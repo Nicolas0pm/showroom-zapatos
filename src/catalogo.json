@@ -1,0 +1,1218 @@
+{
+  "productos": {
+    "samba": {
+      "nombre": "Samba",
+      "base": "samba",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Blanco y negro",
+          "precio": 120,
+          "tallas": [
+            37,
+            38,
+            39,
+            41,
+            42,
+            44
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#141414"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#141414",
+            "suela": "#b57f4c",
+            "puntera": "#e2ded2",
+            "talon": "#141414",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y blanco",
+          "precio": 130,
+          "tallas": [
+            38,
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#17171a",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#17171a",
+            "ojalera": "#17171a",
+            "lengua": "#17171a",
+            "rayas": "#f3f1ea",
+            "suela": "#b57f4c",
+            "puntera": "#222226",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#17171a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Blanco y verde",
+          "precio": 135,
+          "tallas": [
+            40,
+            41
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#1f5a3c"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#1f5a3c",
+            "suela": "#b57f4c",
+            "puntera": "#e2ded2",
+            "talon": "#1f5a3c",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        }
+      ]
+    },
+    "gazelle": {
+      "nombre": "Gazelle",
+      "base": "gazelle",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Azul y blanco",
+          "precio": 110,
+          "tallas": [
+            38,
+            39,
+            40,
+            42
+          ],
+          "muestra": [
+            "#27407c",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#27407c",
+            "ojalera": "#27407c",
+            "lengua": "#27407c",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#27407c",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#27407c",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Verde y blanco",
+          "precio": 110,
+          "tallas": [
+            39,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#25604a",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#25604a",
+            "ojalera": "#25604a",
+            "lengua": "#25604a",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#25604a",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#25604a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Rosa y blanco",
+          "precio": 115,
+          "tallas": [
+            36,
+            37,
+            38,
+            39
+          ],
+          "muestra": [
+            "#d9a3ad",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#d9a3ad",
+            "ojalera": "#d9a3ad",
+            "lengua": "#d9a3ad",
+            "rayas": "#f3f1ea",
+            "suela": "#b57f4c",
+            "puntera": "#d9a3ad",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        }
+      ]
+    },
+    "superstar": {
+      "nombre": "Superstar",
+      "base": "superstar",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Blanco y negro",
+          "precio": 110,
+          "tallas": [
+            37,
+            38,
+            40,
+            41,
+            42,
+            44
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#141414"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#141414",
+            "suela": "#f3f1ea",
+            "puntera": "#e9e7df",
+            "talon": "#141414",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y blanco",
+          "precio": 110,
+          "tallas": [
+            39,
+            40,
+            41,
+            43
+          ],
+          "muestra": [
+            "#17171a",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#17171a",
+            "ojalera": "#17171a",
+            "lengua": "#17171a",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#e9e7df",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#17171a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Blanco y dorado",
+          "precio": 125,
+          "tallas": [
+            38,
+            41,
+            42
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#b9933f"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#b9933f",
+            "suela": "#f3f1ea",
+            "puntera": "#e9e7df",
+            "talon": "#b9933f",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        }
+      ]
+    },
+    "campus": {
+      "nombre": "Campus 00s",
+      "base": "campus",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Gris y blanco",
+          "precio": 115,
+          "tallas": [
+            38,
+            39,
+            40,
+            41
+          ],
+          "muestra": [
+            "#7d7f85",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#7d7f85",
+            "ojalera": "#7d7f85",
+            "lengua": "#7d7f85",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#7d7f85",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y blanco",
+          "precio": 115,
+          "tallas": [
+            39,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#1e1e22",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#1e1e22",
+            "ojalera": "#1e1e22",
+            "lengua": "#1e1e22",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#1e1e22",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Marrón y crema",
+          "precio": 120,
+          "tallas": [
+            40,
+            41,
+            44
+          ],
+          "muestra": [
+            "#6d4a30",
+            "#e8dcc4"
+          ],
+          "colores": {
+            "capellada": "#6d4a30",
+            "ojalera": "#6d4a30",
+            "lengua": "#6d4a30",
+            "rayas": "#e8dcc4",
+            "suela": "#e8dcc4",
+            "puntera": "#6d4a30",
+            "talon": "#e8dcc4",
+            "entresuela": "#f3f1ea",
+            "cordones": "#e8dcc4",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        }
+      ]
+    },
+    "spezial": {
+      "nombre": "Handball Spezial",
+      "base": "spezial",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Azul y gris",
+          "precio": 115,
+          "tallas": [
+            38,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#2f4f8f",
+            "#d6d4cd"
+          ],
+          "colores": {
+            "capellada": "#2f4f8f",
+            "ojalera": "#2f4f8f",
+            "lengua": "#2f4f8f",
+            "rayas": "#d6d4cd",
+            "suela": "#b57f4c",
+            "puntera": "#27437a",
+            "talon": "#d6d4cd",
+            "entresuela": "#f3f1ea",
+            "cordones": "#2f4f8f",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Burdeos y crema",
+          "precio": 115,
+          "tallas": [
+            37,
+            39,
+            41
+          ],
+          "muestra": [
+            "#6d2233",
+            "#e8dcc4"
+          ],
+          "colores": {
+            "capellada": "#6d2233",
+            "ojalera": "#6d2233",
+            "lengua": "#6d2233",
+            "rayas": "#e8dcc4",
+            "suela": "#b57f4c",
+            "puntera": "#5c1c2b",
+            "talon": "#e8dcc4",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Beige y marrón",
+          "precio": 120,
+          "tallas": [
+            39,
+            40,
+            42,
+            43
+          ],
+          "muestra": [
+            "#cdb896",
+            "#6b4326"
+          ],
+          "colores": {
+            "capellada": "#cdb896",
+            "ojalera": "#cdb896",
+            "lengua": "#cdb896",
+            "rayas": "#6b4326",
+            "suela": "#b57f4c",
+            "puntera": "#bda785",
+            "talon": "#6b4326",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        }
+      ]
+    },
+    "sl72": {
+      "nombre": "SL 72",
+      "base": "sl72",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Azul y blanco",
+          "precio": 95,
+          "tallas": [
+            38,
+            39,
+            41,
+            42
+          ],
+          "muestra": [
+            "#2b56a8",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#2b56a8",
+            "ojalera": "#2b56a8",
+            "lengua": "#2b56a8",
+            "rayas": "#f3f1ea",
+            "suela": "#c9463d",
+            "puntera": "#d9d7cf",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#2b56a8",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y dorado",
+          "precio": 100,
+          "tallas": [
+            40,
+            41,
+            43
+          ],
+          "muestra": [
+            "#17171a",
+            "#b9933f"
+          ],
+          "colores": {
+            "capellada": "#17171a",
+            "ojalera": "#17171a",
+            "lengua": "#17171a",
+            "rayas": "#b9933f",
+            "suela": "#b57f4c",
+            "puntera": "#2c2c31",
+            "talon": "#b9933f",
+            "entresuela": "#f3f1ea",
+            "cordones": "#17171a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Rojo y blanco",
+          "precio": 95,
+          "tallas": [
+            37,
+            38,
+            39
+          ],
+          "muestra": [
+            "#b3261e",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#b3261e",
+            "ojalera": "#b3261e",
+            "lengua": "#b3261e",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#d9d7cf",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        }
+      ]
+    },
+    "hawaii": {
+      "nombre": "Hawaii SPZL",
+      "base": "gazelle",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Marrón tono a tono",
+          "precio": 130,
+          "tallas": [
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#6a4a33",
+            "#54392a"
+          ],
+          "colores": {
+            "capellada": "#6a4a33",
+            "ojalera": "#6a4a33",
+            "lengua": "#6a4a33",
+            "rayas": "#54392a",
+            "suela": "#b57f4c",
+            "puntera": "#6a4a33",
+            "talon": "#54392a",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Verde",
+          "precio": 130,
+          "tallas": [
+            39,
+            41,
+            43
+          ],
+          "muestra": [
+            "#3d5a3d",
+            "#e8dcc4"
+          ],
+          "colores": {
+            "capellada": "#3d5a3d",
+            "ojalera": "#3d5a3d",
+            "lengua": "#3d5a3d",
+            "rayas": "#e8dcc4",
+            "suela": "#b57f4c",
+            "puntera": "#3d5a3d",
+            "talon": "#e8dcc4",
+            "entresuela": "#f3f1ea",
+            "cordones": "#3d5a3d",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        }
+      ]
+    },
+    "albrecht": {
+      "nombre": "Albrecht II SPZL",
+      "base": "spezial",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Marrón",
+          "precio": 140,
+          "tallas": [
+            40,
+            41,
+            42,
+            44
+          ],
+          "muestra": [
+            "#7a5436",
+            "#e8dcc4"
+          ],
+          "colores": {
+            "capellada": "#7a5436",
+            "ojalera": "#7a5436",
+            "lengua": "#7a5436",
+            "rayas": "#e8dcc4",
+            "suela": "#b57f4c",
+            "puntera": "#6b4930",
+            "talon": "#e8dcc4",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Azul marino",
+          "precio": 140,
+          "tallas": [
+            39,
+            41,
+            43
+          ],
+          "muestra": [
+            "#1f2c4f",
+            "#d6d4cd"
+          ],
+          "colores": {
+            "capellada": "#1f2c4f",
+            "ojalera": "#1f2c4f",
+            "lengua": "#1f2c4f",
+            "rayas": "#d6d4cd",
+            "suela": "#b57f4c",
+            "puntera": "#1b2644",
+            "talon": "#d6d4cd",
+            "entresuela": "#f3f1ea",
+            "cordones": "#1f2c4f",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        }
+      ]
+    },
+    "zx8000": {
+      "nombre": "ZX 8000",
+      "base": "zx",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Azul y amarillo",
+          "precio": 120,
+          "tallas": [
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#d8d9dc",
+            "#2352a3"
+          ],
+          "colores": {
+            "capellada": "#d8d9dc",
+            "ojalera": "#d8d9dc",
+            "lengua": "#d8d9dc",
+            "rayas": "#2352a3",
+            "suela": "#2352a3",
+            "puntera": "#2f6fb5",
+            "talon": "#e6c229",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco y gris",
+          "precio": 120,
+          "tallas": [
+            38,
+            39,
+            41
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#8a8c92"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#8a8c92",
+            "suela": "#8a8c92",
+            "puntera": "#c9c9cc",
+            "talon": "#8a8c92",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        }
+      ]
+    },
+    "campus-nuevo": {
+      "nombre": "Campus 00s",
+      "base": "campus",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Crema y verde",
+          "precio": 120,
+          "tallas": [
+            38,
+            40,
+            41
+          ],
+          "muestra": [
+            "#e8dcc4",
+            "#2c5a3f"
+          ],
+          "colores": {
+            "capellada": "#e8dcc4",
+            "ojalera": "#e8dcc4",
+            "lengua": "#e8dcc4",
+            "rayas": "#2c5a3f",
+            "suela": "#f3f1ea",
+            "puntera": "#e8dcc4",
+            "talon": "#2c5a3f",
+            "entresuela": "#f3f1ea",
+            "cordones": "#2c5a3f",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Lila y blanco",
+          "precio": 120,
+          "tallas": [
+            36,
+            37,
+            38
+          ],
+          "muestra": [
+            "#b7a7d3",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#b7a7d3",
+            "ojalera": "#b7a7d3",
+            "lengua": "#b7a7d3",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#b7a7d3",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        }
+      ]
+    },
+    "clot-samba": {
+      "nombre": "CLOT × Samba",
+      "base": "samba",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Crema y yute",
+          "precio": 180,
+          "tallas": [
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#e4d6bd",
+            "#3a2c20"
+          ],
+          "colores": {
+            "capellada": "#e4d6bd",
+            "ojalera": "#e4d6bd",
+            "lengua": "#e4d6bd",
+            "rayas": "#3a2c20",
+            "suela": "#c8a877",
+            "puntera": "#d6c6a8",
+            "talon": "#3a2c20",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y yute",
+          "precio": 180,
+          "tallas": [
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#232326",
+            "#c8a877"
+          ],
+          "colores": {
+            "capellada": "#232326",
+            "ojalera": "#232326",
+            "lengua": "#232326",
+            "rayas": "#c8a877",
+            "suela": "#c8a877",
+            "puntera": "#2e2e33",
+            "talon": "#c8a877",
+            "entresuela": "#f3f1ea",
+            "cordones": "#232326",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        }
+      ]
+    },
+    "sftm-samba": {
+      "nombre": "Song for the Mute × Samba LX",
+      "base": "samba",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Gris desgastado",
+          "precio": 170,
+          "tallas": [
+            39,
+            41,
+            42
+          ],
+          "muestra": [
+            "#8e8a80",
+            "#3d3b37"
+          ],
+          "colores": {
+            "capellada": "#8e8a80",
+            "ojalera": "#8e8a80",
+            "lengua": "#8e8a80",
+            "rayas": "#3d3b37",
+            "suela": "#9c8866",
+            "puntera": "#7f7b72",
+            "talon": "#3d3b37",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Marrón desgastado",
+          "precio": 170,
+          "tallas": [
+            40,
+            42,
+            44
+          ],
+          "muestra": [
+            "#6e5a48",
+            "#d5ccb9"
+          ],
+          "colores": {
+            "capellada": "#6e5a48",
+            "ojalera": "#6e5a48",
+            "lengua": "#6e5a48",
+            "rayas": "#d5ccb9",
+            "suela": "#9c8866",
+            "puntera": "#604e3f",
+            "talon": "#d5ccb9",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        }
+      ]
+    },
+    "sftm-tokyo": {
+      "nombre": "Song for the Mute × Tokyo",
+      "base": "spezial",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Verde desgastado",
+          "precio": 170,
+          "tallas": [
+            39,
+            40,
+            41
+          ],
+          "muestra": [
+            "#59604b",
+            "#d5ccb9"
+          ],
+          "colores": {
+            "capellada": "#59604b",
+            "ojalera": "#59604b",
+            "lengua": "#59604b",
+            "rayas": "#d5ccb9",
+            "suela": "#b57f4c",
+            "puntera": "#4e5442",
+            "talon": "#d5ccb9",
+            "entresuela": "#f3f1ea",
+            "cordones": "#59604b",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro desgastado",
+          "precio": 170,
+          "tallas": [
+            40,
+            41,
+            43
+          ],
+          "muestra": [
+            "#2d2c2a",
+            "#a9a497"
+          ],
+          "colores": {
+            "capellada": "#2d2c2a",
+            "ojalera": "#2d2c2a",
+            "lengua": "#2d2c2a",
+            "rayas": "#a9a497",
+            "suela": "#b57f4c",
+            "puntera": "#3a3936",
+            "talon": "#a9a497",
+            "entresuela": "#f3f1ea",
+            "cordones": "#2d2c2a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        }
+      ]
+    },
+    "atmos-zx": {
+      "nombre": "atmos × ZX 8000",
+      "base": "zx",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Edición atmos",
+          "precio": 160,
+          "tallas": [
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#efeeea",
+            "#111114"
+          ],
+          "colores": {
+            "capellada": "#efeeea",
+            "ojalera": "#efeeea",
+            "lengua": "#efeeea",
+            "rayas": "#111114",
+            "suela": "#d23a2e",
+            "puntera": "#d23a2e",
+            "talon": "#111114",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y rojo",
+          "precio": 160,
+          "tallas": [
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#1b1b1f",
+            "#d23a2e"
+          ],
+          "colores": {
+            "capellada": "#1b1b1f",
+            "ojalera": "#1b1b1f",
+            "lengua": "#1b1b1f",
+            "rayas": "#d23a2e",
+            "suela": "#d23a2e",
+            "puntera": "#2c2c31",
+            "talon": "#d23a2e",
+            "entresuela": "#e8e6df",
+            "cordones": "#1b1b1f",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c"
+          }
+        }
+      ]
+    }
+  },
+  "estantes": [
+    {
+      "id": "vendidos",
+      "nombre": "Más vendidos",
+      "color": "#ffe2bd",
+      "oscuro": false,
+      "zapatos": [
+        "samba",
+        "gazelle",
+        "superstar",
+        "campus",
+        "spezial",
+        "sl72"
+      ]
+    },
+    {
+      "id": "novedades",
+      "nombre": "Novedades",
+      "color": "#cfe4ff",
+      "oscuro": false,
+      "zapatos": [
+        "hawaii",
+        "albrecht",
+        "zx8000",
+        "campus-nuevo"
+      ]
+    },
+    {
+      "id": "colaboraciones",
+      "nombre": "Colaboraciones",
+      "color": "#ffffff",
+      "oscuro": true,
+      "zapatos": [
+        "clot-samba",
+        "sftm-samba",
+        "sftm-tokyo",
+        "atmos-zx"
+      ]
+    }
+  ]
+}
