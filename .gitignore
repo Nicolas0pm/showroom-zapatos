@@ -3,3 +3,4 @@ dist
 *.blend1
 __pycache__
 blender/renders
+.vercel

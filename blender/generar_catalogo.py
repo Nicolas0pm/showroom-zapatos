@@ -2,7 +2,7 @@
 import json
 import os
 
-from modelos import ESTANTES, PRODUCTOS
+from modelos import DESCRIPCIONES, ESTANTES, PRODUCTOS
 
 TALLAS = [36, 37, 38, 39, 40, 41, 42, 43, 44]
 productos = {}
@@ -10,6 +10,7 @@ for clave, (nombre, base, variantes) in PRODUCTOS.items():
     productos[clave] = {
         'nombre': nombre,
         'base': base,
+        'descripcion': DESCRIPCIONES[base],
         'tallas': TALLAS,
         'variantes': [{'id': str(i), **x} for i, x in enumerate(variantes)],
     }

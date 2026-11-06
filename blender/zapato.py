@@ -19,7 +19,7 @@ import numpy as np
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
-from modelos import MODELOS  # noqa: E402
+from modelos import MODELOS, PRODUCTOS  # noqa: E402
 
 
 # --- curvas ---------------------------------------------------------------
@@ -94,7 +94,10 @@ class Horma:
         p = np.array(p, float)
         x0, alto = self.m['punta']
         t = np.clip((p[..., 0] - x0) / (30 - x0), 0, None)
-        p[..., 2] += alto * t ** 2
+        p[..., 2] += alto * t ** 2 + self.m.get('elevar', 0)
+        if 'arco_talon' in self.m:
+            x1, subida = self.m['arco_talon']
+            p[..., 2] += subida * np.clip((x1 - p[..., 0]) / x1, 0, None) ** 2
         return p
 
     def plano(self, u, v):
@@ -214,8 +217,10 @@ def banda(h, nombre, material, anillos, tapa_abajo, tapa_arriba):
         n = -n
     alto = h.base(c[:, 0])
     verts = []
+    amplitud, ondas = h.m.get('ondas', (0, 0))
     for fr, sal in anillos:
-        verts += list(np.column_stack([c + n * sal, alto * fr]))
+        bulto = amplitud * np.sin(us * 2 * math.pi * ondas) * math.sin(min(fr, 1) * math.pi)
+        verts += list(np.column_stack([c + n * (sal + bulto)[:, None], alto * fr]))
     v = h.curvar(np.array(verts))
     nv = len(anillos)
     # los vertices van por anillo, la rejilla los espera por columna
@@ -228,7 +233,29 @@ def banda(h, nombre, material, anillos, tapa_abajo, tapa_arriba):
     return malla(nombre, v, caras, material)
 
 
+def columnas(h):
+    """Suela hueca: base y entresuela unidas por columnas a lo largo del borde."""
+    abajo, arriba, cantidad, radio = h.m['columnas']
+    obs = [banda(h, 'suela', 'suela', abajo, True, True),
+           banda(h, 'entresuela', 'entresuela', arriba, True, True),
+           banda(h, 'nucleo', 'forro', [(abajo[-1][0], -0.9), (arriba[0][0], -0.9)], False, False)]
+    us = np.linspace(0.04, 0.96, cantidad)
+    c, n = h.contorno(us), h.contorno.normal(us)
+    if np.dot(h.contorno.normal(0.25), (0, -1)) < 0:
+        n = -n
+    for i, (p, d) in enumerate(zip(c, n)):
+        if 26 < p[0]:
+            continue
+        xy = p - d * 0.25
+        alto = float(h.base(p[0]))
+        camino = h.curvar([(xy[0], xy[1], alto * f) for f in np.linspace(abajo[-1][0] - 0.03, arriba[0][0] + 0.03, 4)])
+        obs.append(tubo(f'columna_{i}', 'correa', camino, radio, radio, arriba=(1, 0, 0), lados=6))
+    return obs
+
+
 def suela(h):
+    if 'columnas' in h.m:
+        return columnas(h)
     anillos, corte = h.m['suela'], h.m['corte']
     if corte is None:
         return [banda(h, 'suela', 'suela', anillos, True, True)]
@@ -384,6 +411,134 @@ def talon(h):
     return parche(h, 'talon', 'talon', uv, 14, 12, alto=0.1)
 
 
+def punto(h, nombre, u, v, radio=0.17, alto=0.1):
+    """Disco pequeno sobre la capellada, para perforaciones."""
+    p, n = h.S(u, v), h.normal(u, v)
+    t = h.S(u + 2e-3, v) - h.S(u - 2e-3, v)
+    t /= np.linalg.norm(t)
+    b = np.cross(n, t)
+    verts = [p + n * alto + (t * math.cos(a) + b * math.sin(a)) * radio
+             for a in np.linspace(0, 2 * math.pi, 7, endpoint=False)]
+    return malla(nombre, verts, [tuple(range(7))], 'rayas')
+
+
+def perforaciones(h):
+    obs = []
+    for i, (x_abajo, x_arriba, n, v0, v1) in enumerate(h.m.get('perfora', ())):
+        for lado in (-1, 1):
+            for k, t in enumerate(np.linspace(0, 1, n)):
+                v = v0 + (v1 - v0) * t
+                u = h.u_de_x(x_abajo + (x_arriba - x_abajo) * t, v, lado)
+                obs.append(punto(h, f'perfora_{i}_{lado}_{k}', u, v))
+    if h.m.get('perfora_punta'):
+        ua, ub = h.u_de_x(24, 0.02, -1), h.u_de_x(24, 0.02, 1)
+        for i, v in enumerate((0.42, 0.56, 0.7)):
+            for k, a in enumerate(np.linspace(0.36, 0.64, 7 - i)):
+                obs.append(punto(h, f'punta_{i}_{k}', ua + (ub - ua) * a, v, radio=0.14))
+    return obs
+
+
+def paneles(h):
+    obs = []
+    for i, p in enumerate(h.m.get('paneles', ())):
+        x0, x1 = p['x']
+        v0, v1 = p['v']
+        inclina = p.get('inclina', 0)
+        for lado in (-1, 1):
+            def uv(A, B):
+                V = v0 + (v1 - v0) * B
+                U = np.zeros_like(A)
+                for idx in np.ndindex(A.shape):
+                    U[idx] = h.u_de_x(x0 + (x1 - x0) * A[idx] + inclina * B[idx], V[idx], lado)
+                return U, V
+            obs.append(parche(h, f'panel_{i}_{lado}', p['parte'], uv, 14, 10, alto=p.get('alto', 0.08)))
+    return obs
+
+
+def guardia(h):
+    parte, tope = h.m['guardia']
+    return [parche(h, 'guardia', parte, lambda A, B: (A, B * tope), 200, 4, alto=0.09)]
+
+
+def correa(h):
+    x, ancho, v = h.m['correa']
+    ue, ui = h.u_de_x(x, 0.9, -1), h.u_de_x(x, 0.9, 1)
+    camino = [h.S(ue, a) + h.normal(ue, a) * 0.16 for a in np.linspace(v, 0.97, 8)]
+    a, b = camino[-1], h.S(ui, 0.97) + h.normal(ui, 0.97) * 0.16
+    for t in np.linspace(0, 1, 12)[1:-1]:
+        p = a + (b - a) * t
+        p[2] += 0.9 * math.sin(t * math.pi)
+        camino.append(p)
+    camino += [h.S(ui, a) + h.normal(ui, a) * 0.16 for a in np.linspace(0.97, v, 8)]
+    return [tubo('correa', 'correa', camino, 0.12, ancho, arriba=(1, 0, 0), lados=6)]
+
+
+def solapa(h):
+    """Lengueta ancha que tapa los cordones, como en las botas de futbol."""
+    x0, x1, medio = h.m['solapa']
+    filas, cols = 12, 9
+    verts = []
+    for b in np.linspace(0, 1, filas):
+        x = x0 + (x1 - x0) * b
+        for a in np.linspace(-1, 1, cols):
+            verts.append((x, a * medio * (1 - 0.35 * b ** 2), h.borde(x) + 0.75 - 0.9 * a * a))
+    return [malla('solapa', h.curvar(verts), rejilla(filas, cols), 'puntera')]
+
+
+def tacos(h):
+    obs = []
+    alto = h.m['elevar']
+    for i, (x, y, r) in enumerate(h.m['tacos']):
+        verts = []
+        for altura, f in ((alto + 0.3, 1), (0.01, 0.72)):
+            verts += [(x + math.cos(a) * r * f, y + math.sin(a) * r * f, altura)
+                      for a in np.linspace(0, 2 * math.pi, 8, endpoint=False)]
+        caras = [(k, (k + 1) % 8, 8 + (k + 1) % 8, 8 + k) for k in range(8)]
+        caras.append(tuple(range(15, 7, -1)))
+        obs.append(malla(f'taco_{i}', verts, caras, 'suela'))
+    return obs
+
+
+def lazos(h):
+    """Tiradores de tela en el talon y la lengua."""
+    x_lengua = h.m['lengua'][1]
+    bases = [h.S(0.0, 1.0), h.curvar((x_lengua, 0.0, float(h.borde(x_lengua)) + 1.4))]
+    obs = []
+    for i, p in enumerate(bases):
+        camino = [p + np.array((-0.25 * math.sin(t), 0.42 * math.cos(t), 1.9 * math.sin(t)))
+                  for t in np.linspace(0, math.pi, 12)]
+        obs.append(tubo(f'lazo_{i}', 'cordones', camino, 0.07, 0.2, arriba=(1, 0, 0), lados=6))
+    return obs
+
+
+def chancla(h):
+    """Suela contorneada y una tira ancha con tres rayas."""
+    obs = suela(h)
+    x0, x1, altura = h.m['tira']
+    filas, cols = 24, 30
+    arriba, abajo = [], []
+    for b in np.linspace(0, 1, filas):
+        x = x0 + (x1 - x0) * b
+        ye, yi = h.S(h.u_de_x(x, 0.0, -1), 0.0)[1], h.S(h.u_de_x(x, 0.0, 1), 0.0)[1]
+        centro, medio = (ye + yi) / 2, (yi - ye) / 2 + 0.05
+        for a in np.linspace(-1, 1, cols):
+            z = h.base(x) - 0.2 + altura * (1 - abs(a) ** 2.6) ** 0.62
+            arriba.append((x, centro + a * medio, z))
+            abajo.append((x, centro + a * medio * 0.97, z - 0.3))
+    arriba = h.curvar(arriba)
+    abajo = h.curvar(abajo)
+    n = len(arriba)
+    caras = rejilla(filas, cols) + [tuple(c + n for c in reversed(f)) for f in rejilla(filas, cols)]
+    obs.append(malla('tira', np.vstack([arriba, abajo]), caras, 'capellada'))
+    grilla = arriba.reshape(filas, cols, 3)
+    for i, fila in enumerate((5, 11, 17)):
+        p = grilla[fila:fila + 4, 2:-2].copy()
+        p[..., 2] += 0.07
+        f, c = p.shape[:2]
+        obs.append(malla(f'raya_{i}', p.reshape(-1, 3), rejilla(f, c), 'rayas'))
+    return obs
+
+
 def suavizar(ob, angulo=0.6):
     bm = bmesh.new()
     bm.from_mesh(ob.data)
@@ -414,8 +569,15 @@ def unir_por_material(obs):
 
 def construir(m):
     h = Horma(m)
-    obs = suela(h) + [capellada(h), lengua(h), talon(h)]
-    obs += (puntera(h) if m['puntera'] else []) + ojalera(h) + list(interior(h)) + rayas(h) + cordones(h)
+    if m.get('tipo') == 'chancla':
+        obs = chancla(h)
+    else:
+        obs = suela(h) + [capellada(h), lengua(h), talon(h)]
+        obs += (puntera(h) if m['puntera'] else []) + ojalera(h) + list(interior(h)) + rayas(h) + cordones(h)
+        obs += paneles(h) + perforaciones(h)
+        for clave, parte in (('guardia', guardia), ('correa', correa), ('solapa', solapa), ('tacos', tacos), ('lazos', lazos)):
+            if clave in m:
+                obs += parte(h)
     for ob in obs:
         suavizar(ob)
     unir_por_material(obs)
@@ -430,7 +592,10 @@ def hex_rgb(c):
 
 
 def aplicar_variante(m, nombre):
-    colores = m['variantes'][nombre]
+    pintar(m['variantes'][nombre])
+
+
+def pintar(colores):
     for parte, material in _mats.items():
         bsdf = material.node_tree.nodes.get('Principled BSDF')
         bsdf.inputs['Base Color'].default_value = hex_rgb(colores.get(parte, '#ffffff'))
@@ -499,6 +664,7 @@ def main():
     ap.add_argument('--vistas', default='lado,tres_cuartos,arriba,atras')
     ap.add_argument('--render', action='store_true')
     ap.add_argument('--glb', action='store_true')
+    ap.add_argument('--fotos', action='store_true', help='foto transparente de cada producto y color')
     ap.add_argument('--lod', type=float, default=0, help='exporta tambien una version reducida')
     a = ap.parse_args(argv)
 
@@ -519,6 +685,22 @@ def main():
                                   export_format='GLB', export_apply=True)
         for ob in bpy.context.scene.objects:
             ob.modifiers.clear()
+    if a.fotos:
+        cam = preparar_escena()
+        s = bpy.context.scene
+        s.render.film_transparent = True
+        s.render.resolution_x, s.render.resolution_y = 1000, 700
+        s.cycles.samples = 32
+        bpy.data.objects['Plane'].hide_render = True
+        mirar(cam, (66, -70, 24))
+        for clave, (_, base, lista) in PRODUCTOS.items():
+            if base != a.modelo:
+                continue
+            for i, x in enumerate(lista):
+                pintar(x['colores'])
+                s.render.filepath = f'{AQUI}/renders/fotos/{clave}-{i}.png'
+                bpy.ops.render.render(write_still=True)
+        return
     if a.render:
         cam = preparar_escena()
         for v in variantes:

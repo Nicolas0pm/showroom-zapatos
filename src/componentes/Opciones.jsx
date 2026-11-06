@@ -1,7 +1,12 @@
-import { forwardRef, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import gsap from 'gsap'
+import { usarCarrito } from '../carrito.jsx'
+import { usarSinMovimiento } from '../usarSinMovimiento.js'
 
-const Panel = forwardRef(function Panel({ clave, producto, estante, variante, sinMovimiento, alCambiar, alAgregar, alCerrar }, ref) {
+// Precio, color, talla y boton de compra; se usa en la sala y en el detalle.
+export default function Opciones({ clave, producto, variante, alCambiar }) {
+  const { agregar } = usarCarrito()
+  const sinMovimiento = usarSinMovimiento()
   const [talla, setTalla] = useState(null)
   const [agregado, setAgregado] = useState(false)
   const precio = useRef(null)
@@ -17,18 +22,15 @@ const Panel = forwardRef(function Panel({ clave, producto, estante, variante, si
     }
   }
 
-  function agregar() {
-    alAgregar({ producto: clave, variante: variante.id, talla, precio: variante.precio })
+  function comprar() {
+    agregar({ producto: clave, variante: variante.id, talla, precio: variante.precio })
     setAgregado(true)
     clearTimeout(temporizador.current)
     temporizador.current = setTimeout(() => setAgregado(false), 1800)
   }
 
   return (
-    <aside className="panel" ref={ref}>
-      <button type="button" className="cerrar" aria-label="Volver a la estantería" onClick={alCerrar}>×</button>
-      <p className="linea">{estante}</p>
-      <h1>{producto.nombre}</h1>
+    <>
       <p className="precio" ref={precio} aria-live="polite">${variante.precio}</p>
 
       <fieldset>
@@ -66,12 +68,10 @@ const Panel = forwardRef(function Panel({ clave, producto, estante, variante, si
         </div>
       </fieldset>
 
-      <button type="button" className={`agregar ${agregado ? 'listo' : ''}`} disabled={!talla} onClick={agregar}>
+      <button type="button" className={`agregar ${agregado ? 'listo' : ''}`} disabled={!talla} onClick={comprar}>
         {agregado ? 'Agregado ✓' : talla ? 'Agregar a la bolsa' : 'Elige una talla'}
       </button>
       <p className="simulado">Precios, tallas y modelos provisionales.</p>
-    </aside>
+    </>
   )
-})
-
-export default Panel
+}

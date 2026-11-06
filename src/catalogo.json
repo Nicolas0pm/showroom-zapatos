@@ -3,6 +3,7 @@
     "samba": {
       "nombre": "Samba",
       "base": "samba",
+      "descripcion": "Silueta baja de inspiración futbolera, con puntera en T y suela de goma.",
       "tallas": [
         36,
         37,
@@ -42,7 +43,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#141414"
           }
         },
         {
@@ -71,7 +73,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#17171a",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
           }
         },
         {
@@ -97,7 +100,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#1f5a3c"
           }
         }
       ]
@@ -105,6 +109,7 @@
     "gazelle": {
       "nombre": "Gazelle",
       "base": "gazelle",
+      "descripcion": "Clásico de perfil bajo y líneas limpias, pensado para el uso diario.",
       "tallas": [
         36,
         37,
@@ -142,7 +147,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#27407c",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
           }
         },
         {
@@ -170,7 +176,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#25604a",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
           }
         },
         {
@@ -198,7 +205,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#f3f1ea"
           }
         }
       ]
@@ -206,6 +214,7 @@
     "superstar": {
       "nombre": "Superstar",
       "base": "superstar",
+      "descripcion": "Puntera de concha y suela de copa, una silueta reconocible al instante.",
       "tallas": [
         36,
         37,
@@ -245,7 +254,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#141414"
           }
         },
         {
@@ -273,7 +283,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#17171a",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
           }
         },
         {
@@ -300,7 +311,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#b9933f"
           }
         }
       ]
@@ -308,6 +320,7 @@
     "campus": {
       "nombre": "Campus 00s",
       "base": "campus",
+      "descripcion": "Proporciones anchas, cuello acolchado y cordones gruesos.",
       "tallas": [
         36,
         37,
@@ -345,7 +358,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#f3f1ea"
           }
         },
         {
@@ -373,7 +387,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
           }
         },
         {
@@ -400,7 +415,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#e8dcc4",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#e8dcc4"
           }
         }
       ]
@@ -408,6 +424,7 @@
     "spezial": {
       "nombre": "Handball Spezial",
       "base": "spezial",
+      "descripcion": "Perfil estilizado de inspiración deportiva, con suela de goma.",
       "tallas": [
         36,
         37,
@@ -445,7 +462,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#2f4f8f",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#d6d4cd"
           }
         },
         {
@@ -472,7 +490,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#e8dcc4"
           }
         },
         {
@@ -500,7 +519,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#6b4326"
           }
         }
       ]
@@ -508,6 +528,7 @@
     "sl72": {
       "nombre": "SL 72",
       "base": "sl72",
+      "descripcion": "Silueta de running retro con suela en cuña y rayas finas.",
       "tallas": [
         36,
         37,
@@ -545,7 +566,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#2b56a8",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
           }
         },
         {
@@ -572,7 +594,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#17171a",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#b9933f"
           }
         },
         {
@@ -599,14 +622,16 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#f3f1ea"
           }
         }
       ]
     },
     "hawaii": {
       "nombre": "Hawaii SPZL",
-      "base": "gazelle",
+      "base": "hawaii",
+      "descripcion": "Silueta de terraza con suela de copa y refuerzo bajo en la capellada.",
       "tallas": [
         36,
         37,
@@ -643,7 +668,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#54392a"
           }
         },
         {
@@ -670,14 +696,16 @@
             "entresuela": "#f3f1ea",
             "cordones": "#3d5a3d",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#e8dcc4"
           }
         }
       ]
     },
     "albrecht": {
       "nombre": "Albrecht II SPZL",
-      "base": "spezial",
+      "base": "albrecht",
+      "descripcion": "Corte alto para tobillo, con muchos ojales y rayas finas.",
       "tallas": [
         36,
         37,
@@ -715,7 +743,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#e8dcc4"
           }
         },
         {
@@ -742,7 +771,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#1f2c4f",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#d6d4cd"
           }
         }
       ]
@@ -750,6 +780,7 @@
     "zx8000": {
       "nombre": "ZX 8000",
       "base": "zx",
+      "descripcion": "Zapatilla de running de volumen generoso, con refuerzo en el talón.",
       "tallas": [
         36,
         37,
@@ -787,7 +818,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#2352a3"
           }
         },
         {
@@ -814,14 +846,16 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#8a8c92"
           }
         }
       ]
     },
-    "campus-nuevo": {
-      "nombre": "Campus 00s",
-      "base": "campus",
+    "stansmith": {
+      "nombre": "Stan Smith",
+      "base": "stansmith",
+      "descripcion": "Tenis limpio, sin rayas: tres líneas de perforaciones y talón de color.",
       "tallas": [
         36,
         37,
@@ -836,63 +870,1401 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Crema y verde",
-          "precio": 120,
+          "nombre": "Blanco y verde",
+          "precio": 100,
           "tallas": [
+            37,
             38,
             40,
-            41
+            41,
+            42
           ],
           "muestra": [
-            "#e8dcc4",
-            "#2c5a3f"
+            "#f3f1ea",
+            "#b8b5ab"
           ],
           "colores": {
-            "capellada": "#e8dcc4",
-            "ojalera": "#e8dcc4",
-            "lengua": "#e8dcc4",
-            "rayas": "#2c5a3f",
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#b8b5ab",
             "suela": "#f3f1ea",
-            "puntera": "#e8dcc4",
-            "talon": "#2c5a3f",
+            "puntera": "#f3f1ea",
+            "talon": "#1f6b45",
             "entresuela": "#f3f1ea",
-            "cordones": "#2c5a3f",
+            "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#b8b5ab"
           }
         },
         {
           "id": "1",
-          "nombre": "Lila y blanco",
+          "nombre": "Blanco y azul",
+          "precio": 100,
+          "tallas": [
+            38,
+            39,
+            41,
+            43
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#b8b5ab"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#b8b5ab",
+            "suela": "#f3f1ea",
+            "puntera": "#f3f1ea",
+            "talon": "#1f3f8a",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#b8b5ab"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Blanco y dorado",
+          "precio": 110,
+          "tallas": [
+            39,
+            40,
+            41
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#b8b5ab"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#b8b5ab",
+            "suela": "#f3f1ea",
+            "puntera": "#f3f1ea",
+            "talon": "#b9933f",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#b8b5ab"
+          }
+        }
+      ]
+    },
+    "forum": {
+      "nombre": "Forum Low",
+      "base": "forum",
+      "descripcion": "Bota baja de baloncesto con correa en el tobillo y puntera perforada.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Blanco y azul",
+          "precio": 110,
+          "tallas": [
+            39,
+            40,
+            41,
+            42,
+            44
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#1f3f8a"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#1f3f8a",
+            "suela": "#f3f1ea",
+            "puntera": "#e4e2db",
+            "talon": "#1f3f8a",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#1f3f8a"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco y rojo",
+          "precio": 110,
+          "tallas": [
+            38,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#b3261e"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#b3261e",
+            "suela": "#f3f1ea",
+            "puntera": "#e4e2db",
+            "talon": "#b3261e",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#b3261e"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Negro total",
           "precio": 120,
+          "tallas": [
+            40,
+            41,
+            43
+          ],
+          "muestra": [
+            "#1e1e22",
+            "#3a3a40"
+          ],
+          "colores": {
+            "capellada": "#1e1e22",
+            "ojalera": "#1e1e22",
+            "lengua": "#1e1e22",
+            "rayas": "#3a3a40",
+            "suela": "#1e1e22",
+            "puntera": "#2b2b30",
+            "talon": "#3a3a40",
+            "entresuela": "#f3f1ea",
+            "cordones": "#1e1e22",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#3a3a40"
+          }
+        }
+      ]
+    },
+    "ultraboost": {
+      "nombre": "Ultraboost",
+      "base": "ultraboost",
+      "descripcion": "Tejido tipo calcetín, jaula lateral y una suela alta y abultada.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Negro y blanco",
+          "precio": 180,
+          "tallas": [
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#26262b",
+            "#3f3f46"
+          ],
+          "colores": {
+            "capellada": "#26262b",
+            "ojalera": "#26262b",
+            "lengua": "#26262b",
+            "rayas": "#3f3f46",
+            "suela": "#26262b",
+            "puntera": "#26262b",
+            "talon": "#3f3f46",
+            "entresuela": "#f3f1ea",
+            "cordones": "#26262b",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#3f3f46"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco total",
+          "precio": 180,
+          "tallas": [
+            38,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#e7e6e1",
+            "#cfcfca"
+          ],
+          "colores": {
+            "capellada": "#e7e6e1",
+            "ojalera": "#e7e6e1",
+            "lengua": "#e7e6e1",
+            "rayas": "#cfcfca",
+            "suela": "#c9c9c4",
+            "puntera": "#e7e6e1",
+            "talon": "#cfcfca",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#cfcfca"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Azul y naranja",
+          "precio": 190,
+          "tallas": [
+            40,
+            41,
+            44
+          ],
+          "muestra": [
+            "#1f3f8a",
+            "#e8703a"
+          ],
+          "colores": {
+            "capellada": "#1f3f8a",
+            "ojalera": "#1f3f8a",
+            "lengua": "#1f3f8a",
+            "rayas": "#e8703a",
+            "suela": "#1f3f8a",
+            "puntera": "#1f3f8a",
+            "talon": "#e8703a",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#e8703a"
+          }
+        }
+      ]
+    },
+    "adilette": {
+      "nombre": "Adilette",
+      "base": "adilette",
+      "descripcion": "Chancla de tira ancha y suela contorneada, para antes y después de entrenar.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Negro y blanco",
+          "precio": 45,
+          "tallas": [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "muestra": [
+            "#17171a",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#17171a",
+            "ojalera": "#17171a",
+            "lengua": "#17171a",
+            "rayas": "#f3f1ea",
+            "suela": "#17171a",
+            "puntera": "#17171a",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#17171a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Azul y blanco",
+          "precio": 45,
+          "tallas": [
+            38,
+            40,
+            42,
+            43
+          ],
+          "muestra": [
+            "#1f3f8a",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#1f3f8a",
+            "ojalera": "#1f3f8a",
+            "lengua": "#1f3f8a",
+            "rayas": "#f3f1ea",
+            "suela": "#1f3f8a",
+            "puntera": "#1f3f8a",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#1f3f8a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Blanco y negro",
+          "precio": 45,
+          "tallas": [
+            37,
+            38,
+            39,
+            41
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#141414"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#141414",
+            "suela": "#f3f1ea",
+            "puntera": "#f3f1ea",
+            "talon": "#141414",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#141414"
+          }
+        }
+      ]
+    },
+    "predator": {
+      "nombre": "Predator 96 FG",
+      "base": "predator",
+      "descripcion": "Bota de fútbol con lengüeta sobre los cordones y tacos en la suela.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Negro y rojo",
+          "precio": 300,
+          "tallas": [
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#17171a",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#17171a",
+            "ojalera": "#17171a",
+            "lengua": "#17171a",
+            "rayas": "#f3f1ea",
+            "suela": "#b3261e",
+            "puntera": "#26262b",
+            "talon": "#b3261e",
+            "entresuela": "#f3f1ea",
+            "cordones": "#17171a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco y negro",
+          "precio": 300,
+          "tallas": [
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#141414"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#141414",
+            "suela": "#141414",
+            "puntera": "#e4e2db",
+            "talon": "#141414",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#141414"
+          }
+        }
+      ]
+    },
+    "taekwondo": {
+      "nombre": "Taekwondo",
+      "base": "taekwondo",
+      "descripcion": "Silueta muy delgada y flexible, con suela casi plana.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Blanco y negro",
+          "precio": 90,
+          "tallas": [
+            36,
+            37,
+            38,
+            39,
+            40
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#141414"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#141414",
+            "suela": "#b57f4c",
+            "puntera": "#f3f1ea",
+            "talon": "#141414",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#f3f1ea",
+            "costuras": "#b9b4a6",
+            "correa": "#141414"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y blanco",
+          "precio": 90,
+          "tallas": [
+            37,
+            38,
+            39,
+            41
+          ],
+          "muestra": [
+            "#17171a",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#17171a",
+            "ojalera": "#17171a",
+            "lengua": "#17171a",
+            "rayas": "#f3f1ea",
+            "suela": "#b57f4c",
+            "puntera": "#17171a",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#17171a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Rojo y blanco",
+          "precio": 95,
           "tallas": [
             36,
             37,
             38
           ],
           "muestra": [
-            "#b7a7d3",
+            "#b3261e",
             "#f3f1ea"
           ],
           "colores": {
-            "capellada": "#b7a7d3",
-            "ojalera": "#b7a7d3",
-            "lengua": "#b7a7d3",
+            "capellada": "#b3261e",
+            "ojalera": "#b3261e",
+            "lengua": "#b3261e",
             "rayas": "#f3f1ea",
-            "suela": "#f3f1ea",
-            "puntera": "#b7a7d3",
+            "suela": "#b57f4c",
+            "puntera": "#b3261e",
             "talon": "#f3f1ea",
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#f3f1ea"
+          }
+        }
+      ]
+    },
+    "adizero": {
+      "nombre": "Adizero Adios Pro",
+      "base": "adizero",
+      "descripcion": "Zapatilla de competición con suela curva muy alta y rayas anchas.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Rosa y negro",
+          "precio": 250,
+          "tallas": [
+            39,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#ec2f5b",
+            "#16161a"
+          ],
+          "colores": {
+            "capellada": "#ec2f5b",
+            "ojalera": "#ec2f5b",
+            "lengua": "#ec2f5b",
+            "rayas": "#16161a",
+            "suela": "#16161a",
+            "puntera": "#ec2f5b",
+            "talon": "#16161a",
+            "entresuela": "#ec2f5b",
+            "cordones": "#ec2f5b",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#16161a"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y gris",
+          "precio": 250,
+          "tallas": [
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#1c1c20",
+            "#55555c"
+          ],
+          "colores": {
+            "capellada": "#1c1c20",
+            "ojalera": "#1c1c20",
+            "lengua": "#1c1c20",
+            "rayas": "#55555c",
+            "suela": "#1c1c20",
+            "puntera": "#1c1c20",
+            "talon": "#55555c",
+            "entresuela": "#35353b",
+            "cordones": "#1c1c20",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#55555c"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Blanco y azul",
+          "precio": 250,
+          "tallas": [
+            38,
+            39,
+            41
+          ],
+          "muestra": [
+            "#eceae4",
+            "#1f3f8a"
+          ],
+          "colores": {
+            "capellada": "#eceae4",
+            "ojalera": "#eceae4",
+            "lengua": "#eceae4",
+            "rayas": "#1f3f8a",
+            "suela": "#1f3f8a",
+            "puntera": "#eceae4",
+            "talon": "#1f3f8a",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#1f3f8a"
+          }
+        }
+      ]
+    },
+    "grandcourt": {
+      "nombre": "Grand Court Base",
+      "base": "grandcourt",
+      "descripcion": "Tenis de cancha sencillo, con talón y puntera en capas.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Blanco y negro",
+          "precio": 75,
+          "tallas": [
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#141414"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#141414",
+            "suela": "#f3f1ea",
+            "puntera": "#e6e4dd",
+            "talon": "#141414",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#141414"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco y verde",
+          "precio": 75,
+          "tallas": [
+            38,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#1f5a3c"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#1f5a3c",
+            "suela": "#f3f1ea",
+            "puntera": "#e6e4dd",
+            "talon": "#1f5a3c",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#1f5a3c"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Negro y blanco",
+          "precio": 75,
+          "tallas": [
+            39,
+            41,
+            43
+          ],
+          "muestra": [
+            "#17171a",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#17171a",
+            "ojalera": "#17171a",
+            "lengua": "#17171a",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#26262b",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#17171a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
+          }
+        }
+      ]
+    },
+    "supernova": {
+      "nombre": "Supernova",
+      "base": "supernova",
+      "descripcion": "Running de uso diario con suela acolchada en capas.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Gris y azul",
+          "precio": 130,
+          "tallas": [
+            39,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#b9bbc0",
+            "#8f9096"
+          ],
+          "colores": {
+            "capellada": "#b9bbc0",
+            "ojalera": "#b9bbc0",
+            "lengua": "#b9bbc0",
+            "rayas": "#8f9096",
+            "suela": "#3b3c88",
+            "puntera": "#8f9096",
+            "talon": "#3b3c88",
+            "entresuela": "#e8e7e2",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#8f9096"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y blanco",
+          "precio": 130,
+          "tallas": [
+            40,
+            41,
+            43
+          ],
+          "muestra": [
+            "#1c1c20",
+            "#4a4a50"
+          ],
+          "colores": {
+            "capellada": "#1c1c20",
+            "ojalera": "#1c1c20",
+            "lengua": "#1c1c20",
+            "rayas": "#4a4a50",
+            "suela": "#1c1c20",
+            "puntera": "#2c2c31",
+            "talon": "#4a4a50",
+            "entresuela": "#f3f1ea",
+            "cordones": "#1c1c20",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#4a4a50"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Blanco y naranja",
+          "precio": 135,
+          "tallas": [
+            38,
+            39,
+            41
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#e8703a"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#e8703a",
+            "suela": "#e8703a",
+            "puntera": "#d9d7cf",
+            "talon": "#e8703a",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#e8703a"
+          }
+        }
+      ]
+    },
+    "megaride": {
+      "nombre": "Megaride",
+      "base": "megaride",
+      "descripcion": "Suela hueca con columnas a la vista y capellada envolvente.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Negro y rojo",
+          "precio": 180,
+          "tallas": [
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#17231d",
+            "#1f5a3c"
+          ],
+          "colores": {
+            "capellada": "#17231d",
+            "ojalera": "#17231d",
+            "lengua": "#17231d",
+            "rayas": "#1f5a3c",
+            "suela": "#141416",
+            "puntera": "#222a26",
+            "talon": "#c2a82f",
+            "entresuela": "#17231d",
+            "cordones": "#17231d",
+            "forro": "#0e0e10",
+            "costuras": "#55555c",
+            "correa": "#b3261e"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Plata y negro",
+          "precio": 180,
+          "tallas": [
+            39,
+            41,
+            42
+          ],
+          "muestra": [
+            "#bfc1c6",
+            "#35353b"
+          ],
+          "colores": {
+            "capellada": "#bfc1c6",
+            "ojalera": "#bfc1c6",
+            "lengua": "#bfc1c6",
+            "rayas": "#35353b",
+            "suela": "#141416",
+            "puntera": "#8f9096",
+            "talon": "#35353b",
+            "entresuela": "#d9d9d6",
+            "cordones": "#f3f1ea",
+            "forro": "#0e0e10",
+            "costuras": "#b9b4a6",
+            "correa": "#141416"
+          }
+        }
+      ]
+    },
+    "hoopsmid": {
+      "nombre": "Hoops Mid",
+      "base": "hoopsmid",
+      "descripcion": "Bota media de baloncesto, con cuello acolchado en franjas.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Negro y blanco",
+          "precio": 85,
+          "tallas": [
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#1b1b1f",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#1b1b1f",
+            "ojalera": "#1b1b1f",
+            "lengua": "#1b1b1f",
+            "rayas": "#f3f1ea",
+            "suela": "#1b1b1f",
+            "puntera": "#2a2a2f",
+            "talon": "#2a2a2f",
+            "entresuela": "#f3f1ea",
+            "cordones": "#1b1b1f",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco y negro",
+          "precio": 85,
+          "tallas": [
+            38,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#141414"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#141414",
+            "suela": "#f3f1ea",
+            "puntera": "#dedcd5",
+            "talon": "#141414",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#dedcd5"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Blanco y azul",
+          "precio": 85,
+          "tallas": [
+            39,
+            41,
+            43
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#1f3f8a"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#1f3f8a",
+            "suela": "#f3f1ea",
+            "puntera": "#dedcd5",
+            "talon": "#1f3f8a",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#1f3f8a"
+          }
+        }
+      ]
+    },
+    "forummid": {
+      "nombre": "Forum Mid",
+      "base": "forummid",
+      "descripcion": "Bota media con correa en el tobillo y puntera perforada.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Blanco y azul",
+          "precio": 120,
+          "tallas": [
+            39,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#1f45c4"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#1f45c4",
+            "suela": "#1f45c4",
+            "puntera": "#e4e2db",
+            "talon": "#1f45c4",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#f3f1ea"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Crema y negro",
+          "precio": 125,
+          "tallas": [
+            40,
+            41,
+            43
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#232326"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#232326",
+            "suela": "#232326",
+            "puntera": "#d8cbb0",
+            "talon": "#232326",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#d8cbb0"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Negro total",
+          "precio": 125,
+          "tallas": [
+            41,
+            42,
+            44
+          ],
+          "muestra": [
+            "#1e1e22",
+            "#3a3a40"
+          ],
+          "colores": {
+            "capellada": "#1e1e22",
+            "ojalera": "#1e1e22",
+            "lengua": "#1e1e22",
+            "rayas": "#3a3a40",
+            "suela": "#1e1e22",
+            "puntera": "#2b2b30",
+            "talon": "#3a3a40",
+            "entresuela": "#f3f1ea",
+            "cordones": "#1e1e22",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#3a3a40"
+          }
+        }
+      ]
+    },
+    "breaknetmid": {
+      "nombre": "Breaknet Mid",
+      "base": "breaknetmid",
+      "descripcion": "Bota media limpia, con rayas anchas y suela de copa.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Blanco y negro",
+          "precio": 80,
+          "tallas": [
+            38,
+            39,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#141414"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#141414",
+            "suela": "#f3f1ea",
+            "puntera": "#f3f1ea",
+            "talon": "#141414",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#141414"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y blanco",
+          "precio": 80,
+          "tallas": [
+            40,
+            41,
+            43
+          ],
+          "muestra": [
+            "#17171a",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#17171a",
+            "ojalera": "#17171a",
+            "lengua": "#17171a",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#17171a",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#17171a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#f3f1ea"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Blanco y verde",
+          "precio": 80,
+          "tallas": [
+            38,
+            41,
+            42
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#1f5a3c"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#1f5a3c",
+            "suela": "#f3f1ea",
+            "puntera": "#f3f1ea",
+            "talon": "#1f5a3c",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#1f5a3c"
+          }
+        }
+      ]
+    },
+    "terrex": {
+      "nombre": "Terrex",
+      "base": "terrex",
+      "descripcion": "Bota de senderismo con suela de tacos, puntera reforzada y tiradores.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Negro total",
+          "precio": 160,
+          "tallas": [
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "muestra": [
+            "#1a1a1d",
+            "#2e2e33"
+          ],
+          "colores": {
+            "capellada": "#1a1a1d",
+            "ojalera": "#1a1a1d",
+            "lengua": "#1a1a1d",
+            "rayas": "#2e2e33",
+            "suela": "#111113",
+            "puntera": "#232327",
+            "talon": "#2e2e33",
+            "entresuela": "#232327",
+            "cordones": "#111113",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#2e2e33"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Verde y naranja",
+          "precio": 165,
+          "tallas": [
+            39,
+            41,
+            42
+          ],
+          "muestra": [
+            "#44513a",
+            "#2d3626"
+          ],
+          "colores": {
+            "capellada": "#44513a",
+            "ojalera": "#44513a",
+            "lengua": "#44513a",
+            "rayas": "#2d3626",
+            "suela": "#111113",
+            "puntera": "#2d3626",
+            "talon": "#e8703a",
+            "entresuela": "#6a6a63",
+            "cordones": "#e8703a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#2d3626"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Arena y negro",
+          "precio": 165,
+          "tallas": [
+            40,
+            42,
+            43
+          ],
+          "muestra": [
+            "#b9a888",
+            "#3a342a"
+          ],
+          "colores": {
+            "capellada": "#b9a888",
+            "ojalera": "#b9a888",
+            "lengua": "#b9a888",
+            "rayas": "#3a342a",
+            "suela": "#1a1a1d",
+            "puntera": "#7b6d55",
+            "talon": "#3a342a",
+            "entresuela": "#e0d9c8",
+            "cordones": "#3a342a",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#3a342a"
           }
         }
       ]
     },
     "clot-samba": {
       "nombre": "CLOT × Samba",
-      "base": "samba",
+      "base": "clot",
+      "descripcion": "Versión con suela alta de textura trenzada y puntera ampliada.",
       "tallas": [
         36,
         37,
@@ -929,7 +2301,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#3a2c20"
           }
         },
         {
@@ -956,14 +2329,16 @@
             "entresuela": "#f3f1ea",
             "cordones": "#232326",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#c8a877"
           }
         }
       ]
     },
     "sftm-samba": {
       "nombre": "Song for the Mute × Samba LX",
-      "base": "samba",
+      "base": "sambalx",
+      "descripcion": "Perfil muy bajo, con dos franjas anchas y materiales desgastados.",
       "tallas": [
         36,
         37,
@@ -1000,7 +2375,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#3d3b37"
           }
         },
         {
@@ -1027,14 +2403,16 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#d5ccb9"
           }
         }
       ]
     },
     "sftm-tokyo": {
       "nombre": "Song for the Mute × Tokyo",
-      "base": "spezial",
+      "base": "tokyo",
+      "descripcion": "Silueta delgada con correa sobre el empeine.",
       "tallas": [
         36,
         37,
@@ -1071,7 +2449,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#59604b",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#d5ccb9"
           }
         },
         {
@@ -1098,14 +2477,16 @@
             "entresuela": "#f3f1ea",
             "cordones": "#2d2c2a",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#a9a497"
           }
         }
       ]
     },
     "atmos-zx": {
       "nombre": "atmos × ZX 8000",
-      "base": "zx",
+      "base": "atmoszx",
+      "descripcion": "Running en capas, con correa y paneles de contraste.",
       "tallas": [
         36,
         37,
@@ -1142,7 +2523,8 @@
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
-            "costuras": "#b9b4a6"
+            "costuras": "#b9b4a6",
+            "correa": "#111114"
           }
         },
         {
@@ -1169,7 +2551,8 @@
             "entresuela": "#e8e6df",
             "cordones": "#1b1b1f",
             "forro": "#2b2b2f",
-            "costuras": "#55555c"
+            "costuras": "#55555c",
+            "correa": "#d23a2e"
           }
         }
       ]
@@ -1185,9 +2568,15 @@
         "samba",
         "gazelle",
         "superstar",
+        "adilette",
+        "ultraboost",
+        "stansmith",
+        "forum",
         "campus",
         "spezial",
-        "sl72"
+        "sl72",
+        "taekwondo",
+        "grandcourt"
       ]
     },
     {
@@ -1196,10 +2585,17 @@
       "color": "#cfe4ff",
       "oscuro": false,
       "zapatos": [
+        "predator",
+        "adizero",
         "hawaii",
-        "albrecht",
         "zx8000",
-        "campus-nuevo"
+        "supernova",
+        "megaride",
+        "albrecht",
+        "hoopsmid",
+        "forummid",
+        "breaknetmid",
+        "terrex"
       ]
     },
     {

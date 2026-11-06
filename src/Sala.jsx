@@ -6,6 +6,7 @@ import gsap from 'gsap'
 
 // Medidas en centimetros, igual que los modelos de Blender.
 const MEDIO = 220
+let entradaVista = false
 const LARGO_ZAPATO = 30
 const ESCALA_REPISA = 1.45
 const EJE_Y = new Vector3(0, 1, 0)
@@ -21,12 +22,12 @@ function aMundo(pared, x, y, z) {
 
 // En pantallas verticales las repisas se apilan para que quepan.
 function distribucion(vertical, cantidad) {
-  if (vertical) {
-    return { filas: cantidad > 4 ? [52, 100, 148] : [76, 130], columnas: [-29, 29], ancho: 118 }
-  }
-  return cantidad > 4
-    ? { filas: [84, 140], columnas: [-58, 0, 58], ancho: 180 }
-    : { filas: [84, 140], columnas: [-40, 40], ancho: 180 }
+  const columnas = vertical ? [-29, 29] : cantidad > 9 ? [-84, -28, 28, 84] : cantidad > 4 ? [-58, 0, 58] : [-40, 40]
+  const cantidadFilas = Math.ceil(cantidad / columnas.length)
+  const filas = vertical
+    ? { 2: [76, 130], 3: [52, 100, 148], 4: [40, 88, 136, 184], 5: [24, 68, 112, 156, 200], 6: [16, 56, 96, 136, 176, 216] }[cantidadFilas]
+    : { 2: [84, 140], 3: [56, 108, 160] }[cantidadFilas]
+  return { filas, columnas, ancho: vertical ? 118 : cantidad > 9 ? 236 : 180, rotulo: filas.at(-1) + 46 }
 }
 
 function ranuras(estantes, productos, vertical) {
@@ -49,11 +50,14 @@ function ranuras(estantes, productos, vertical) {
 }
 
 function estacion(e, cantidad, aspecto, fov) {
-  const { ancho } = distribucion(aspecto < 0.8, cantidad)
+  const { ancho, filas, rotulo } = distribucion(aspecto < 0.8, cantidad)
   const tangente = Math.tan((fov * Math.PI) / 360)
-  const distancia = Math.min(400, Math.max(190, (ancho / 2 + 16) / (tangente * aspecto)))
+  const centro = (filas[0] + rotulo) / 2
+  const medioAlto = (rotulo - filas[0]) / 2 + 20
+  const porAncho = (ancho / 2 + 16) / (tangente * aspecto)
+  const distancia = Math.min(400, Math.max(190, porAncho, (medioAlto * 1.3) / tangente))
   const pared = PAREDES[e]
-  return { pos: aMundo(pared, 0, 128, distancia), mira: aMundo(pared, 0, 122, 0) }
+  return { pos: aMundo(pared, 0, centro + 6, distancia), mira: aMundo(pared, 0, centro, 0) }
 }
 
 const GENERAL = { pos: new Vector3(0, 138, 345), mira: new Vector3(0, 118, -80) }
@@ -125,7 +129,7 @@ function rotulo(texto, claro) {
 }
 
 function Estante({ estante, pared, vertical, encendido }) {
-  const { filas, ancho } = distribucion(vertical, estante.zapatos.length)
+  const { filas, ancho, rotulo: alturaRotulo } = distribucion(vertical, estante.zapatos.length)
   const textura = useMemo(() => rotulo(estante.nombre, estante.oscuro), [estante])
   return (
     <group position={pared.pos} rotation={[0, pared.rot, 0]}>
@@ -135,7 +139,7 @@ function Estante({ estante, pared, vertical, encendido }) {
           <meshStandardMaterial color="#1b1b1e" roughness={0.8} />
         </mesh>
       )}
-      <mesh position={[0, 190, 1]}>
+      <mesh position={[0, alturaRotulo, 1]}>
         <planeGeometry args={[120, 15]} />
         <meshBasicMaterial map={textura} transparent toneMapped={false} />
       </mesh>
@@ -481,7 +485,8 @@ function Detalle({ url, ranura, colores, abierto, sinMovimiento, alCerrar }) {
 
 export default function Sala({ catalogo, vista, producto, colores, abierto, sinMovimiento, alElegirEstante, alElegirRanura, alCerrar, alListo }) {
   const [vertical, setVertical] = useState(() => window.innerWidth / window.innerHeight < 0.8)
-  const intro = useRef(!sinMovimiento)
+  const intro = useRef(!sinMovimiento && !entradaVista)
+  entradaVista = true
   const { estantes, productos } = catalogo
   const cantidades = useMemo(() => estantes.map((e) => e.zapatos.length), [estantes])
   const slots = useMemo(() => ranuras(estantes, productos, vertical), [estantes, productos, vertical])
