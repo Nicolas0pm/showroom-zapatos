@@ -2261,6 +2261,607 @@
         }
       ]
     },
+    "badbo": {
+      "nombre": "Bad Bunny BadBo 1.0",
+      "base": "badbo",
+      "descripcion": "Versión aproximada: silueta de cancha con correa y colores de bandera.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Blanco, rojo y azul",
+          "precio": 160,
+          "tallas": [
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#c8102e"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#c8102e",
+            "suela": "#f3f1ea",
+            "puntera": "#1f3f8a",
+            "talon": "#1f3f8a",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#c8102e"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y rojo",
+          "precio": 160,
+          "tallas": [
+            40,
+            41,
+            43
+          ],
+          "muestra": [
+            "#17171a",
+            "#c8102e"
+          ],
+          "colores": {
+            "capellada": "#17171a",
+            "ojalera": "#17171a",
+            "lengua": "#17171a",
+            "rayas": "#c8102e",
+            "suela": "#1b1b1f",
+            "puntera": "#2a2a2f",
+            "talon": "#c8102e",
+            "entresuela": "#f3f1ea",
+            "cordones": "#17171a",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#c8102e"
+          }
+        }
+      ]
+    },
+    "chavarria-megaride": {
+      "nombre": "Willy Chavarria × Megaride",
+      "base": "wcmegaride",
+      "descripcion": "Suela de columnas gruesas y capellada envolvente.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Negro y plata",
+          "precio": 200,
+          "tallas": [
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#1a1a1d",
+            "#c9cbd0"
+          ],
+          "colores": {
+            "capellada": "#1a1a1d",
+            "ojalera": "#1a1a1d",
+            "lengua": "#1a1a1d",
+            "rayas": "#c9cbd0",
+            "suela": "#111113",
+            "puntera": "#2a2a2f",
+            "talon": "#c9cbd0",
+            "entresuela": "#1a1a1d",
+            "cordones": "#1a1a1d",
+            "forro": "#0e0e10",
+            "costuras": "#55555c",
+            "correa": "#c9cbd0"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco y rojo",
+          "precio": 200,
+          "tallas": [
+            39,
+            41,
+            42
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#b3261e"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#b3261e",
+            "suela": "#141416",
+            "puntera": "#d9d7cf",
+            "talon": "#b3261e",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#0e0e10",
+            "costuras": "#b9b4a6",
+            "correa": "#b3261e"
+          }
+        }
+      ]
+    },
+    "wb-army": {
+      "nombre": "Wales Bonner × BW Army",
+      "base": "wbarmy",
+      "descripcion": "Perfil bajo y delgado con rayas finas y suela de goma.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Marrón y crema",
+          "precio": 190,
+          "tallas": [
+            38,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#6b4a31",
+            "#e8dcc4"
+          ],
+          "colores": {
+            "capellada": "#6b4a31",
+            "ojalera": "#6b4a31",
+            "lengua": "#6b4a31",
+            "rayas": "#e8dcc4",
+            "suela": "#b57f4c",
+            "puntera": "#58391f",
+            "talon": "#e8dcc4",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#e8dcc4"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Crema y verde",
+          "precio": 190,
+          "tallas": [
+            39,
+            41,
+            43
+          ],
+          "muestra": [
+            "#e4d6bd",
+            "#2c5a3f"
+          ],
+          "colores": {
+            "capellada": "#e4d6bd",
+            "ojalera": "#e4d6bd",
+            "lengua": "#e4d6bd",
+            "rayas": "#2c5a3f",
+            "suela": "#b57f4c",
+            "puntera": "#d6c6a8",
+            "talon": "#2c5a3f",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#2c5a3f"
+          }
+        }
+      ]
+    },
+    "y3-evo": {
+      "nombre": "Y-3 Evo SL",
+      "base": "y3evo",
+      "descripcion": "Running elevado de líneas limpias, con suela curva.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Negro total",
+          "precio": 240,
+          "tallas": [
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#141416",
+            "#2d2d32"
+          ],
+          "colores": {
+            "capellada": "#141416",
+            "ojalera": "#141416",
+            "lengua": "#141416",
+            "rayas": "#2d2d32",
+            "suela": "#141416",
+            "puntera": "#232327",
+            "talon": "#2d2d32",
+            "entresuela": "#232327",
+            "cordones": "#141416",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#2d2d32"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco y negro",
+          "precio": 240,
+          "tallas": [
+            39,
+            41,
+            42
+          ],
+          "muestra": [
+            "#e7e6e1",
+            "#141414"
+          ],
+          "colores": {
+            "capellada": "#e7e6e1",
+            "ojalera": "#e7e6e1",
+            "lengua": "#e7e6e1",
+            "rayas": "#141414",
+            "suela": "#141414",
+            "puntera": "#d9d7cf",
+            "talon": "#141414",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#141414"
+          }
+        }
+      ]
+    },
+    "satisfy-adizero": {
+      "nombre": "Satisfy × Adizero Adios Pro 4",
+      "base": "satisfyadizero",
+      "descripcion": "Zapatilla de competición con suela curva y puntera perforada.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Gris y lima",
+          "precio": 280,
+          "tallas": [
+            39,
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#b5b7ba",
+            "#c7e03a"
+          ],
+          "colores": {
+            "capellada": "#b5b7ba",
+            "ojalera": "#b5b7ba",
+            "lengua": "#b5b7ba",
+            "rayas": "#c7e03a",
+            "suela": "#2c2c31",
+            "puntera": "#8f9096",
+            "talon": "#c7e03a",
+            "entresuela": "#e0e0da",
+            "cordones": "#c7e03a",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#c7e03a"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro y lima",
+          "precio": 280,
+          "tallas": [
+            40,
+            41,
+            43
+          ],
+          "muestra": [
+            "#1c1c20",
+            "#c7e03a"
+          ],
+          "colores": {
+            "capellada": "#1c1c20",
+            "ojalera": "#1c1c20",
+            "lengua": "#1c1c20",
+            "rayas": "#c7e03a",
+            "suela": "#1c1c20",
+            "puntera": "#2c2c31",
+            "talon": "#c7e03a",
+            "entresuela": "#35353b",
+            "cordones": "#1c1c20",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#c7e03a"
+          }
+        }
+      ]
+    },
+    "bape-adistar": {
+      "nombre": "BAPE × Adistar HRMY",
+      "base": "bapeadistar",
+      "descripcion": "Running voluminoso con suela en capas y paneles de contraste.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Verde militar",
+          "precio": 220,
+          "tallas": [
+            40,
+            41,
+            42
+          ],
+          "muestra": [
+            "#5d6b4a",
+            "#2a3324"
+          ],
+          "colores": {
+            "capellada": "#5d6b4a",
+            "ojalera": "#5d6b4a",
+            "lengua": "#5d6b4a",
+            "rayas": "#2a3324",
+            "suela": "#2a3324",
+            "puntera": "#3f4b33",
+            "talon": "#2a3324",
+            "entresuela": "#d9d5c5",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#8a9470"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Azul y blanco",
+          "precio": 220,
+          "tallas": [
+            39,
+            41,
+            43
+          ],
+          "muestra": [
+            "#3a5fa8",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#3a5fa8",
+            "ojalera": "#3a5fa8",
+            "lengua": "#3a5fa8",
+            "rayas": "#f3f1ea",
+            "suela": "#1f3f8a",
+            "puntera": "#27437a",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#3a5fa8",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#7f9bd0"
+          }
+        }
+      ]
+    },
+    "coca-superstar": {
+      "nombre": "Coca-Cola × Superstar",
+      "base": "cocasuperstar",
+      "descripcion": "Superstar de puntera marcada y paneles en el talón.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Rojo y blanco",
+          "precio": 150,
+          "tallas": [
+            38,
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#c8102e",
+            "#f3f1ea"
+          ],
+          "colores": {
+            "capellada": "#c8102e",
+            "ojalera": "#c8102e",
+            "lengua": "#c8102e",
+            "rayas": "#f3f1ea",
+            "suela": "#f3f1ea",
+            "puntera": "#f3f1ea",
+            "talon": "#f3f1ea",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#f3f1ea"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco y rojo",
+          "precio": 150,
+          "tallas": [
+            39,
+            41,
+            42
+          ],
+          "muestra": [
+            "#f3f1ea",
+            "#c8102e"
+          ],
+          "colores": {
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#c8102e",
+            "suela": "#f3f1ea",
+            "puntera": "#e9e7df",
+            "talon": "#c8102e",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#c8102e"
+          }
+        }
+      ]
+    },
+    "braindead-guide": {
+      "nombre": "Brain Dead × Guide Tennie",
+      "base": "guidetennie",
+      "descripcion": "Zapatilla de aproximación con cordones hasta la punta y borde de goma.",
+      "tallas": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "variantes": [
+        {
+          "id": "0",
+          "nombre": "Mostaza y negro",
+          "precio": 170,
+          "tallas": [
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#b08a2e",
+            "#2b2b2b"
+          ],
+          "colores": {
+            "capellada": "#b08a2e",
+            "ojalera": "#b08a2e",
+            "lengua": "#b08a2e",
+            "rayas": "#2b2b2b",
+            "suela": "#1e1e22",
+            "puntera": "#b08a2e",
+            "talon": "#2b2b2b",
+            "entresuela": "#f3f1ea",
+            "cordones": "#1e1e22",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#2b2b2b"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Violeta y negro",
+          "precio": 170,
+          "tallas": [
+            39,
+            41,
+            43
+          ],
+          "muestra": [
+            "#5c4a86",
+            "#2b2b2b"
+          ],
+          "colores": {
+            "capellada": "#5c4a86",
+            "ojalera": "#5c4a86",
+            "lengua": "#5c4a86",
+            "rayas": "#2b2b2b",
+            "suela": "#1e1e22",
+            "puntera": "#5c4a86",
+            "talon": "#d8d24b",
+            "entresuela": "#f3f1ea",
+            "cordones": "#d8d24b",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#2b2b2b"
+          }
+        }
+      ]
+    },
     "clot-samba": {
       "nombre": "CLOT × Samba",
       "base": "clot",
@@ -2604,7 +3205,15 @@
       "color": "#ffffff",
       "oscuro": true,
       "zapatos": [
+        "badbo",
+        "chavarria-megaride",
         "clot-samba",
+        "wb-army",
+        "y3-evo",
+        "satisfy-adizero",
+        "bape-adistar",
+        "coca-superstar",
+        "braindead-guide",
         "sftm-samba",
         "sftm-tokyo",
         "atmos-zx"
