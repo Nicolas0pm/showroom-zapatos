@@ -36,48 +36,59 @@ function grano(x, ancho, alto, r, cantidad, tono) {
 }
 
 export function ladrillo(repetir, oscuro = false) {
-  const [c, x] = lienzo(512, 512)
+  const [c, x] = lienzo(256, 256)
   const r = azar(oscuro ? 7 : 3)
   x.fillStyle = oscuro ? '#1c1c1f' : '#8f8a82'
-  x.fillRect(0, 0, 512, 512)
-  const alto = 32
-  const largo = 96
-  for (let fila = 0; fila < 512 / alto; fila++) {
+  x.fillRect(0, 0, 256, 256)
+  const alto = 16
+  const largo = 48
+  for (let fila = 0; fila < 256 / alto; fila++) {
     const corrido = fila % 2 ? largo / 2 : 0
-    for (let col = -1; col < 512 / largo + 1; col++) {
+    for (let col = -1; col < 256 / largo + 1; col++) {
       const tono = oscuro ? 34 + r() * 16 : 0
       x.fillStyle = oscuro
         ? `rgb(${tono},${tono},${tono + 3})`
         : `hsl(${10 + r() * 14}, ${38 + r() * 18}%, ${30 + r() * 12}%)`
-      x.fillRect(col * largo + corrido + 3, fila * alto + 3, largo - 6, alto - 6)
+      x.fillRect(col * largo + corrido + 1.5, fila * alto + 1.5, largo - 3, alto - 3)
     }
   }
-  grano(x, 512, 512, r, 2600, oscuro ? '255,255,255' : '0,0,0')
+  grano(x, 256, 256, r, 700, oscuro ? '255,255,255' : '0,0,0')
   return textura(c, repetir)
 }
 
-export function concreto(repetir, base = '#9a9893') {
-  const [c, x] = lienzo(512, 512)
+const bases = {}
+
+function baseConcreto(color) {
+  if (bases[color]) return bases[color]
+  const [c, x] = lienzo(256, 256)
   const r = azar(11)
-  x.fillStyle = base
-  x.fillRect(0, 0, 512, 512)
-  for (let i = 0; i < 70; i++) {
-    const g = x.createRadialGradient(r() * 512, r() * 512, 0, r() * 512, r() * 512, 40 + r() * 120)
-    g.addColorStop(0, `rgba(0,0,0,${r() * 0.06})`)
+  x.fillStyle = color
+  x.fillRect(0, 0, 256, 256)
+  for (let i = 0; i < 16; i++) {
+    const px = r() * 256
+    const py = r() * 256
+    const radio = 30 + r() * 70
+    const g = x.createRadialGradient(px, py, 0, px, py, radio)
+    g.addColorStop(0, `rgba(0,0,0,${r() * 0.07})`)
     g.addColorStop(1, 'rgba(0,0,0,0)')
     x.fillStyle = g
-    x.fillRect(0, 0, 512, 512)
+    x.fillRect(px - radio, py - radio, radio * 2, radio * 2)
   }
-  grano(x, 512, 512, r, 5000, '0,0,0')
-  grano(x, 512, 512, r, 2000, '255,255,255')
-  return textura(c, repetir)
+  grano(x, 256, 256, r, 1200, '0,0,0')
+  grano(x, 256, 256, r, 500, '255,255,255')
+  bases[color] = c
+  return c
+}
+
+export function concreto(repetir, base = '#9a9893') {
+  return textura(baseConcreto(base), repetir)
 }
 
 // Mural con letras de burbuja, manchas y chorreados. Todo original.
 export function grafiti() {
   const [c, x] = lienzo(1024, 512)
   const r = azar(23)
-  x.drawImage(concreto([1, 1], '#8e8c87').image, 0, 0, 1024, 512)
+  x.drawImage(baseConcreto('#8e8c87'), 0, 0, 1024, 512)
   const colores = ['#ff3d7f', '#2ec4ff', '#ffd23f', '#7cff6b', '#9b5cff', '#ff7a2e']
   for (let i = 0; i < 9; i++) {
     const cx = 60 + r() * 900
@@ -146,12 +157,12 @@ export function grafiti() {
 
 // Piso de concreto pulido con lineas de cancha pintadas.
 export function piso(ancho, largo) {
-  const escala = 2
-  const [c, x] = lienzo(ancho * escala, largo * escala)
+  const escala = 1.2
+  const [c, x] = lienzo(Math.round(ancho * escala), Math.round(largo * escala))
   const r = azar(5)
-  const base = concreto([1, 1], '#6f6d69').image
-  for (let i = 0; i < c.width; i += 512) {
-    for (let j = 0; j < c.height; j += 512) x.drawImage(base, i, j)
+  const base = baseConcreto('#6f6d69')
+  for (let i = 0; i < c.width; i += 256) {
+    for (let j = 0; j < c.height; j += 256) x.drawImage(base, i, j)
   }
   x.strokeStyle = 'rgba(255,255,255,0.75)'
   x.lineWidth = 5 * escala
@@ -195,13 +206,13 @@ export function piso(ancho, largo) {
 }
 
 // Letrero de neon: tubo blanco con halo de color.
-export function neon(texto, color, ancho = 1024, alto = 160) {
+export function neon(texto, color, ancho = 640, alto = 100) {
   const [c, x] = lienzo(ancho, alto)
   x.font = `600 ${alto * 0.5}px "Trebuchet MS", "Segoe UI", system-ui, sans-serif`
   x.textAlign = 'center'
   x.textBaseline = 'middle'
   x.shadowColor = color
-  for (const [blur, ancho2] of [[38, 10], [18, 7], [6, 4]]) {
+  for (const [blur, ancho2] of [[22, 7], [8, 4]]) {
     x.shadowBlur = blur
     x.lineWidth = ancho2
     x.strokeStyle = color

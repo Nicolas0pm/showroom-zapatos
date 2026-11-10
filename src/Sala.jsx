@@ -187,15 +187,33 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
   const leds = useRef({})
   const marca = useRef()
 
-  const t = useMemo(() => ({
-    fondo: ladrillo([4.6, 3.2]),
-    izquierda: grafiti(),
-    concreto: concreto([5, 2.4]),
-    derecha: ladrillo([6.6, 3.2], true),
-    piso: piso(MEDIO * 2, 640),
-    reja: reja(),
-    marca: neon('Showroom', '#ff4f8b', 1024, 200),
-  }), [])
+  // Las texturas se dibujan una por tarea, en pausas libres, para no congelar la carga.
+  const [t, setT] = useState({})
+  useEffect(() => {
+    const tareas = [
+      ['marca', () => neon('Showroom', '#ff4f8b', 640, 125)],
+      ['fondo', () => ladrillo([4.6, 3.2])],
+      ['derecha', () => ladrillo([6.6, 3.2], true)],
+      ['concreto', () => concreto([5, 2.4])],
+      ['piso', () => piso(MEDIO * 2, 640)],
+      ['izquierda', grafiti],
+      ['reja', reja],
+    ]
+    const pausa = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 16))
+    const cancelar = window.cancelIdleCallback ?? clearTimeout
+    let id
+    const siguiente = (i) => {
+      if (i >= tareas.length) return
+      id = pausa(() => {
+        const [clave, crear] = tareas[i]
+        const nueva = crear()
+        setT((previo) => ({ ...previo, [clave]: nueva }))
+        siguiente(i + 1)
+      })
+    }
+    siguiente(0)
+    return () => cancelar(id)
+  }, [])
 
   useEffect(() => {
     const aplicar = (niveles) => {
@@ -256,7 +274,7 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
       ))}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 100]}>
         <planeGeometry args={[MEDIO * 2, 640]} />
-        <meshStandardMaterial map={t.piso} roughness={0.35} metalness={0.05} />
+        <meshStandardMaterial key={t.piso ? 1 : 0} map={t.piso ?? null} color={t.piso ? '#fff' : '#6f6d69'} roughness={0.35} metalness={0.05} />
       </mesh>
       <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, 300, 100]}>
         <planeGeometry args={[MEDIO * 2, 640]} />
@@ -276,28 +294,28 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
       ))}
       <mesh position={[0, 150, -MEDIO]}>
         <planeGeometry args={[MEDIO * 2, 300]} />
-        <meshStandardMaterial map={t.fondo} roughness={0.95} />
+        <meshStandardMaterial key={t.fondo ? 1 : 0} map={t.fondo ?? null} color={t.fondo ? '#fff' : '#7a4a38'} roughness={0.95} />
       </mesh>
       <mesh position={[-MEDIO, 150, 100]} rotation={[0, Math.PI / 2, 0]}>
         <planeGeometry args={[640, 300]} />
-        <meshStandardMaterial map={t.concreto} roughness={0.95} />
+        <meshStandardMaterial key={t.concreto ? 1 : 0} map={t.concreto ?? null} color={t.concreto ? '#fff' : '#9a9893'} roughness={0.95} />
       </mesh>
       <mesh position={[-MEDIO + 0.5, 150, 0]} rotation={[0, Math.PI / 2, 0]}>
         <planeGeometry args={[420, 210]} />
-        <meshStandardMaterial map={t.izquierda} roughness={0.9} />
+        <meshStandardMaterial key={t.izquierda ? 1 : 0} map={t.izquierda ?? null} color={t.izquierda ? '#fff' : '#8e8c87'} roughness={0.9} />
       </mesh>
       <mesh position={[MEDIO, 150, 100]} rotation={[0, -Math.PI / 2, 0]}>
         <planeGeometry args={[640, 300]} />
-        <meshStandardMaterial map={t.derecha} roughness={0.95} />
+        <meshStandardMaterial key={t.derecha ? 1 : 0} map={t.derecha ?? null} color={t.derecha ? '#fff' : '#26262a'} roughness={0.95} />
       </mesh>
-      <mesh position={[-MEDIO + 3, 90, 330]} rotation={[0, Math.PI / 2, 0]}>
+      {t.reja && <mesh position={[-MEDIO + 3, 90, 330]} rotation={[0, Math.PI / 2, 0]}>
         <planeGeometry args={[150, 180]} />
         <meshStandardMaterial map={t.reja} transparent alphaTest={0.4} side={DoubleSide} metalness={0.5} roughness={0.5} />
-      </mesh>
-      <mesh position={[0, 284, -MEDIO + 2]}>
+      </mesh>}
+      {t.marca && <mesh position={[0, 284, -MEDIO + 2]}>
         <planeGeometry args={[112, 21.9]} />
         <meshBasicMaterial ref={marca} map={t.marca} transparent depthWrite={false} toneMapped={false} color="#000" />
-      </mesh>
+      </mesh>}
       {cielo.map((f, i) => (
         <mesh key={i} position={f.pos}>
           <boxGeometry args={f.tam} />
