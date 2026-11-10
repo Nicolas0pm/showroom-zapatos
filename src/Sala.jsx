@@ -1,8 +1,9 @@
 import { Suspense, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
-import { CanvasTexture, Color, DoubleSide, Euler, Matrix4, Quaternion, SRGBColorSpace, Vector3 } from 'three'
+import { CanvasTexture, Color, DoubleSide, Euler, Matrix4, Quaternion, Vector3 } from 'three'
 import gsap from 'gsap'
+import { concreto, grafiti, ladrillo, neon, piso, reja } from './texturas.js'
 
 // Medidas en centimetros, igual que los modelos de Blender.
 const MEDIO = 220
@@ -113,43 +114,43 @@ function Camara({ vista, cantidades, sinMovimiento, intro, alTerminarIntro }) {
   return null
 }
 
-function rotulo(texto, claro) {
-  const c = document.createElement('canvas')
-  c.width = 1024
-  c.height = 128
-  const x = c.getContext('2d')
-  x.font = '800 84px system-ui, sans-serif'
-  x.textAlign = 'center'
-  x.textBaseline = 'middle'
-  x.fillStyle = claro ? '#f3f1ea' : '#141414'
-  x.fillText(texto.toUpperCase(), 512, 66)
-  const t = new CanvasTexture(c)
-  t.colorSpace = SRGBColorSpace
-  return t
-}
+// Color de neon de cada pared: calido, frio y rosa.
+const NEON = ['#ffa94d', '#3fd0ff', '#ff4f8b']
 
-function Estante({ estante, pared, vertical, encendido }) {
+function Estante({ estante, indice, pared, vertical, encendido }) {
   const { filas, ancho, rotulo: alturaRotulo } = distribucion(vertical, estante.zapatos.length)
-  const textura = useMemo(() => rotulo(estante.nombre, estante.oscuro), [estante])
+  const letrero = useMemo(() => neon(estante.nombre, NEON[indice]), [estante, indice])
+  const alto = alturaRotulo - 20
   return (
     <group position={pared.pos} rotation={[0, pared.rot, 0]}>
-      {estante.oscuro && (
-        <mesh position={[0, 150, 0.4]}>
-          <planeGeometry args={[300, 300]} />
-          <meshStandardMaterial color="#1b1b1e" roughness={0.8} />
-        </mesh>
-      )}
-      <mesh position={[0, alturaRotulo, 1]}>
-        <planeGeometry args={[120, 15]} />
-        <meshBasicMaterial map={textura} transparent toneMapped={false} />
+      <mesh position={[0, alturaRotulo, 2]}>
+        <planeGeometry args={[150, 23.4]} />
+        <meshBasicMaterial
+          ref={(m) => { encendido.current[`${estante.id}-letrero`] = m }}
+          map={letrero}
+          transparent
+          depthWrite={false}
+          toneMapped={false}
+          color="#000"
+        />
       </mesh>
+      {[-1, 1].map((lado) => (
+        <mesh key={lado} position={[lado * (ancho / 2 + 2), alto / 2, 34]}>
+          <cylinderGeometry args={[1.6, 1.6, alto, 10]} />
+          <meshStandardMaterial color="#232326" metalness={0.6} roughness={0.4} />
+        </mesh>
+      ))}
       {filas.map((y) => (
         <group key={y} position={[0, y, 0]}>
-          <mesh position={[0, -1.6, 19]}>
-            <boxGeometry args={[ancho, 3.2, 38]} />
-            <meshStandardMaterial color={estante.oscuro ? '#3a3a3f' : '#c9a071'} roughness={0.6} />
+          <mesh position={[0, -2, 19]}>
+            <boxGeometry args={[ancho, 4, 36]} />
+            <meshStandardMaterial color={estante.oscuro ? '#3a3a3f' : '#9a7652'} roughness={0.75} />
           </mesh>
-          <mesh position={[0, -3.5, 36]}>
+          <mesh position={[0, -4.4, 35.5]} rotation={[0, 0, Math.PI / 2]}>
+            <cylinderGeometry args={[1.1, 1.1, ancho + 4, 8]} />
+            <meshStandardMaterial color="#232326" metalness={0.6} roughness={0.4} />
+          </mesh>
+          <mesh position={[0, -4.6, 33]}>
             <boxGeometry args={[ancho - 8, 0.7, 1]} />
             <meshBasicMaterial ref={(m) => { encendido.current[`${estante.id}${y}`] = m }} color="#000" toneMapped={false} />
           </mesh>
@@ -159,90 +160,160 @@ function Estante({ estante, pared, vertical, encendido }) {
   )
 }
 
+function Cono({ posicion }) {
+  return (
+    <group position={posicion}>
+      <mesh position={[0, 1, 0]}>
+        <boxGeometry args={[22, 2, 22]} />
+        <meshStandardMaterial color="#e2571e" roughness={0.6} />
+      </mesh>
+      <mesh position={[0, 18, 0]}>
+        <coneGeometry args={[8, 32, 18, 1, true]} />
+        <meshStandardMaterial color="#ff6a1f" roughness={0.5} />
+      </mesh>
+      <mesh position={[0, 20, 0]}>
+        <cylinderGeometry args={[5.6, 6.6, 5, 18, 1, true]} />
+        <meshStandardMaterial color="#f3f1ea" roughness={0.4} />
+      </mesh>
+    </group>
+  )
+}
+
 function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, intro }) {
   const invalidate = useThree((s) => s.invalidate)
   const ambiente = useRef()
   const focos = useRef([])
-  const franjas = useRef([])
+  const tubos = useRef([])
   const leds = useRef({})
+  const marca = useRef()
+
+  const t = useMemo(() => ({
+    fondo: ladrillo([4.6, 3.2]),
+    izquierda: grafiti(),
+    concreto: concreto([5, 2.4]),
+    derecha: ladrillo([6.6, 3.2], true),
+    piso: piso(MEDIO * 2, 640),
+    reja: reja(),
+    marca: neon('Showroom', '#ff4f8b', 1024, 200),
+  }), [])
 
   useEffect(() => {
     const aplicar = (niveles) => {
-      ambiente.current.intensity = 0.1 + 0.8 * niveles.sala
+      ambiente.current.intensity = 0.12 + 0.6 * niveles.sala
+      marca.current?.color.setScalar(niveles.marca)
       estantes.forEach((estante, i) => {
         const n = niveles[`e${i}`]
-        focos.current[i].intensity = 1.25 * n
-        franjas.current[i].color.set(estante.color).multiplyScalar(n * 1.1)
+        focos.current[i].intensity = 1.2 * n
+        tubos.current[i]?.color.set(NEON[i]).multiplyScalar(n * 1.4)
         Object.entries(leds.current)
           .filter(([k]) => k.startsWith(estante.id))
-          .forEach(([, m]) => m?.color.set(estante.color).multiplyScalar(n))
+          .forEach(([k, m]) => (k.endsWith('-letrero') ? m?.color.setScalar(n) : m?.color.set(NEON[i]).multiplyScalar(n)))
       })
       invalidate()
     }
-    const niveles = { sala: 0, e0: 0, e1: 0, e2: 0 }
+    const encendida = { sala: 1, marca: 1, e0: 1, e1: 1, e2: 1 }
     if (sinMovimiento || !intro.current) {
-      aplicar({ sala: 1, e0: 1, e1: 1, e2: 1 })
+      aplicar(encendida)
       return
     }
+    // Cada neon parpadea antes de quedar fijo, como un tubo que arranca.
+    const niveles = { sala: 0, marca: 0, e0: 0, e1: 0, e2: 0 }
     aplicar(niveles)
-    const t = gsap.timeline({ onUpdate: () => aplicar(niveles) })
-    t.to(niveles, { e1: 1, duration: 0.5, ease: 'power2.out' }, 0.3)
-    t.to(niveles, { e0: 1, duration: 0.5, ease: 'power2.out' }, 1.2)
-    t.to(niveles, { e2: 1, duration: 0.5, ease: 'power2.out' }, 2.1)
-    t.to(niveles, { sala: 1, duration: 1.2, ease: 'power1.inOut' }, 2.6)
-    return () => t.kill()
+    const linea = gsap.timeline({ onUpdate: () => aplicar(niveles) })
+    const parpadeo = (clave, inicio) => {
+      ;[[0, 1], [0.07, 0.1], [0.14, 0.9], [0.3, 0.2], [0.36, 1]].forEach(([d, valor]) => {
+        linea.set(niveles, { [clave]: valor }, inicio + d)
+      })
+    }
+    parpadeo('e1', 0.3)
+    parpadeo('e0', 1.2)
+    parpadeo('e2', 2.1)
+    parpadeo('marca', 2.6)
+    linea.to(niveles, { sala: 1, duration: 1.2, ease: 'power1.inOut' }, 2.7)
+    return () => linea.kill()
   }, [estantes, invalidate, sinMovimiento, intro])
 
+  // Tubos de neon en el techo: uno hacia cada pared.
   const cielo = [
-    { pos: [0, 299, -60], tam: [9, 1, 300] },
-    { pos: [-110, 299, 90], tam: [210, 1, 9] },
-    { pos: [110, 299, 90], tam: [210, 1, 9] },
+    { pos: [0, 292, -60], tam: [3, 3, 300] },
+    { pos: [-110, 292, 90], tam: [210, 3, 3] },
+    { pos: [110, 292, 90], tam: [210, 3, 3] },
   ]
-  const orden = [0, 1, 2]
 
   return (
     <>
-      <ambientLight ref={ambiente} intensity={0.1} />
-      {PAREDES.map((pared, i) => {
-        const p = aMundo(pared, 0, 240, 150)
-        return (
-          <pointLight
-            key={i}
-            ref={(l) => { focos.current[i] = l }}
-            position={p}
-            color={estantes[i].color}
-            decay={0}
-            distance={420}
-            intensity={0}
-          />
-        )
-      })}
+      <ambientLight ref={ambiente} intensity={0.12} />
+      {PAREDES.map((pared, i) => (
+        <pointLight
+          key={i}
+          ref={(l) => { focos.current[i] = l }}
+          position={aMundo(pared, 0, 240, 150)}
+          color={estantes[i].color}
+          decay={0}
+          distance={420}
+          intensity={0}
+        />
+      ))}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 100]}>
         <planeGeometry args={[MEDIO * 2, 640]} />
-        <meshStandardMaterial color="#cfccc4" roughness={0.45} />
+        <meshStandardMaterial map={t.piso} roughness={0.35} metalness={0.05} />
       </mesh>
       <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, 300, 100]}>
         <planeGeometry args={[MEDIO * 2, 640]} />
-        <meshStandardMaterial color="#e9e7e1" />
+        <meshStandardMaterial color="#232327" roughness={0.9} />
       </mesh>
-      <mesh position={[0, 150, -MEDIO]}>
-        <planeGeometry args={[MEDIO * 2, 300]} />
-        <meshStandardMaterial color="#efece5" />
-      </mesh>
-      {[-1, 1].map((s) => (
-        <mesh key={s} position={[s * MEDIO, 150, 100]} rotation={[0, -s * Math.PI / 2, 0]}>
-          <planeGeometry args={[640, 300]} />
-          <meshStandardMaterial color="#efece5" />
+      {[-80, 80].map((x) => (
+        <mesh key={x} position={[x, 284, 100]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[9, 9, 640, 14]} />
+          <meshStandardMaterial color="#7c7f86" metalness={0.7} roughness={0.35} />
         </mesh>
       ))}
+      {[-160, -40, 80, 200, 320].map((z) => (
+        <mesh key={z} position={[0, 294, z]}>
+          <boxGeometry args={[MEDIO * 2, 8, 6]} />
+          <meshStandardMaterial color="#1a1a1d" roughness={0.8} />
+        </mesh>
+      ))}
+      <mesh position={[0, 150, -MEDIO]}>
+        <planeGeometry args={[MEDIO * 2, 300]} />
+        <meshStandardMaterial map={t.fondo} roughness={0.95} />
+      </mesh>
+      <mesh position={[-MEDIO, 150, 100]} rotation={[0, Math.PI / 2, 0]}>
+        <planeGeometry args={[640, 300]} />
+        <meshStandardMaterial map={t.concreto} roughness={0.95} />
+      </mesh>
+      <mesh position={[-MEDIO + 0.5, 150, 0]} rotation={[0, Math.PI / 2, 0]}>
+        <planeGeometry args={[420, 210]} />
+        <meshStandardMaterial map={t.izquierda} roughness={0.9} />
+      </mesh>
+      <mesh position={[MEDIO, 150, 100]} rotation={[0, -Math.PI / 2, 0]}>
+        <planeGeometry args={[640, 300]} />
+        <meshStandardMaterial map={t.derecha} roughness={0.95} />
+      </mesh>
+      <mesh position={[-MEDIO + 3, 90, 330]} rotation={[0, Math.PI / 2, 0]}>
+        <planeGeometry args={[150, 180]} />
+        <meshStandardMaterial map={t.reja} transparent alphaTest={0.4} side={DoubleSide} metalness={0.5} roughness={0.5} />
+      </mesh>
+      <mesh position={[0, 284, -MEDIO + 2]}>
+        <planeGeometry args={[112, 21.9]} />
+        <meshBasicMaterial ref={marca} map={t.marca} transparent depthWrite={false} toneMapped={false} color="#000" />
+      </mesh>
       {cielo.map((f, i) => (
         <mesh key={i} position={f.pos}>
           <boxGeometry args={f.tam} />
-          <meshBasicMaterial ref={(m) => { if (m) franjas.current[orden[i]] = m }} color="#000" toneMapped={false} />
+          <meshBasicMaterial ref={(m) => { if (m) tubos.current[i] = m }} color="#000" toneMapped={false} />
+        </mesh>
+      ))}
+      <Cono posicion={[-170, 0, 250]} />
+      <Cono posicion={[-140, 0, 275]} />
+      {[[175, 20, 250], [175, 60, 250], [205, 20, 285]].map((p, i) => (
+        <mesh key={i} position={p} rotation={[0, 0.2 * i, 0]}>
+          <boxGeometry args={[40, 40, 40]} />
+          <meshStandardMaterial color={i === 1 ? '#7a5a3c' : '#8c6a47'} roughness={0.85} />
         </mesh>
       ))}
       {estantes.map((estante, i) => (
-        <Estante key={estante.id} estante={estante} pared={PAREDES[i]} vertical={vertical} encendido={leds} />
+        <Estante key={estante.id} estante={estante} indice={i} pared={PAREDES[i]} vertical={vertical} encendido={leds} />
       ))}
       {vista.estante === null && PAREDES.map((pared, i) => (
         <mesh
@@ -517,6 +588,7 @@ export default function Sala({ catalogo, vista, producto, colores, abierto, sinM
       gl={{ antialias: true, powerPreference: 'high-performance' }}
     >
       <color attach="background" args={['#0b0b0c']} />
+      <fog attach="fog" args={['#0b0b0c', 520, 900]} />
       <Camara vista={vista} cantidades={cantidades} sinMovimiento={sinMovimiento} intro={intro} alTerminarIntro={alListo} />
       <Cuarto
         estantes={estantes}

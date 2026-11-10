@@ -85,9 +85,32 @@ class Horma:
         self.borde = perfil(m['borde'])
         self.base = perfil(m['base'], 2.5)
         self.signo = 1.0
+        # ancho del pie en cada x, para la cupula de la punta
+        xs = np.linspace(0, 30, 160)
+        ext = self.contorno(np.linspace(0.0, 0.5, 400))
+        intr = self.contorno(np.linspace(1.0, 0.5, 400))
+        self.x_lado = xs
+        self.y_ext = np.interp(xs, *self._monotono(ext))
+        self.y_int = np.interp(xs, *self._monotono(intr))
+        # detras de la garganta no limita nada; delante baja poco a poco hasta la punta
+        garganta = self.garganta = float(np.max(np.array(m['abertura'])[:, 0]))
+        alto = float(self.borde(garganta)) + 0.6
+        bajada = m.get('bajada', (0.6, 1.6, 1.2))
+        tramo = 29.3 - garganta
+        puntos = [(garganta, alto), (garganta + tramo * 0.42, alto - bajada[0] - 0.6),
+                  (garganta + tramo * 0.75, alto - bajada[1] - 0.6),
+                  (29.3, float(self.base(29.3)) + bajada[2]), (31, float(self.base(30)))]
+        self.altura_punta = lambda q: np.where(q < garganta, self.borde(q) + 0.6 + 50 * (garganta - q),
+                                               np.interp(q, *zip(*puntos)))
         n = self.normal(0.25, 0.3)
         if n[1] > 0:  # en u=0.25 la cara exterior mira hacia y negativo
             self.signo = -1.0
+
+    @staticmethod
+    def _monotono(puntos):
+        """Ordena (x, y) por x para poder interpolar y en funcion de x."""
+        orden = np.argsort(puntos[:, 0])
+        return puntos[orden, 0], puntos[orden, 1]
 
     def curvar(self, p):
         """Levanta la punta (toe spring)."""
@@ -106,12 +129,26 @@ class Horma:
         c, o = self.contorno(u), self.abertura(u)
         cuello = 1 - suave(*self.m['cuello'], o[..., 0])
         ang = v * math.pi / 2
-        f = (1 - cuello) * (1 - np.cos(ang)) + cuello * v ** 1.7
-        g = (1 - cuello) * np.sin(ang) + cuello * v ** 0.9
+        exp = 2 / self.m.get('caja', 2.7)
+        f = (1 - cuello) * (1 - np.cos(ang) ** exp) + cuello * v ** 1.7
+        g = (1 - cuello) * np.sin(ang) ** exp + cuello * v ** 0.9
+        # en la punta la capellada baja en pendiente, no en curva abombada
         xy = c + (o - c) * f[..., None]
         zb, zt = self.base(c[..., 0]) - 0.45, self.borde(o[..., 0])
         z = zb + (zt - zb) * g
+        z = self.cupula(xy, z)
         return np.concatenate([xy, z[..., None]], axis=-1)
+
+    def cupula(self, xy, z, suavidad=0.35):
+        """Baja la punta con una cupula: alta hacia los cordones, baja en la punta."""
+        x, y = xy[..., 0], xy[..., 1]
+        centro = (np.interp(x, self.x_lado, self.y_ext) + np.interp(x, self.x_lado, self.y_int)) / 2
+        medio = np.maximum((np.interp(x, self.x_lado, self.y_int) - np.interp(x, self.x_lado, self.y_ext)) / 2, 0.5)
+        r = np.clip(np.abs(y - centro) / medio, 0, 1)
+        # junto a la garganta la cupula aun no redondea los lados
+        w = suave(self.garganta, self.garganta + 4.5, x)
+        techo = self.base(x) + (self.altura_punta(x) - self.base(x)) * (1 - w * r ** 2.4) ** 0.45
+        return -suavidad * np.logaddexp(-z / suavidad, -techo / suavidad)
 
     def S(self, u, v):
         return self.curvar(self.plano(u, v))
@@ -328,27 +365,43 @@ def lengua(h):
     for j in range(na - 1):
         a = (nb - 1) * na + j
         caras.append((a, a + n, a + 1 + n, a + 1))
-    return malla('lengua', np.vstack([arriba, abajo]), caras, 'lengua')
+    etiqueta = arriba.reshape(nb, na, 3)[int(nb * 0.74):int(nb * 0.9), 3:na - 3].copy()
+    etiqueta += np.array((0, 0, 0.05))
+    f, c = etiqueta.shape[:2]
+    return [malla('lengua', np.vstack([arriba, abajo]), caras, 'lengua'),
+            malla('etiqueta', etiqueta.reshape(-1, 3), rejilla(f, c), 'talon')]
 
 
 def cordones(h):
+    """Cordones cruzados en X, con una barra al frente y ojales en cada fila."""
     m = h.m
     x_fin, x_ini, filas = m['cordones']
-    obs = []
-    for i, x in enumerate(np.linspace(x_ini, x_fin, filas)):
+    externos, internos = [], []
+    for x in np.linspace(x_ini, x_fin, filas):
         ue, ui = h.u_de_x(x, 0.9, -1), h.u_de_x(x, 0.9, 1)
-        a, b = h.S(ue, 0.9), h.S(ui, 0.9)
+        externos.append((ue, h.S(ue, 0.9)))
+        internos.append((ui, h.S(ui, 0.9)))
+
+    def tramo(nombre, a, b, alza):
         camino = []
         for t in np.linspace(0, 1, 14):
             p = a + (b - a) * t
-            p[2] += 0.32 * math.sin(t * math.pi) ** 0.7 + 0.12
+            p[2] += alza * math.sin(t * math.pi) ** 0.7 + 0.12
             camino.append(p)
-        obs.append(tubo(f'cordon_{i}', 'cordones', camino, *m['cordon']))
+        return tubo(nombre, 'cordones', camino, *m['cordon'])
+
+    obs = [tramo('cordon_frente', externos[0][1], internos[0][1], 0.3)]
+    for i in range(filas - 1):
+        obs.append(tramo(f'cordon_{i}_a', externos[i][1], internos[i + 1][1], 0.36))
+        obs.append(tramo(f'cordon_{i}_b', internos[i][1], externos[i + 1][1], 0.46))
+    for i, (u, _) in enumerate(externos + internos):
+        obs.append(punto(h, f'ojal_{i}', u, 0.9, radio=0.22, alto=0.09, material='costuras'))
     return obs
 
 
 def rayas(h):
     m = h.m['rayas']
+    dientes = m.get('dientes', 0)
     obs = []
     for lado, nombre in ((-1, 'ext'), (1, 'int')):
         for i in range(m['n']):
@@ -361,11 +414,14 @@ def rayas(h):
                 U = np.zeros_like(A)
                 for idx in np.ndindex(A.shape):
                     b = B[idx]
-                    x = xa + (xb - xa) * b + (A[idx] - 0.5) * ancho
+                    borde = A[idx] - 0.5
+                    x = xa + (xb - xa) * b + borde * ancho
+                    if dientes and abs(borde) == 0.5:
+                        x += math.copysign(dientes, borde) * abs((b * 16) % 2 - 1)
                     U[idx] = h.u_de_x(x, V[idx], lado)
                 return U, V
 
-            obs.append(parche(h, f'raya_{nombre}_{i}', 'rayas', uv, 5, 22, alto=0.11))
+            obs.append(parche(h, f'raya_{nombre}_{i}', 'rayas', uv, 5, 48 if dientes else 22, alto=0.11))
     return obs
 
 
@@ -381,11 +437,15 @@ def puntera(h):
     def uv(A, B):
         U = ua + (ub - ua) * A
         tope = 0.03 + (vmax - 0.03) * np.sin(A * math.pi) ** forma
+        if 'puntera_t' in h.m:
+            bajo, tallo = h.m['puntera_t']
+            tope = np.maximum(0.03 + bajo * np.sin(A * math.pi) ** 0.45,
+                              0.03 + (vmax - 0.03) * np.exp(-((A - 0.5) / tallo) ** 4))
         return U, B * tope
 
-    a = np.linspace(0.02, 0.98, 70)
+    a = np.linspace(0.02, 0.98, 120)
     U, V = uv(a, np.full_like(a, 0.97))
-    obs = [parche(h, 'puntera', 'puntera', uv, 70, 14, alto=grosor),
+    obs = [parche(h, 'puntera', 'puntera', uv, 120, 14, alto=grosor),
            costura(h, 'costura_puntera', U, V, alto=grosor + 0.06)]
     for i, altura in enumerate(h.m.get('aros', ())):
         Ua = ua + (ub - ua) * np.linspace(0.3, 0.7, 40)
@@ -402,6 +462,33 @@ def ojalera(h):
             costura(h, 'costura_ojalera', ua + (ub - ua) * a, np.full_like(a, v0 + 0.02))]
 
 
+def contrafuerte(h):
+    """Refuerzo curvo del talon, con su costura."""
+    x, altura = h.m.get('contrafuerte', (7.2, 0.6))
+    ue, ui = h.u_de_x(x, 0.3, -1), h.u_de_x(x, 0.3, 1)
+
+    def uv(A, B):
+        U = np.mod(ui + (ue + 1 - ui) * A, 1)
+        tope = 0.06 + (altura - 0.06) * np.sin(A * math.pi) ** 0.55
+        return U, B * tope
+
+    a = np.linspace(0.01, 0.99, 60)
+    U, V = uv(a, np.full_like(a, 0.96))
+    return [parche(h, 'contrafuerte', 'contrafuerte', uv, 60, 10, alto=0.07),
+            costura(h, 'costura_talon', U, V, alto=0.12)]
+
+
+def costura_suela(h):
+    fraccion = h.m['costura_suela']
+    us = np.linspace(0, 1, 240)
+    c, n = h.contorno(us), h.contorno.normal(us)
+    if np.dot(n[len(us) // 4], (0, -1)) < 0:
+        n = -n
+    salida = np.interp(fraccion, *zip(*h.m['suela'])) + 0.03
+    camino = h.curvar(np.column_stack([c + n * salida, h.base(c[:, 0]) * fraccion]))
+    return [tubo('costura_suela', 'costuras', camino, 0.06, 0.06, arriba=(1, 0, 0), lados=5)]
+
+
 def talon(h):
     ancho, v0 = h.m['talon']
 
@@ -411,7 +498,7 @@ def talon(h):
     return parche(h, 'talon', 'talon', uv, 14, 12, alto=0.1)
 
 
-def punto(h, nombre, u, v, radio=0.17, alto=0.1):
+def punto(h, nombre, u, v, radio=0.17, alto=0.1, material='rayas'):
     """Disco pequeno sobre la capellada, para perforaciones."""
     p, n = h.S(u, v), h.normal(u, v)
     t = h.S(u + 2e-3, v) - h.S(u - 2e-3, v)
@@ -419,7 +506,7 @@ def punto(h, nombre, u, v, radio=0.17, alto=0.1):
     b = np.cross(n, t)
     verts = [p + n * alto + (t * math.cos(a) + b * math.sin(a)) * radio
              for a in np.linspace(0, 2 * math.pi, 7, endpoint=False)]
-    return malla(nombre, verts, [tuple(range(7))], 'rayas')
+    return malla(nombre, verts, [tuple(range(7))], material)
 
 
 def perforaciones(h):
@@ -444,14 +531,20 @@ def paneles(h):
         x0, x1 = p['x']
         v0, v1 = p['v']
         inclina = p.get('inclina', 0)
+        redondo = p.get('forma', 'redondo') == 'redondo'
         for lado in (-1, 1):
             def uv(A, B):
-                V = v0 + (v1 - v0) * B
+                # borde superior en arco: los paneles reales no son rectangulos
+                perfil = 0.3 + 0.7 * np.sin(A * math.pi) ** 0.5 if redondo else 1
+                V = v0 + (v1 - v0) * B * perfil
                 U = np.zeros_like(A)
                 for idx in np.ndindex(A.shape):
                     U[idx] = h.u_de_x(x0 + (x1 - x0) * A[idx] + inclina * B[idx], V[idx], lado)
                 return U, V
-            obs.append(parche(h, f'panel_{i}_{lado}', p['parte'], uv, 14, 10, alto=p.get('alto', 0.08)))
+            obs.append(parche(h, f'panel_{i}_{lado}', p['parte'], uv, 24, 10, alto=p.get('alto', 0.08)))
+            a = np.linspace(0.03, 0.97, 30)
+            U, V = uv(a, np.full_like(a, 0.94))
+            obs.append(costura(h, f'costura_panel_{i}_{lado}', U, V, alto=p.get('alto', 0.08) + 0.05))
     return obs
 
 
@@ -467,7 +560,7 @@ def correa(h):
     a, b = camino[-1], h.S(ui, 0.97) + h.normal(ui, 0.97) * 0.16
     for t in np.linspace(0, 1, 12)[1:-1]:
         p = a + (b - a) * t
-        p[2] += 0.9 * math.sin(t * math.pi)
+        p[2] += 0.45 * math.sin(t * math.pi)
         camino.append(p)
     camino += [h.S(ui, a) + h.normal(ui, a) * 0.16 for a in np.linspace(0.97, v, 8)]
     return [tubo('correa', 'correa', camino, 0.12, ancho, arriba=(1, 0, 0), lados=6)]
@@ -572,9 +665,13 @@ def construir(m):
     if m.get('tipo') == 'chancla':
         obs = chancla(h)
     else:
-        obs = suela(h) + [capellada(h), lengua(h), talon(h)]
+        obs = suela(h) + [capellada(h), talon(h)] + lengua(h)
         obs += (puntera(h) if m['puntera'] else []) + ojalera(h) + list(interior(h)) + rayas(h) + cordones(h)
         obs += paneles(h) + perforaciones(h)
+        if h.m.get('contrafuerte', True):
+            obs += contrafuerte(h)
+        if 'costura_suela' in h.m:
+            obs += costura_suela(h)
         for clave, parte in (('guardia', guardia), ('correa', correa), ('solapa', solapa), ('tacos', tacos), ('lazos', lazos)):
             if clave in m:
                 obs += parte(h)

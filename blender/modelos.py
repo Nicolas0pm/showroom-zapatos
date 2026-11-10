@@ -38,13 +38,17 @@ SAMBA = {
     'rayas': {'n': 3, 'x_abajo': 9.6, 'paso_abajo': 2.05, 'x_arriba': 13.6, 'paso_arriba': 1.5,
               'ancho': 1.0, 'v0': 0.07, 'v1': 0.8},
     'puntera': (22.2, 0.98, 1.15, 0.07),  # x, altura, forma, grosor
+    'puntera_t': (0.36, 0.11),            # puntera en T: altura a los lados y ancho del tallo
     'ojalera': (11.8, 0.8),
     'talon': (0.05, 0.5),
 }
 
 
 def variante_de(origen, **cambios):
-    return {**origen, **cambios}
+    nuevo = {**origen, **cambios}
+    if 'puntera' in cambios and 'puntera_t' not in cambios:
+        nuevo.pop('puntera_t', None)
+    return nuevo
 
 
 GAZELLE = variante_de(
@@ -77,7 +81,8 @@ SUPERSTAR = variante_de(
     puntera=(21.6, 0.74, 0.3, 0.2),
     aros=(0.18, 0.27, 0.36, 0.45, 0.54),
     collar=0.42,
-    rayas={**SAMBA['rayas'], 'x_abajo': 10.0, 'x_arriba': 13.6, 'paso_abajo': 2.1, 'paso_arriba': 1.55, 'v0': 0.05, 'v1': 0.82},
+    rayas={**SAMBA['rayas'], 'x_abajo': 10.0, 'x_arriba': 13.6, 'paso_abajo': 2.1, 'paso_arriba': 1.55, 'v0': 0.05, 'v1': 0.82,
+           'dientes': 0.14},
     talon=(0.05, 0.56),
 )
 
@@ -160,7 +165,7 @@ FORUM = variante_de(
     collar=0.62,
     cordon=(0.38, 0.12),
     cordones=(14.2, 19.8, 5),
-    correa=(9.9, 1.15, 0.45),
+    correa=(12.2, 1.0, 0.55),
     rayas={**SAMBA['rayas'], 'x_abajo': 13.2, 'x_arriba': 15.4, 'ancho': 0.85, 'paso_abajo': 1.7, 'paso_arriba': 1.15, 'v0': 0.22, 'v1': 0.72},
     paneles=[{'parte': 'puntera', 'x': (3.5, 8.5), 'v': (0.18, 0.62), 'inclina': 1.5}],
     talon=(0.06, 0.2),
@@ -200,8 +205,8 @@ PREDATOR = variante_de(
     puntera=(21.5, 0.92, 0.62, 0.12),
     solapa=(10.8, 19.4, 3.3),
     cordones=(12.6, 19.0, 5),
-    paneles=[{'parte': 'puntera', 'x': (22, 27), 'v': (0.42, 0.5), 'alto': 0.2},
-             {'parte': 'puntera', 'x': (22, 27), 'v': (0.58, 0.66), 'alto': 0.2}],
+    paneles=[{'parte': 'puntera', 'x': (22, 27), 'v': (0.42, 0.5), 'alto': 0.2, 'forma': 'recto'},
+             {'parte': 'puntera', 'x': (22, 27), 'v': (0.58, 0.66), 'alto': 0.2, 'forma': 'recto'}],
     rayas={**SAMBA['rayas'], 'x_abajo': 7.6, 'x_arriba': 10.6, 'paso_abajo': 2.0, 'paso_arriba': 1.5, 'ancho': 0.95, 'v0': 0.08, 'v1': 0.72},
     talon=(0.075, 0.08),
 )
@@ -347,18 +352,17 @@ TOKYO = variante_de(
     TAEKWONDO,
     borde=[(2, 9.0), (4.5, 7.6), (7, 6.8), (10, 7.2), (13, 7.5), (17, 6.3), (21.5, 4.3)],
     guardia=('puntera', 0.1),
-    correa=(15.6, 0.95, 0.35),
-    cordones=(17.2, 20.0, 3),
+    cordones=(13.0, 19.8, 6),
     rayas={**TAEKWONDO['rayas'], 'x_abajo': 9.2, 'x_arriba': 10.6},
     talon=(0.06, 0.1),
 )
 
-ATMOS_ZX = {**ZX, 'guardia': ('puntera', 0.3), 'puntera': None,
-            'correa': (11.2, 1.0, 0.5),
-            'paneles': [{'parte': 'talon', 'x': (14.5, 19), 'v': (0.32, 0.86), 'inclina': -2},
-                        {'parte': 'talon', 'x': (3.5, 7), 'v': (0.32, 0.9), 'inclina': 1.5}],
-            'rayas': {**ZX['rayas'], 'n': 3, 'ancho': 0.6, 'paso_abajo': 1.2, 'paso_arriba': 1.0, 'x_abajo': 9.0, 'x_arriba': 10.2, 'v0': 0.32, 'v1': 0.74},
-            'talon': (0.05, 0.3)}
+ATMOS_ZX = {**ZX, 'guardia': ('puntera', 0.13),
+            'puntera': (21.6, 0.9, 0.55, 0.1),
+            'paneles': [{'parte': 'talon', 'x': (2.4, 7.6), 'v': (0.1, 0.86), 'inclina': 1.6}],
+            'rayas': {**ZX['rayas'], 'ancho': 0.9, 'paso_abajo': 1.9, 'paso_arriba': 1.45, 'x_abajo': 10.6, 'x_arriba': 13.2,
+                      'v0': 0.14, 'v1': 0.78},
+            'talon': (0.05, 0.4)}
 
 BORDE_ALTO = [(2, 15.6), (4.5, 15.2), (7, 15.0), (10, 14.8), (13, 12.8), (17, 9.8), (21.5, 6.9)]
 
@@ -373,8 +377,8 @@ HOOPS_MID = variante_de(
     guardia=('puntera', 0.14),
     collar=0.62,
     cordones=(11.4, 19.7, 7),
-    paneles=[{'parte': 'correa', 'x': (2.8, 10.6), 'v': (0.8, 0.96), 'alto': 0.16},
-             {'parte': 'correa', 'x': (2.8, 10.6), 'v': (0.62, 0.77), 'alto': 0.16}],
+    paneles=[{'parte': 'correa', 'x': (2.8, 10.6), 'v': (0.8, 0.96), 'alto': 0.16, 'forma': 'recto'},
+             {'parte': 'correa', 'x': (2.8, 10.6), 'v': (0.62, 0.77), 'alto': 0.16, 'forma': 'recto'}],
     rayas={**SAMBA['rayas'], 'ancho': 1.2, 'paso_abajo': 2.3, 'paso_arriba': 1.9, 'x_abajo': 9.4, 'x_arriba': 13.0, 'v0': 0.14, 'v1': 0.58},
     talon=(0.06, 0.14),
 )
@@ -382,7 +386,7 @@ HOOPS_MID = variante_de(
 FORUM_MID = variante_de(
     FORUM,
     borde=[(2, 16.0), (4.5, 15.6), (7, 15.4), (10, 15.2), (13, 13.0), (17, 9.9), (21.5, 7.0)],
-    correa=(8.6, 1.25, 0.6),
+    correa=(11.6, 1.05, 0.6),
     cordones=(12.0, 19.8, 6),
     paneles=[{'parte': 'puntera', 'x': (3.0, 8.0), 'v': (0.16, 0.56), 'inclina': 1.5},
              {'parte': 'talon', 'x': (2.6, 7.2), 'v': (0.72, 0.96), 'alto': 0.14}],
@@ -431,8 +435,7 @@ BADBO = variante_de(
     punta=(19, 1.1),
     puntera=(23.0, 0.8, 0.45, 0.14),
     collar=0.55,
-    correa=(16.2, 1.15, 0.5),
-    cordones=(11.8, 14.6, 3),
+    cordones=(11.8, 19.6, 7),
     paneles=[{'parte': 'talon', 'x': (2.8, 8.4), 'v': (0.2, 0.8), 'inclina': 2.0}],
     rayas={**SAMBA['rayas'], 'ancho': 0.8, 'paso_abajo': 1.5, 'paso_arriba': 1.3, 'x_abajo': 10.2, 'x_arriba': 11.8, 'v0': 0.2, 'v1': 0.76},
     talon=(0.04, 0.72),
@@ -525,6 +528,13 @@ SL72 = {**SL72, 'paneles': [{'parte': 'puntera', 'x': (3.0, 7.6), 'v': (0.16, 0.
 ZX = {**ZX, 'guardia': ('puntera', 0.16),
       'paneles': [{'parte': 'talon', 'x': (17.5, 20.5), 'v': (0.3, 0.8), 'inclina': -1.5}]}
 
+for _modelo in (SUPERSTAR, CAMPUS, STAN, FORUM, GRAND_COURT, HOOPS_MID, FORUM_MID, BREAKNET_MID,
+                BADBO, COCA_SUPERSTAR, HAWAII):
+    _modelo['costura_suela'] = 0.84
+ADILETTE['contrafuerte'] = False
+PREDATOR['contrafuerte'] = (8.0, 0.5)
+ULTRABOOST['contrafuerte'] = False
+
 MODELOS = {'samba': SAMBA, 'gazelle': GAZELLE, 'spezial': SPEZIAL, 'superstar': SUPERSTAR,
            'campus': CAMPUS, 'sl72': SL72, 'zx': ZX, 'stansmith': STAN, 'forum': FORUM,
            'ultraboost': ULTRABOOST, 'predator': PREDATOR, 'taekwondo': TAEKWONDO, 'adilette': ADILETTE,
@@ -547,6 +557,7 @@ def paleta(cuerpo, rayas, suela=GOMA, puntera=None, talon=None, entresuela=None,
         'forro': forro or ('#2b2b2f' if oscuro else '#e6e2d8'),
         'costuras': '#55555c' if oscuro else '#b9b4a6',
         'correa': correa or rayas,
+        'contrafuerte': cuerpo,
     }
 
 
@@ -630,8 +641,8 @@ PRODUCTOS = {
         v('Rojo y blanco', 95, [36, 37, 38], '#b3261e', BLANCO, suela=GOMA),
     ]),
     'adizero': ('Adizero Adios Pro', 'adizero', [
-        v('Rosa y negro', 250, [39, 40, 41, 42], '#ec2f5b', '#16161a', suela='#16161a', talon='#16161a', entresuela='#ec2f5b', cordones='#ec2f5b'),
-        v('Negro y gris', 250, [40, 41, 42, 43], '#1c1c20', '#55555c', suela='#1c1c20', talon='#55555c', entresuela='#35353b', cordones='#1c1c20'),
+        v('Rosa y negro', 250, [39, 40, 41, 42], '#ec2f5b', '#16161a', suela='#16161a', talon='#16161a', entresuela='#f6f4ee', cordones='#ec2f5b'),
+        v('Negro y gris', 250, [40, 41, 42, 43], '#1c1c20', '#55555c', suela='#1c1c20', talon='#55555c', entresuela='#8f9096', cordones='#1c1c20'),
         v('Blanco y azul', 250, [38, 39, 41], '#eceae4', '#1f3f8a', suela='#1f3f8a', talon='#1f3f8a', entresuela=BLANCO, cordones=BLANCO),
     ]),
     'grandcourt': ('Grand Court Base', 'grandcourt', [
@@ -681,8 +692,8 @@ PRODUCTOS = {
         v('Crema y verde', 190, [39, 41, 43], '#e4d6bd', '#2c5a3f', suela=GOMA, puntera='#d6c6a8', talon='#2c5a3f'),
     ]),
     'y3-evo': ('Y-3 Evo SL', 'y3evo', [
-        v('Negro total', 240, [40, 41, 42, 43], '#141416', '#2d2d32', suela='#141416', puntera='#232327', talon='#2d2d32', entresuela='#232327', cordones='#141416'),
         v('Blanco y negro', 240, [39, 41, 42], '#e7e6e1', '#141414', suela='#141414', puntera='#d9d7cf', talon='#141414', entresuela=BLANCO),
+        v('Negro total', 240, [40, 41, 42, 43], '#141416', '#2d2d32', suela='#141416', puntera='#232327', talon='#2d2d32', entresuela='#55555c', cordones='#141416'),
     ]),
     'satisfy-adizero': ('Satisfy × Adizero Adios Pro 4', 'satisfyadizero', [
         v('Gris y lima', 280, [39, 40, 41, 42], '#b5b7ba', '#c7e03a', suela='#2c2c31', puntera='#8f9096', talon='#c7e03a', entresuela='#e0e0da', cordones='#c7e03a'),
@@ -713,8 +724,8 @@ PRODUCTOS = {
         v('Negro desgastado', 170, [40, 41, 43], '#2d2c2a', '#a9a497', puntera='#3a3936'),
     ]),
     'atmos-zx': ('atmos × ZX 8000', 'atmoszx', [
-        v('Edición atmos', 160, [40, 41, 42], '#efeeea', '#111114', suela='#d23a2e', puntera='#d23a2e', talon='#111114'),
-        v('Negro y rojo', 160, [41, 42, 43], '#1b1b1f', '#d23a2e', suela='#d23a2e', puntera='#2c2c31', talon='#d23a2e', entresuela='#e8e6df'),
+        v('Blanco, gris y rojo', 160, [40, 41, 42], '#efeeea', '#111114', suela='#d23a2e', puntera='#c9c8c3', talon='#d23a2e', entresuela='#efeeea'),
+        v('Negro y rojo', 160, [41, 42, 43], '#1b1b1f', '#d23a2e', suela='#d23a2e', puntera='#2c2c31', talon='#2c2c31', entresuela='#e8e6df'),
     ]),
 }
 
@@ -767,6 +778,22 @@ ESTANTES = [
      'zapatos': ['badbo', 'chavarria-megaride', 'clot-samba', 'wb-army', 'y3-evo', 'satisfy-adizero',
                  'bape-adistar', 'coca-superstar', 'braindead-guide', 'sftm-samba', 'sftm-tokyo', 'atmos-zx']},
 ]
+
+for _modelo in MODELOS.values():
+    _quedan = []
+    for _p in _modelo.get('paneles', ()):
+        if _p.get('forma', 'redondo') == 'recto' or _p['parte'] == 'rayas':
+            _quedan.append(_p)
+        elif _p['x'][0] < 4.5 and 'contrafuerte_como' not in _modelo and _modelo.get('contrafuerte') is not False:
+            _modelo['contrafuerte'] = (_p['x'][1] + 0.5 * _p.get('inclina', 0), min(max(_p['v'][1], 0.5), 0.86))
+            _modelo['contrafuerte_como'] = _p['parte']
+    _modelo['paneles'] = _quedan
+
+for _nombre, _base, _lista in PRODUCTOS.values():
+    _como = MODELOS[_base].get('contrafuerte_como')
+    if _como:
+        for _x in _lista:
+            _x['colores']['contrafuerte'] = _x['colores'][_como]
 
 for _clave, _modelo in MODELOS.items():
     _lista = next(x[2] for x in PRODUCTOS.values() if x[1] == _clave)

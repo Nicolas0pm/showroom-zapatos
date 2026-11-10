@@ -44,7 +44,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#141414"
+            "correa": "#141414",
+            "contrafuerte": "#f3f1ea"
           }
         },
         {
@@ -74,7 +75,8 @@
             "cordones": "#17171a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#17171a"
           }
         },
         {
@@ -101,7 +103,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#1f5a3c"
+            "correa": "#1f5a3c",
+            "contrafuerte": "#f3f1ea"
           }
         }
       ]
@@ -148,7 +151,8 @@
             "cordones": "#27407c",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#27407c"
           }
         },
         {
@@ -177,7 +181,8 @@
             "cordones": "#25604a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#25604a"
           }
         },
         {
@@ -206,7 +211,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#d9a3ad"
           }
         }
       ]
@@ -255,7 +261,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#141414"
+            "correa": "#141414",
+            "contrafuerte": "#f3f1ea"
           }
         },
         {
@@ -284,7 +291,8 @@
             "cordones": "#17171a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#17171a"
           }
         },
         {
@@ -312,7 +320,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#b9933f"
+            "correa": "#b9933f",
+            "contrafuerte": "#f3f1ea"
           }
         }
       ]
@@ -359,7 +368,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#7d7f85"
           }
         },
         {
@@ -388,7 +398,8 @@
             "cordones": "#f3f1ea",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#1e1e22"
           }
         },
         {
@@ -416,7 +427,8 @@
             "cordones": "#e8dcc4",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#e8dcc4"
+            "correa": "#e8dcc4",
+            "contrafuerte": "#6d4a30"
           }
         }
       ]
@@ -463,7 +475,8 @@
             "cordones": "#2f4f8f",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#d6d4cd"
+            "correa": "#d6d4cd",
+            "contrafuerte": "#2f4f8f"
           }
         },
         {
@@ -491,7 +504,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#e8dcc4"
+            "correa": "#e8dcc4",
+            "contrafuerte": "#6d2233"
           }
         },
         {
@@ -520,7 +534,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#6b4326"
+            "correa": "#6b4326",
+            "contrafuerte": "#cdb896"
           }
         }
       ]
@@ -567,7 +582,8 @@
             "cordones": "#2b56a8",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#d9d7cf"
           }
         },
         {
@@ -595,7 +611,8 @@
             "cordones": "#17171a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#b9933f"
+            "correa": "#b9933f",
+            "contrafuerte": "#2c2c31"
           }
         },
         {
@@ -623,7 +640,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#d9d7cf"
           }
         }
       ]
@@ -669,7 +687,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#54392a"
+            "correa": "#54392a",
+            "contrafuerte": "#6a4a33"
           }
         },
         {
@@ -697,7 +716,8 @@
             "cordones": "#3d5a3d",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#e8dcc4"
+            "correa": "#e8dcc4",
+            "contrafuerte": "#3d5a3d"
           }
         }
       ]
@@ -744,7 +764,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#e8dcc4"
+            "correa": "#e8dcc4",
+            "contrafuerte": "#6b4930"
           }
         },
         {
@@ -772,7 +793,8 @@
             "cordones": "#1f2c4f",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#d6d4cd"
+            "correa": "#d6d4cd",
+            "contrafuerte": "#1b2644"
           }
         }
       ]
@@ -819,7 +841,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#2352a3"
+            "correa": "#2352a3",
+            "contrafuerte": "#d8d9dc"
           }
         },
         {
@@ -847,7 +870,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#8a8c92"
+            "correa": "#8a8c92",
+            "contrafuerte": "#f3f1ea"
           }
         }
       ]
@@ -895,7 +919,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#b8b5ab"
+            "correa": "#b8b5ab",
+            "contrafuerte": "#f3f1ea"
           }
         },
         {
@@ -924,7 +949,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#b8b5ab"
+            "correa": "#b8b5ab",
+            "contrafuerte": "#f3f1ea"
           }
         },
         {
@@ -952,7 +978,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#b8b5ab"
+            "correa": "#b8b5ab",
+            "contrafuerte": "#f3f1ea"
           }
         }
       ]
@@ -1000,7 +1027,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#1f3f8a"
+            "correa": "#1f3f8a",
+            "contrafuerte": "#e4e2db"
           }
         },
         {
@@ -1029,7 +1057,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#b3261e"
+            "correa": "#b3261e",
+            "contrafuerte": "#e4e2db"
           }
         },
         {
@@ -1057,7 +1086,8 @@
             "cordones": "#1e1e22",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#3a3a40"
+            "correa": "#3a3a40",
+            "contrafuerte": "#2b2b30"
           }
         }
       ]
@@ -1105,7 +1135,8 @@
             "cordones": "#26262b",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#3f3f46"
+            "correa": "#3f3f46",
+            "contrafuerte": "#26262b"
           }
         },
         {
@@ -1134,7 +1165,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#cfcfca"
+            "correa": "#cfcfca",
+            "contrafuerte": "#e7e6e1"
           }
         },
         {
@@ -1162,7 +1194,8 @@
             "cordones": "#f3f1ea",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#e8703a"
+            "correa": "#e8703a",
+            "contrafuerte": "#1f3f8a"
           }
         }
       ]
@@ -1212,7 +1245,8 @@
             "cordones": "#17171a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#17171a"
           }
         },
         {
@@ -1241,7 +1275,8 @@
             "cordones": "#1f3f8a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#1f3f8a"
           }
         },
         {
@@ -1270,7 +1305,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#141414"
+            "correa": "#141414",
+            "contrafuerte": "#f3f1ea"
           }
         }
       ]
@@ -1318,7 +1354,8 @@
             "cordones": "#17171a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#17171a"
           }
         },
         {
@@ -1346,7 +1383,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#141414"
+            "correa": "#141414",
+            "contrafuerte": "#f3f1ea"
           }
         }
       ]
@@ -1394,7 +1432,8 @@
             "cordones": "#f3f1ea",
             "forro": "#f3f1ea",
             "costuras": "#b9b4a6",
-            "correa": "#141414"
+            "correa": "#141414",
+            "contrafuerte": "#f3f1ea"
           }
         },
         {
@@ -1423,7 +1462,8 @@
             "cordones": "#17171a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#17171a"
           }
         },
         {
@@ -1451,7 +1491,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#b3261e"
           }
         }
       ]
@@ -1494,11 +1535,12 @@
             "suela": "#16161a",
             "puntera": "#ec2f5b",
             "talon": "#16161a",
-            "entresuela": "#ec2f5b",
+            "entresuela": "#f6f4ee",
             "cordones": "#ec2f5b",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#16161a"
+            "correa": "#16161a",
+            "contrafuerte": "#ec2f5b"
           }
         },
         {
@@ -1523,11 +1565,12 @@
             "suela": "#1c1c20",
             "puntera": "#1c1c20",
             "talon": "#55555c",
-            "entresuela": "#35353b",
+            "entresuela": "#8f9096",
             "cordones": "#1c1c20",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#55555c"
+            "correa": "#55555c",
+            "contrafuerte": "#1c1c20"
           }
         },
         {
@@ -1555,7 +1598,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#1f3f8a"
+            "correa": "#1f3f8a",
+            "contrafuerte": "#eceae4"
           }
         }
       ]
@@ -1605,7 +1649,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#141414"
+            "correa": "#141414",
+            "contrafuerte": "#e6e4dd"
           }
         },
         {
@@ -1634,7 +1679,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#1f5a3c"
+            "correa": "#1f5a3c",
+            "contrafuerte": "#e6e4dd"
           }
         },
         {
@@ -1662,7 +1708,8 @@
             "cordones": "#17171a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#26262b"
           }
         }
       ]
@@ -1709,7 +1756,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#8f9096"
+            "correa": "#8f9096",
+            "contrafuerte": "#8f9096"
           }
         },
         {
@@ -1737,7 +1785,8 @@
             "cordones": "#1c1c20",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#4a4a50"
+            "correa": "#4a4a50",
+            "contrafuerte": "#2c2c31"
           }
         },
         {
@@ -1765,7 +1814,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#e8703a"
+            "correa": "#e8703a",
+            "contrafuerte": "#d9d7cf"
           }
         }
       ]
@@ -1812,7 +1862,8 @@
             "cordones": "#17231d",
             "forro": "#0e0e10",
             "costuras": "#55555c",
-            "correa": "#b3261e"
+            "correa": "#b3261e",
+            "contrafuerte": "#222a26"
           }
         },
         {
@@ -1840,7 +1891,8 @@
             "cordones": "#f3f1ea",
             "forro": "#0e0e10",
             "costuras": "#b9b4a6",
-            "correa": "#141416"
+            "correa": "#141416",
+            "contrafuerte": "#8f9096"
           }
         }
       ]
@@ -1888,7 +1940,8 @@
             "cordones": "#1b1b1f",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#1b1b1f"
           }
         },
         {
@@ -1917,7 +1970,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#dedcd5"
+            "correa": "#dedcd5",
+            "contrafuerte": "#f3f1ea"
           }
         },
         {
@@ -1945,7 +1999,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#1f3f8a"
+            "correa": "#1f3f8a",
+            "contrafuerte": "#f3f1ea"
           }
         }
       ]
@@ -1992,7 +2047,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#e4e2db"
           }
         },
         {
@@ -2020,7 +2076,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#d8cbb0"
+            "correa": "#d8cbb0",
+            "contrafuerte": "#d8cbb0"
           }
         },
         {
@@ -2048,7 +2105,8 @@
             "cordones": "#1e1e22",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#3a3a40"
+            "correa": "#3a3a40",
+            "contrafuerte": "#2b2b30"
           }
         }
       ]
@@ -2096,7 +2154,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#141414"
+            "correa": "#141414",
+            "contrafuerte": "#f3f1ea"
           }
         },
         {
@@ -2124,7 +2183,8 @@
             "cordones": "#17171a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#17171a"
           }
         },
         {
@@ -2152,7 +2212,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#1f5a3c"
+            "correa": "#1f5a3c",
+            "contrafuerte": "#f3f1ea"
           }
         }
       ]
@@ -2200,7 +2261,8 @@
             "cordones": "#111113",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#2e2e33"
+            "correa": "#2e2e33",
+            "contrafuerte": "#1a1a1d"
           }
         },
         {
@@ -2228,7 +2290,8 @@
             "cordones": "#e8703a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#2d3626"
+            "correa": "#2d3626",
+            "contrafuerte": "#44513a"
           }
         },
         {
@@ -2256,7 +2319,8 @@
             "cordones": "#3a342a",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#3a342a"
+            "correa": "#3a342a",
+            "contrafuerte": "#b9a888"
           }
         }
       ]
@@ -2304,7 +2368,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#c8102e"
+            "correa": "#c8102e",
+            "contrafuerte": "#1f3f8a"
           }
         },
         {
@@ -2332,7 +2397,8 @@
             "cordones": "#17171a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#c8102e"
+            "correa": "#c8102e",
+            "contrafuerte": "#c8102e"
           }
         }
       ]
@@ -2379,7 +2445,8 @@
             "cordones": "#1a1a1d",
             "forro": "#0e0e10",
             "costuras": "#55555c",
-            "correa": "#c9cbd0"
+            "correa": "#c9cbd0",
+            "contrafuerte": "#c9cbd0"
           }
         },
         {
@@ -2407,7 +2474,8 @@
             "cordones": "#f3f1ea",
             "forro": "#0e0e10",
             "costuras": "#b9b4a6",
-            "correa": "#b3261e"
+            "correa": "#b3261e",
+            "contrafuerte": "#b3261e"
           }
         }
       ]
@@ -2454,7 +2522,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#e8dcc4"
+            "correa": "#e8dcc4",
+            "contrafuerte": "#58391f"
           }
         },
         {
@@ -2482,7 +2551,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#2c5a3f"
+            "correa": "#2c5a3f",
+            "contrafuerte": "#d6c6a8"
           }
         }
       ]
@@ -2505,35 +2575,6 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Negro total",
-          "precio": 240,
-          "tallas": [
-            40,
-            41,
-            42,
-            43
-          ],
-          "muestra": [
-            "#141416",
-            "#2d2d32"
-          ],
-          "colores": {
-            "capellada": "#141416",
-            "ojalera": "#141416",
-            "lengua": "#141416",
-            "rayas": "#2d2d32",
-            "suela": "#141416",
-            "puntera": "#232327",
-            "talon": "#2d2d32",
-            "entresuela": "#232327",
-            "cordones": "#141416",
-            "forro": "#2b2b2f",
-            "costuras": "#55555c",
-            "correa": "#2d2d32"
-          }
-        },
-        {
-          "id": "1",
           "nombre": "Blanco y negro",
           "precio": 240,
           "tallas": [
@@ -2557,7 +2598,38 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#141414"
+            "correa": "#141414",
+            "contrafuerte": "#e7e6e1"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Negro total",
+          "precio": 240,
+          "tallas": [
+            40,
+            41,
+            42,
+            43
+          ],
+          "muestra": [
+            "#141416",
+            "#2d2d32"
+          ],
+          "colores": {
+            "capellada": "#141416",
+            "ojalera": "#141416",
+            "lengua": "#141416",
+            "rayas": "#2d2d32",
+            "suela": "#141416",
+            "puntera": "#232327",
+            "talon": "#2d2d32",
+            "entresuela": "#55555c",
+            "cordones": "#141416",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#2d2d32",
+            "contrafuerte": "#141416"
           }
         }
       ]
@@ -2604,7 +2676,8 @@
             "cordones": "#c7e03a",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#c7e03a"
+            "correa": "#c7e03a",
+            "contrafuerte": "#b5b7ba"
           }
         },
         {
@@ -2632,7 +2705,8 @@
             "cordones": "#1c1c20",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#c7e03a"
+            "correa": "#c7e03a",
+            "contrafuerte": "#1c1c20"
           }
         }
       ]
@@ -2678,7 +2752,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#8a9470"
+            "correa": "#8a9470",
+            "contrafuerte": "#8a9470"
           }
         },
         {
@@ -2706,7 +2781,8 @@
             "cordones": "#3a5fa8",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#7f9bd0"
+            "correa": "#7f9bd0",
+            "contrafuerte": "#7f9bd0"
           }
         }
       ]
@@ -2754,7 +2830,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#f3f1ea"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#f3f1ea"
           }
         },
         {
@@ -2782,7 +2859,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#c8102e"
+            "correa": "#c8102e",
+            "contrafuerte": "#c8102e"
           }
         }
       ]
@@ -2829,7 +2907,8 @@
             "cordones": "#1e1e22",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#2b2b2b"
+            "correa": "#2b2b2b",
+            "contrafuerte": "#b08a2e"
           }
         },
         {
@@ -2857,7 +2936,8 @@
             "cordones": "#d8d24b",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#2b2b2b"
+            "correa": "#2b2b2b",
+            "contrafuerte": "#5c4a86"
           }
         }
       ]
@@ -2903,7 +2983,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#3a2c20"
+            "correa": "#3a2c20",
+            "contrafuerte": "#e4d6bd"
           }
         },
         {
@@ -2931,7 +3012,8 @@
             "cordones": "#232326",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#c8a877"
+            "correa": "#c8a877",
+            "contrafuerte": "#232326"
           }
         }
       ]
@@ -2977,7 +3059,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#3d3b37"
+            "correa": "#3d3b37",
+            "contrafuerte": "#8e8a80"
           }
         },
         {
@@ -3005,7 +3088,8 @@
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#d5ccb9"
+            "correa": "#d5ccb9",
+            "contrafuerte": "#6e5a48"
           }
         }
       ]
@@ -3051,7 +3135,8 @@
             "cordones": "#59604b",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#d5ccb9"
+            "correa": "#d5ccb9",
+            "contrafuerte": "#59604b"
           }
         },
         {
@@ -3079,7 +3164,8 @@
             "cordones": "#2d2c2a",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#a9a497"
+            "correa": "#a9a497",
+            "contrafuerte": "#2d2c2a"
           }
         }
       ]
@@ -3102,7 +3188,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Edición atmos",
+          "nombre": "Blanco, gris y rojo",
           "precio": 160,
           "tallas": [
             40,
@@ -3119,13 +3205,14 @@
             "lengua": "#efeeea",
             "rayas": "#111114",
             "suela": "#d23a2e",
-            "puntera": "#d23a2e",
-            "talon": "#111114",
-            "entresuela": "#f3f1ea",
+            "puntera": "#c9c8c3",
+            "talon": "#d23a2e",
+            "entresuela": "#efeeea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#111114"
+            "correa": "#111114",
+            "contrafuerte": "#d23a2e"
           }
         },
         {
@@ -3148,12 +3235,13 @@
             "rayas": "#d23a2e",
             "suela": "#d23a2e",
             "puntera": "#2c2c31",
-            "talon": "#d23a2e",
+            "talon": "#2c2c31",
             "entresuela": "#e8e6df",
             "cordones": "#1b1b1f",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#d23a2e"
+            "correa": "#d23a2e",
+            "contrafuerte": "#2c2c31"
           }
         }
       ]
