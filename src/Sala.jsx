@@ -3,7 +3,7 @@ import { Canvas, useThree } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
 import { CanvasTexture, Color, DoubleSide, Euler, Matrix4, Quaternion, Vector3 } from 'three'
 import gsap from 'gsap'
-import { concreto, grafiti, ladrillo, neon, piso, reja } from './texturas.js'
+import { concreto, grafiti, ladrillo, neon, persiana, piso, reja } from './texturas.js'
 
 // Medidas en centimetros, igual que los modelos de Blender.
 const MEDIO = 220
@@ -61,13 +61,30 @@ function estacion(e, cantidad, aspecto, fov) {
   return { pos: aMundo(pared, 0, centro + 6, distancia), mira: aMundo(pared, 0, centro, 0) }
 }
 
-const GENERAL = { pos: new Vector3(0, 138, 345), mira: new Vector3(0, 118, -80) }
+// La camara se describe en polares alrededor del centro de la sala: hacia donde mira (angulo),
+// que tan lejos del centro esta (radio) y a que altura. Asi los cambios de pared son giros, no deslizamientos.
+const ANGULOS = [0, Math.PI / 2, -Math.PI / 2]
+const GENERAL = { angulo: 0, radio: -345, alto: 138, radioMira: 80, altoMira: 118 }
+
+function polarDe(e, cantidad, aspecto, fov) {
+  const { pos, mira } = estacion(e, cantidad, aspecto, fov)
+  // la camara queda sobre la linea centro-pared; su radio es positivo hacia la pared
+  const haciaPared = new Vector3(-Math.sin(ANGULOS[e]), 0, -Math.cos(ANGULOS[e]))
+  return { angulo: ANGULOS[e], radio: pos.x * haciaPared.x + pos.z * haciaPared.z, alto: pos.y, radioMira: MEDIO, altoMira: mira.y }
+}
+
+function vueltaCorta(desde, hasta) {
+  let d = ((hasta - desde + Math.PI) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2) - Math.PI
+  // entre paredes opuestas se gira pasando por el fondo, no por la entrada
+  if (Math.abs(Math.abs(d) - Math.PI) < 0.01) d = desde > 0 ? -Math.PI : Math.PI
+  return desde + d
+}
 
 function Camara({ vista, cantidades, sinMovimiento, intro, alTerminarIntro }) {
   const camera = useThree((s) => s.camera)
   const size = useThree((s) => s.size)
   const invalidate = useThree((s) => s.invalidate)
-  const mira = useRef(GENERAL.mira.clone())
+  const polar = useRef({ ...GENERAL })
   const aspecto = size.width / size.height
 
   useEffect(() => {
@@ -78,36 +95,44 @@ function Camara({ vista, cantidades, sinMovimiento, intro, alTerminarIntro }) {
 
   useEffect(() => {
     const fov = aspecto < 1 ? 62 : 46
-    const destino = vista.estante === null ? GENERAL : estacion(vista.estante, cantidades[vista.estante], aspecto, fov)
+    const destino = vista.estante === null ? GENERAL : polarDe(vista.estante, cantidades[vista.estante], aspecto, fov)
+    const p = polar.current
     const aplicar = () => {
-      camera.lookAt(mira.current)
+      const dx = -Math.sin(p.angulo)
+      const dz = -Math.cos(p.angulo)
+      camera.position.set(dx * p.radio, p.alto, dz * p.radio)
+      camera.lookAt(dx * p.radioMira, p.altoMira, dz * p.radioMira)
       invalidate()
     }
     // Elegir una seccion durante la entrada la cancela.
     if (vista.estante !== null) intro.current = false
-    if (sinMovimiento || !intro.current) {
-      if (sinMovimiento) {
-        camera.position.copy(destino.pos)
-        mira.current.copy(destino.mira)
-        aplicar()
-        intro.current = false
-        alTerminarIntro()
-        return
-      }
-      const t = gsap.timeline({ defaults: { duration: 1.5, ease: 'power3.inOut' }, onUpdate: aplicar })
-      t.to(camera.position, { x: destino.pos.x, y: destino.pos.y, z: destino.pos.z }, 0)
-      t.to(mira.current, { x: destino.mira.x, y: destino.mira.y, z: destino.mira.z }, 0)
+    if (sinMovimiento) {
+      Object.assign(p, destino)
+      aplicar()
+      intro.current = false
+      alTerminarIntro()
+      return
+    }
+    if (!intro.current) {
+      p.angulo = Math.atan2(Math.sin(p.angulo), Math.cos(p.angulo))
+      const t = gsap.to(p, {
+        ...destino,
+        angulo: vueltaCorta(p.angulo, destino.angulo),
+        duration: 1.7,
+        ease: 'power3.inOut',
+        onUpdate: aplicar,
+      })
       return () => t.kill()
     }
-    // Entrada: barre las paredes laterales y termina en la vista general.
-    camera.position.set(0, 128, 60)
-    mira.current.copy(aMundo(PAREDES[1], 0, 122, 0))
+    // Entrada: una vuelta completa desde el centro; cada pared se enciende al pasar.
+    Object.assign(p, { angulo: 0, radio: 0, alto: 128, radioMira: 200, altoMira: 124 })
     aplicar()
-    const derecha = aMundo(PAREDES[2], 0, 122, 0)
-    const t = gsap.timeline({ onUpdate: aplicar, onComplete: () => { intro.current = false; alTerminarIntro() } })
-    t.to(mira.current, { x: derecha.x, y: derecha.y, z: derecha.z, duration: 2.2, ease: 'sine.inOut' }, 0.9)
-    t.to(mira.current, { x: GENERAL.mira.x, y: GENERAL.mira.y, z: GENERAL.mira.z, duration: 1.5, ease: 'power2.inOut' }, 3.1)
-    t.to(camera.position, { x: GENERAL.pos.x, y: GENERAL.pos.y, z: GENERAL.pos.z, duration: 1.5, ease: 'power2.inOut' }, 3.1)
+    const t = gsap.timeline({
+      onUpdate: aplicar,
+      onComplete: () => { p.angulo %= Math.PI * 2; intro.current = false; alTerminarIntro() },
+    })
+    t.to(p, { angulo: Math.PI * 2, duration: 4.2, ease: 'power2.inOut' }, 0)
+    t.to(p, { radio: GENERAL.radio, alto: GENERAL.alto, radioMira: GENERAL.radioMira, altoMira: GENERAL.altoMira, duration: 1.4, ease: 'power2.inOut' }, 3.4)
     return () => t.kill()
   }, [vista.estante, cantidades, aspecto, camera, sinMovimiento, invalidate, intro, alTerminarIntro])
 
@@ -186,6 +211,7 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
   const tubos = useRef([])
   const leds = useRef({})
   const marca = useRef()
+  const abierto = useRef()
 
   // Las texturas se dibujan una por tarea, en pausas libres, para no congelar la carga.
   const [t, setT] = useState({})
@@ -198,6 +224,8 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
       ['piso', () => piso(MEDIO * 2, 640)],
       ['izquierda', grafiti],
       ['reja', reja],
+      ['persiana', persiana],
+      ['abierto', () => neon('Abierto', '#7cff6b', 512, 110)],
     ]
     const pausa = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 16))
     const cancelar = window.cancelIdleCallback ?? clearTimeout
@@ -219,6 +247,7 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
     const aplicar = (niveles) => {
       ambiente.current.intensity = 0.12 + 0.6 * niveles.sala
       marca.current?.color.setScalar(niveles.marca)
+      abierto.current?.color.setScalar(niveles.frente)
       estantes.forEach((estante, i) => {
         const n = niveles[`e${i}`]
         focos.current[i].intensity = 1.2 * n
@@ -229,13 +258,13 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
       })
       invalidate()
     }
-    const encendida = { sala: 1, marca: 1, e0: 1, e1: 1, e2: 1 }
+    const encendida = { sala: 1, marca: 1, frente: 1, e0: 1, e1: 1, e2: 1 }
     if (sinMovimiento || !intro.current) {
       aplicar(encendida)
       return
     }
     // Cada neon parpadea antes de quedar fijo, como un tubo que arranca.
-    const niveles = { sala: 0, marca: 0, e0: 0, e1: 0, e2: 0 }
+    const niveles = { sala: 0, marca: 0, frente: 0, e0: 0, e1: 0, e2: 0 }
     aplicar(niveles)
     const linea = gsap.timeline({ onUpdate: () => aplicar(niveles) })
     const parpadeo = (clave, inicio) => {
@@ -243,11 +272,13 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
         linea.set(niveles, { [clave]: valor }, inicio + d)
       })
     }
-    parpadeo('e1', 0.3)
-    parpadeo('e0', 1.2)
-    parpadeo('e2', 2.1)
-    parpadeo('marca', 2.6)
-    linea.to(niveles, { sala: 1, duration: 1.2, ease: 'power1.inOut' }, 2.7)
+    // la camara pasa por la izquierda, la entrada, la derecha y vuelve al fondo
+    parpadeo('e1', 1.3)
+    parpadeo('frente', 1.9)
+    parpadeo('e2', 2.5)
+    parpadeo('e0', 3.6)
+    parpadeo('marca', 3.8)
+    linea.to(niveles, { sala: 1, duration: 1.2, ease: 'power1.inOut' }, 3.5)
     return () => linea.kill()
   }, [estantes, invalidate, sinMovimiento, intro])
 
@@ -304,6 +335,18 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
         <planeGeometry args={[420, 210]} />
         <meshStandardMaterial key={t.izquierda ? 1 : 0} map={t.izquierda ?? null} color={t.izquierda ? '#fff' : '#8e8c87'} roughness={0.9} />
       </mesh>
+      <mesh position={[0, 150, 420]} rotation={[0, Math.PI, 0]}>
+        <planeGeometry args={[MEDIO * 2, 300]} />
+        <meshStandardMaterial key={t.fondo ? 1 : 0} map={t.fondo ?? null} color={t.fondo ? '#fff' : '#7a4a38'} roughness={0.95} />
+      </mesh>
+      {t.persiana && <mesh position={[0, 90, 419]} rotation={[0, Math.PI, 0]}>
+        <planeGeometry args={[210, 180]} />
+        <meshStandardMaterial map={t.persiana} metalness={0.55} roughness={0.45} />
+      </mesh>}
+      {t.abierto && <mesh position={[0, 210, 418]} rotation={[0, Math.PI, 0]}>
+        <planeGeometry args={[90, 19.3]} />
+        <meshBasicMaterial ref={abierto} map={t.abierto} transparent depthWrite={false} toneMapped={false} color="#000" />
+      </mesh>}
       <mesh position={[MEDIO, 150, 100]} rotation={[0, -Math.PI / 2, 0]}>
         <planeGeometry args={[640, 300]} />
         <meshStandardMaterial key={t.derecha ? 1 : 0} map={t.derecha ?? null} color={t.derecha ? '#fff' : '#26262a'} roughness={0.95} />
@@ -602,7 +645,7 @@ export default function Sala({ catalogo, vista, producto, colores, abierto, sinM
       flat
       frameloop="demand"
       dpr={[1, 1.75]}
-      camera={{ position: GENERAL.pos.toArray(), fov: 46, near: 4, far: 1400 }}
+      camera={{ position: [0, GENERAL.alto, -GENERAL.radio], fov: 46, near: 4, far: 1400 }}
       gl={{ antialias: true, powerPreference: 'high-performance' }}
     >
       <color attach="background" args={['#0b0b0c']} />

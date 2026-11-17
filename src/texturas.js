@@ -239,3 +239,25 @@ export function reja() {
   }
   return textura(c, [4, 2])
 }
+
+// Cortina metalica de local, con un rayon de pintura.
+export function persiana() {
+  const [c, x] = lienzo(256, 256)
+  for (let y = 0; y < 256; y += 16) {
+    const g = x.createLinearGradient(0, y, 0, y + 16)
+    g.addColorStop(0, '#a9adb3')
+    g.addColorStop(0.55, '#7d8188')
+    g.addColorStop(1, '#4a4d52')
+    x.fillStyle = g
+    x.fillRect(0, y, 256, 16)
+  }
+  x.strokeStyle = '#ff4f8b'
+  x.lineWidth = 6
+  x.lineCap = 'round'
+  x.beginPath()
+  x.moveTo(40, 190)
+  x.bezierCurveTo(80, 120, 120, 230, 160, 150)
+  x.bezierCurveTo(180, 110, 210, 170, 225, 135)
+  x.stroke()
+  return textura(c)
+}
