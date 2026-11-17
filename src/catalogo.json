@@ -725,7 +725,7 @@
     "albrecht": {
       "nombre": "Albrecht II SPZL",
       "base": "albrecht",
-      "descripcion": "Corte alto para tobillo, con muchos ojales y rayas finas.",
+      "descripcion": "Corte medio de cuero, suela gruesa de goma y muchos ojales.",
       "tallas": [
         36,
         37,
@@ -740,7 +740,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Marrón",
+          "nombre": "Cuero tostado",
           "precio": 140,
           "tallas": [
             40,
@@ -749,28 +749,28 @@
             44
           ],
           "muestra": [
-            "#7a5436",
+            "#a5562b",
             "#e8dcc4"
           ],
           "colores": {
-            "capellada": "#7a5436",
-            "ojalera": "#7a5436",
-            "lengua": "#7a5436",
+            "capellada": "#a5562b",
+            "ojalera": "#a5562b",
+            "lengua": "#a5562b",
             "rayas": "#e8dcc4",
             "suela": "#b57f4c",
-            "puntera": "#6b4930",
+            "puntera": "#93491f",
             "talon": "#e8dcc4",
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
             "correa": "#e8dcc4",
-            "contrafuerte": "#6b4930"
+            "contrafuerte": "#93491f"
           }
         },
         {
           "id": "1",
-          "nombre": "Azul marino",
+          "nombre": "Marrón oscuro",
           "precio": 140,
           "tallas": [
             39,
@@ -778,23 +778,23 @@
             43
           ],
           "muestra": [
-            "#1f2c4f",
-            "#d6d4cd"
+            "#5a3b26",
+            "#e8dcc4"
           ],
           "colores": {
-            "capellada": "#1f2c4f",
-            "ojalera": "#1f2c4f",
-            "lengua": "#1f2c4f",
-            "rayas": "#d6d4cd",
+            "capellada": "#5a3b26",
+            "ojalera": "#5a3b26",
+            "lengua": "#5a3b26",
+            "rayas": "#e8dcc4",
             "suela": "#b57f4c",
-            "puntera": "#1b2644",
-            "talon": "#d6d4cd",
+            "puntera": "#4c3120",
+            "talon": "#e8dcc4",
             "entresuela": "#f3f1ea",
-            "cordones": "#1f2c4f",
-            "forro": "#2b2b2f",
-            "costuras": "#55555c",
-            "correa": "#d6d4cd",
-            "contrafuerte": "#1b2644"
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#e8dcc4",
+            "contrafuerte": "#4c3120"
           }
         }
       ]
@@ -817,7 +817,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Azul y amarillo",
+          "nombre": "Aguamarina",
           "precio": 120,
           "tallas": [
             40,
@@ -826,23 +826,23 @@
             43
           ],
           "muestra": [
-            "#d8d9dc",
-            "#2352a3"
+            "#6fd0dc",
+            "#2a3e9b"
           ],
           "colores": {
-            "capellada": "#d8d9dc",
-            "ojalera": "#d8d9dc",
-            "lengua": "#d8d9dc",
-            "rayas": "#2352a3",
-            "suela": "#2352a3",
-            "puntera": "#2f6fb5",
-            "talon": "#e6c229",
+            "capellada": "#6fd0dc",
+            "ojalera": "#6fd0dc",
+            "lengua": "#6fd0dc",
+            "rayas": "#2a3e9b",
+            "suela": "#46b6c8",
+            "puntera": "#3a66c4",
+            "talon": "#f2d33a",
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#2352a3",
-            "contrafuerte": "#d8d9dc"
+            "correa": "#2a3e9b",
+            "contrafuerte": "#6fd0dc"
           }
         },
         {
@@ -2328,7 +2328,7 @@
     "badbo": {
       "nombre": "Bad Bunny BadBo 1.0",
       "base": "badbo",
-      "descripcion": "Versión aproximada: silueta de cancha con correa y colores de bandera.",
+      "descripcion": "Silueta robusta de cancha con cuello acolchado y puntera de goma.",
       "tallas": [
         36,
         37,
@@ -2343,7 +2343,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Blanco, rojo y azul",
+          "nombre": "Crema y negro",
           "precio": 160,
           "tallas": [
             39,
@@ -2353,28 +2353,28 @@
             43
           ],
           "muestra": [
-            "#f3f1ea",
-            "#c8102e"
+            "#ebe4d2",
+            "#161616"
           ],
           "colores": {
-            "capellada": "#f3f1ea",
-            "ojalera": "#f3f1ea",
-            "lengua": "#f3f1ea",
-            "rayas": "#c8102e",
-            "suela": "#f3f1ea",
-            "puntera": "#1f3f8a",
-            "talon": "#1f3f8a",
+            "capellada": "#ebe4d2",
+            "ojalera": "#ebe4d2",
+            "lengua": "#ebe4d2",
+            "rayas": "#161616",
+            "suela": "#ebe4d2",
+            "puntera": "#d8d0bb",
+            "talon": "#161616",
             "entresuela": "#f3f1ea",
-            "cordones": "#f3f1ea",
+            "cordones": "#ebe4d2",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#c8102e",
-            "contrafuerte": "#1f3f8a"
+            "correa": "#161616",
+            "contrafuerte": "#161616"
           }
         },
         {
           "id": "1",
-          "nombre": "Negro y rojo",
+          "nombre": "Blanco y negro",
           "precio": 160,
           "tallas": [
             40,
@@ -2382,23 +2382,23 @@
             43
           ],
           "muestra": [
-            "#17171a",
-            "#c8102e"
+            "#f3f1ea",
+            "#161616"
           ],
           "colores": {
-            "capellada": "#17171a",
-            "ojalera": "#17171a",
-            "lengua": "#17171a",
-            "rayas": "#c8102e",
-            "suela": "#1b1b1f",
-            "puntera": "#2a2a2f",
-            "talon": "#c8102e",
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#161616",
+            "suela": "#f3f1ea",
+            "puntera": "#e2e0d9",
+            "talon": "#161616",
             "entresuela": "#f3f1ea",
-            "cordones": "#17171a",
-            "forro": "#2b2b2f",
-            "costuras": "#55555c",
-            "correa": "#c8102e",
-            "contrafuerte": "#c8102e"
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#161616",
+            "contrafuerte": "#161616"
           }
         }
       ]
@@ -2421,7 +2421,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Negro y plata",
+          "nombre": "Plata",
           "precio": 200,
           "tallas": [
             40,
@@ -2430,28 +2430,28 @@
             43
           ],
           "muestra": [
-            "#1a1a1d",
-            "#c9cbd0"
+            "#b8bcc4",
+            "#2a2a2f"
           ],
           "colores": {
-            "capellada": "#1a1a1d",
-            "ojalera": "#1a1a1d",
-            "lengua": "#1a1a1d",
-            "rayas": "#c9cbd0",
-            "suela": "#111113",
-            "puntera": "#2a2a2f",
-            "talon": "#c9cbd0",
-            "entresuela": "#1a1a1d",
-            "cordones": "#1a1a1d",
-            "forro": "#0e0e10",
-            "costuras": "#55555c",
-            "correa": "#c9cbd0",
-            "contrafuerte": "#c9cbd0"
+            "capellada": "#b8bcc4",
+            "ojalera": "#b8bcc4",
+            "lengua": "#b8bcc4",
+            "rayas": "#2a2a2f",
+            "suela": "#4a4d55",
+            "puntera": "#9fa4ad",
+            "talon": "#2a2a2f",
+            "entresuela": "#d5d8de",
+            "cordones": "#f3f1ea",
+            "forro": "#1c1c20",
+            "costuras": "#b9b4a6",
+            "correa": "#c9d6e2",
+            "contrafuerte": "#2a2a2f"
           }
         },
         {
           "id": "1",
-          "nombre": "Blanco y rojo",
+          "nombre": "Turquesa",
           "precio": 200,
           "tallas": [
             39,
@@ -2459,23 +2459,23 @@
             42
           ],
           "muestra": [
-            "#f3f1ea",
-            "#b3261e"
+            "#5fc3c7",
+            "#e5e4de"
           ],
           "colores": {
-            "capellada": "#f3f1ea",
-            "ojalera": "#f3f1ea",
-            "lengua": "#f3f1ea",
-            "rayas": "#b3261e",
-            "suela": "#141416",
-            "puntera": "#d9d7cf",
-            "talon": "#b3261e",
-            "entresuela": "#f3f1ea",
+            "capellada": "#5fc3c7",
+            "ojalera": "#5fc3c7",
+            "lengua": "#5fc3c7",
+            "rayas": "#e5e4de",
+            "suela": "#3d8f97",
+            "puntera": "#4aa8ad",
+            "talon": "#e5e4de",
+            "entresuela": "#9fdde0",
             "cordones": "#f3f1ea",
-            "forro": "#0e0e10",
+            "forro": "#1c1c20",
             "costuras": "#b9b4a6",
-            "correa": "#b3261e",
-            "contrafuerte": "#b3261e"
+            "correa": "#d8f1f2",
+            "contrafuerte": "#e5e4de"
           }
         }
       ]
@@ -2498,7 +2498,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Marrón y crema",
+          "nombre": "Crema y burdeos",
           "precio": 190,
           "tallas": [
             38,
@@ -2507,28 +2507,28 @@
             42
           ],
           "muestra": [
-            "#6b4a31",
-            "#e8dcc4"
+            "#ece4d2",
+            "#5e1f2b"
           ],
           "colores": {
-            "capellada": "#6b4a31",
-            "ojalera": "#6b4a31",
-            "lengua": "#6b4a31",
-            "rayas": "#e8dcc4",
+            "capellada": "#ece4d2",
+            "ojalera": "#ece4d2",
+            "lengua": "#ece4d2",
+            "rayas": "#5e1f2b",
             "suela": "#b57f4c",
-            "puntera": "#58391f",
-            "talon": "#e8dcc4",
+            "puntera": "#ddd3bd",
+            "talon": "#5e1f2b",
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#e8dcc4",
-            "contrafuerte": "#58391f"
+            "correa": "#5e1f2b",
+            "contrafuerte": "#ddd3bd"
           }
         },
         {
           "id": "1",
-          "nombre": "Crema y verde",
+          "nombre": "Negro y crema",
           "precio": 190,
           "tallas": [
             39,
@@ -2536,23 +2536,23 @@
             43
           ],
           "muestra": [
-            "#e4d6bd",
-            "#2c5a3f"
+            "#1d1d20",
+            "#e8dcc4"
           ],
           "colores": {
-            "capellada": "#e4d6bd",
-            "ojalera": "#e4d6bd",
-            "lengua": "#e4d6bd",
-            "rayas": "#2c5a3f",
+            "capellada": "#1d1d20",
+            "ojalera": "#1d1d20",
+            "lengua": "#1d1d20",
+            "rayas": "#e8dcc4",
             "suela": "#b57f4c",
-            "puntera": "#d6c6a8",
-            "talon": "#2c5a3f",
+            "puntera": "#2a2a2e",
+            "talon": "#e8dcc4",
             "entresuela": "#f3f1ea",
-            "cordones": "#f3f1ea",
-            "forro": "#e6e2d8",
-            "costuras": "#b9b4a6",
-            "correa": "#2c5a3f",
-            "contrafuerte": "#d6c6a8"
+            "cordones": "#1d1d20",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#e8dcc4",
+            "contrafuerte": "#2a2a2e"
           }
         }
       ]
@@ -2805,7 +2805,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Rojo y blanco",
+          "nombre": "Crema y rojo",
           "precio": 150,
           "tallas": [
             38,
@@ -2815,28 +2815,28 @@
             43
           ],
           "muestra": [
-            "#c8102e",
-            "#f3f1ea"
+            "#efe8d8",
+            "#161616"
           ],
           "colores": {
-            "capellada": "#c8102e",
-            "ojalera": "#c8102e",
-            "lengua": "#c8102e",
-            "rayas": "#f3f1ea",
-            "suela": "#f3f1ea",
-            "puntera": "#f3f1ea",
-            "talon": "#f3f1ea",
+            "capellada": "#efe8d8",
+            "ojalera": "#efe8d8",
+            "lengua": "#efe8d8",
+            "rayas": "#161616",
+            "suela": "#efe8d8",
+            "puntera": "#e6dfcd",
+            "talon": "#c8102e",
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#f3f1ea",
-            "contrafuerte": "#f3f1ea"
+            "correa": "#161616",
+            "contrafuerte": "#c8102e"
           }
         },
         {
           "id": "1",
-          "nombre": "Blanco y rojo",
+          "nombre": "Negro y rojo",
           "precio": 150,
           "tallas": [
             39,
@@ -2844,21 +2844,21 @@
             42
           ],
           "muestra": [
-            "#f3f1ea",
+            "#18181b",
             "#c8102e"
           ],
           "colores": {
-            "capellada": "#f3f1ea",
-            "ojalera": "#f3f1ea",
-            "lengua": "#f3f1ea",
+            "capellada": "#18181b",
+            "ojalera": "#18181b",
+            "lengua": "#18181b",
             "rayas": "#c8102e",
             "suela": "#f3f1ea",
             "puntera": "#e9e7df",
             "talon": "#c8102e",
             "entresuela": "#f3f1ea",
-            "cordones": "#f3f1ea",
-            "forro": "#e6e2d8",
-            "costuras": "#b9b4a6",
+            "cordones": "#18181b",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
             "correa": "#c8102e",
             "contrafuerte": "#c8102e"
           }
@@ -2960,7 +2960,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Crema y yute",
+          "nombre": "Blanco y negro",
           "precio": 180,
           "tallas": [
             40,
@@ -2968,28 +2968,28 @@
             42
           ],
           "muestra": [
-            "#e4d6bd",
-            "#3a2c20"
+            "#f3f1ea",
+            "#141414"
           ],
           "colores": {
-            "capellada": "#e4d6bd",
-            "ojalera": "#e4d6bd",
-            "lengua": "#e4d6bd",
-            "rayas": "#3a2c20",
+            "capellada": "#f3f1ea",
+            "ojalera": "#f3f1ea",
+            "lengua": "#f3f1ea",
+            "rayas": "#141414",
             "suela": "#c8a877",
-            "puntera": "#d6c6a8",
-            "talon": "#3a2c20",
+            "puntera": "#e2ded2",
+            "talon": "#141414",
             "entresuela": "#f3f1ea",
             "cordones": "#f3f1ea",
             "forro": "#e6e2d8",
             "costuras": "#b9b4a6",
-            "correa": "#3a2c20",
-            "contrafuerte": "#e4d6bd"
+            "correa": "#141414",
+            "contrafuerte": "#f3f1ea"
           }
         },
         {
           "id": "1",
-          "nombre": "Negro y yute",
+          "nombre": "Verde y blanco",
           "precio": 180,
           "tallas": [
             41,
@@ -2997,23 +2997,52 @@
             43
           ],
           "muestra": [
-            "#232326",
-            "#c8a877"
+            "#2e7d5b",
+            "#f3f1ea"
           ],
           "colores": {
-            "capellada": "#232326",
-            "ojalera": "#232326",
-            "lengua": "#232326",
-            "rayas": "#c8a877",
+            "capellada": "#2e7d5b",
+            "ojalera": "#2e7d5b",
+            "lengua": "#2e7d5b",
+            "rayas": "#f3f1ea",
             "suela": "#c8a877",
-            "puntera": "#2e2e33",
-            "talon": "#c8a877",
+            "puntera": "#27694c",
+            "talon": "#f3f1ea",
             "entresuela": "#f3f1ea",
-            "cordones": "#232326",
+            "cordones": "#2e7d5b",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#c8a877",
-            "contrafuerte": "#232326"
+            "correa": "#f3f1ea",
+            "contrafuerte": "#2e7d5b"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Rosa",
+          "precio": 180,
+          "tallas": [
+            37,
+            38,
+            39
+          ],
+          "muestra": [
+            "#e9c6c9",
+            "#d7aeb2"
+          ],
+          "colores": {
+            "capellada": "#e9c6c9",
+            "ojalera": "#e9c6c9",
+            "lengua": "#e9c6c9",
+            "rayas": "#d7aeb2",
+            "suela": "#c8a877",
+            "puntera": "#dfb9bd",
+            "talon": "#d7aeb2",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#d7aeb2",
+            "contrafuerte": "#e9c6c9"
           }
         }
       ]
@@ -3021,7 +3050,7 @@
     "sftm-samba": {
       "nombre": "Song for the Mute × Samba LX",
       "base": "sambalx",
-      "descripcion": "Perfil muy bajo, con dos franjas anchas y materiales desgastados.",
+      "descripcion": "Samba sobre una suela gruesa con tacos y cuero desgastado.",
       "tallas": [
         36,
         37,
@@ -3036,7 +3065,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Gris desgastado",
+          "nombre": "Negro",
           "precio": 170,
           "tallas": [
             39,
@@ -3044,28 +3073,28 @@
             42
           ],
           "muestra": [
-            "#8e8a80",
-            "#3d3b37"
+            "#1b1b1e",
+            "#e6dfcc"
           ],
           "colores": {
-            "capellada": "#8e8a80",
-            "ojalera": "#8e8a80",
-            "lengua": "#8e8a80",
-            "rayas": "#3d3b37",
-            "suela": "#9c8866",
-            "puntera": "#7f7b72",
-            "talon": "#3d3b37",
+            "capellada": "#1b1b1e",
+            "ojalera": "#1b1b1e",
+            "lengua": "#1b1b1e",
+            "rayas": "#e6dfcc",
+            "suela": "#141416",
+            "puntera": "#26262a",
+            "talon": "#e6dfcc",
             "entresuela": "#f3f1ea",
-            "cordones": "#f3f1ea",
-            "forro": "#e6e2d8",
-            "costuras": "#b9b4a6",
-            "correa": "#3d3b37",
-            "contrafuerte": "#8e8a80"
+            "cordones": "#1b1b1e",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#e6dfcc",
+            "contrafuerte": "#1b1b1e"
           }
         },
         {
           "id": "1",
-          "nombre": "Marrón desgastado",
+          "nombre": "Marrón",
           "precio": 170,
           "tallas": [
             40,
@@ -3073,23 +3102,23 @@
             44
           ],
           "muestra": [
-            "#6e5a48",
-            "#d5ccb9"
+            "#4a2f24",
+            "#e6dfcc"
           ],
           "colores": {
-            "capellada": "#6e5a48",
-            "ojalera": "#6e5a48",
-            "lengua": "#6e5a48",
-            "rayas": "#d5ccb9",
-            "suela": "#9c8866",
-            "puntera": "#604e3f",
-            "talon": "#d5ccb9",
+            "capellada": "#4a2f24",
+            "ojalera": "#4a2f24",
+            "lengua": "#4a2f24",
+            "rayas": "#e6dfcc",
+            "suela": "#141416",
+            "puntera": "#3d271e",
+            "talon": "#e6dfcc",
             "entresuela": "#f3f1ea",
-            "cordones": "#f3f1ea",
-            "forro": "#e6e2d8",
-            "costuras": "#b9b4a6",
-            "correa": "#d5ccb9",
-            "contrafuerte": "#6e5a48"
+            "cordones": "#4a2f24",
+            "forro": "#2b2b2f",
+            "costuras": "#55555c",
+            "correa": "#e6dfcc",
+            "contrafuerte": "#4a2f24"
           }
         }
       ]
@@ -3112,7 +3141,7 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Verde desgastado",
+          "nombre": "Azul y dorado",
           "precio": 170,
           "tallas": [
             39,
@@ -3120,28 +3149,57 @@
             41
           ],
           "muestra": [
-            "#59604b",
-            "#d5ccb9"
+            "#1f6fd1",
+            "#c9a24a"
           ],
           "colores": {
-            "capellada": "#59604b",
-            "ojalera": "#59604b",
-            "lengua": "#59604b",
-            "rayas": "#d5ccb9",
+            "capellada": "#1f6fd1",
+            "ojalera": "#1f6fd1",
+            "lengua": "#1f6fd1",
+            "rayas": "#c9a24a",
             "suela": "#b57f4c",
-            "puntera": "#4e5442",
-            "talon": "#d5ccb9",
+            "puntera": "#1b61b8",
+            "talon": "#c9a24a",
             "entresuela": "#f3f1ea",
-            "cordones": "#59604b",
+            "cordones": "#1f6fd1",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#d5ccb9",
-            "contrafuerte": "#59604b"
+            "correa": "#c9a24a",
+            "contrafuerte": "#1f6fd1"
           }
         },
         {
           "id": "1",
-          "nombre": "Negro desgastado",
+          "nombre": "Crema y dorado",
+          "precio": 170,
+          "tallas": [
+            38,
+            40,
+            41
+          ],
+          "muestra": [
+            "#e8dfcb",
+            "#c9a24a"
+          ],
+          "colores": {
+            "capellada": "#e8dfcb",
+            "ojalera": "#e8dfcb",
+            "lengua": "#e8dfcb",
+            "rayas": "#c9a24a",
+            "suela": "#b57f4c",
+            "puntera": "#dcd2bb",
+            "talon": "#c9a24a",
+            "entresuela": "#f3f1ea",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#c9a24a",
+            "contrafuerte": "#e8dfcb"
+          }
+        },
+        {
+          "id": "2",
+          "nombre": "Negro y dorado",
           "precio": 170,
           "tallas": [
             40,
@@ -3149,23 +3207,23 @@
             43
           ],
           "muestra": [
-            "#2d2c2a",
-            "#a9a497"
+            "#1b1b1e",
+            "#c9a24a"
           ],
           "colores": {
-            "capellada": "#2d2c2a",
-            "ojalera": "#2d2c2a",
-            "lengua": "#2d2c2a",
-            "rayas": "#a9a497",
+            "capellada": "#1b1b1e",
+            "ojalera": "#1b1b1e",
+            "lengua": "#1b1b1e",
+            "rayas": "#c9a24a",
             "suela": "#b57f4c",
-            "puntera": "#3a3936",
-            "talon": "#a9a497",
+            "puntera": "#26262a",
+            "talon": "#c9a24a",
             "entresuela": "#f3f1ea",
-            "cordones": "#2d2c2a",
+            "cordones": "#1b1b1e",
             "forro": "#2b2b2f",
             "costuras": "#55555c",
-            "correa": "#a9a497",
-            "contrafuerte": "#2d2c2a"
+            "correa": "#c9a24a",
+            "contrafuerte": "#1b1b1e"
           }
         }
       ]
@@ -3188,12 +3246,41 @@
       "variantes": [
         {
           "id": "0",
-          "nombre": "Blanco, gris y rojo",
+          "nombre": "Verde G-SNK",
           "precio": 160,
           "tallas": [
             40,
             41,
             42
+          ],
+          "muestra": [
+            "#7bd64a",
+            "#1f3f8a"
+          ],
+          "colores": {
+            "capellada": "#7bd64a",
+            "ojalera": "#7bd64a",
+            "lengua": "#7bd64a",
+            "rayas": "#1f3f8a",
+            "suela": "#1f3f8a",
+            "puntera": "#f2d33a",
+            "talon": "#ff7a1a",
+            "entresuela": "#f2f0e8",
+            "cordones": "#f3f1ea",
+            "forro": "#e6e2d8",
+            "costuras": "#b9b4a6",
+            "correa": "#1f3f8a",
+            "contrafuerte": "#ff7a1a"
+          }
+        },
+        {
+          "id": "1",
+          "nombre": "Blanco, gris y rojo",
+          "precio": 160,
+          "tallas": [
+            41,
+            42,
+            43
           ],
           "muestra": [
             "#efeeea",
@@ -3213,35 +3300,6 @@
             "costuras": "#b9b4a6",
             "correa": "#111114",
             "contrafuerte": "#d23a2e"
-          }
-        },
-        {
-          "id": "1",
-          "nombre": "Negro y rojo",
-          "precio": 160,
-          "tallas": [
-            41,
-            42,
-            43
-          ],
-          "muestra": [
-            "#1b1b1f",
-            "#d23a2e"
-          ],
-          "colores": {
-            "capellada": "#1b1b1f",
-            "ojalera": "#1b1b1f",
-            "lengua": "#1b1b1f",
-            "rayas": "#d23a2e",
-            "suela": "#d23a2e",
-            "puntera": "#2c2c31",
-            "talon": "#2c2c31",
-            "entresuela": "#e8e6df",
-            "cordones": "#1b1b1f",
-            "forro": "#2b2b2f",
-            "costuras": "#55555c",
-            "correa": "#d23a2e",
-            "contrafuerte": "#2c2c31"
           }
         }
       ]

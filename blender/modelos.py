@@ -223,7 +223,7 @@ TAEKWONDO = variante_de(
     cordon=(0.17, 0.07),
     cordones=(13.4, 19.8, 6),
     lengua=(21.2, 11),
-    rayas={**SAMBA['rayas'], 'ancho': 0.62, 'paso_abajo': 1.25, 'paso_arriba': 1.1, 'x_abajo': 11.8, 'x_arriba': 13.8, 'v0': 0.1, 'v1': 0.72},
+    rayas={**SAMBA['rayas'], 'ancho': 0.95, 'paso_abajo': 1.75, 'paso_arriba': 1.45, 'x_abajo': 10.6, 'x_arriba': 13.6, 'v0': 0.03, 'v1': 0.78},
     talon=(0.035, 0.45),
 )
 
@@ -317,6 +317,8 @@ HAWAII = variante_de(
 
 ALBRECHT = variante_de(
     SPEZIAL,
+    base=[(0, 3.3), (12, 3.1), (22, 2.8), (30, 2.7)],
+    suela=SUELA_COPA,
     borde=[(2, 13.4), (4.5, 12.8), (7, 12.4), (10, 12.2), (13, 10.9), (17, 8.4), (21.5, 5.6)],
     cordones=(11.6, 19.6, 8),
     collar=0.48,
@@ -339,13 +341,17 @@ CLOT_SAMBA = variante_de(
 
 SAMBA_LX = variante_de(
     SAMBA,
-    contorno=ancho(CONTORNO_FINO, 0.93),
-    borde=[(2, 9.7), (4.5, 8.2), (7, 7.3), (10, 8.2), (13, 8.4), (17, 7.0), (21.5, 5.0)],
-    base=[(0, 1.9), (12, 1.7), (22, 1.4), (30, 1.3)],
-    puntera=(24.5, 0.55, 0.9, 0.09),
-    guardia=('puntera', 0.12),
-    rayas={**SAMBA['rayas'], 'n': 2, 'ancho': 1.5, 'paso_abajo': 3.0, 'paso_arriba': 2.3, 'x_abajo': 10.2, 'x_arriba': 13.4},
-    talon=(0.04, 0.6),
+    contorno=ancho(CONTORNO_REDONDO, 1.02),
+    borde=[(2, 12.4), (4.5, 11.0), (7, 10.2), (10, 11.0), (13, 11.1), (17, 9.3), (21.5, 6.9)],
+    base=[(0, 3.9), (12, 3.7), (22, 3.4), (30, 3.3)],
+    suela=SUELA_COPA,
+    ondas=(0.12, 46),
+    punta=(19, 1.0),
+    puntera=(22.0, 0.95, 0.9, 0.09),
+    cordones=(12.4, 19.7, 7),
+    collar=0.5,
+    rayas={**SAMBA['rayas'], 'ancho': 1.2, 'paso_abajo': 2.2, 'paso_arriba': 1.65, 'x_abajo': 9.8, 'x_arriba': 13.2, 'v0': 0.06},
+    talon=(0.05, 0.5),
 )
 
 TOKYO = variante_de(
@@ -428,20 +434,24 @@ TERREX = variante_de(
 
 BADBO = variante_de(
     SAMBA,
-    contorno=ancho(CONTORNO_REDONDO, 1.06),
-    borde=[(2, 13.4), (4.5, 12.4), (7, 11.9), (10, 12.5), (13, 12.0), (17, 9.8), (21.5, 7.1)],
-    base=[(0, 3.8), (12, 3.5), (22, 3.1), (30, 3.0)],
+    contorno=ancho(CONTORNO_REDONDO, 1.1),
+    abertura=ancho(ABERTURA, 1.08),
+    borde=[(2, 13.6), (4.5, 12.8), (7, 12.4), (10, 12.8), (13, 12.2), (17, 10.0), (21.5, 7.3)],
+    base=[(0, 3.7), (12, 3.5), (22, 3.2), (30, 3.2)],
     suela=SUELA_COPA,
-    punta=(19, 1.1),
-    puntera=(23.0, 0.8, 0.45, 0.14),
-    collar=0.55,
-    cordones=(11.8, 19.6, 7),
+    punta=(19, 1.2),
+    puntera=None,
+    guardia=('puntera', 0.3),
+    collar=0.78,
+    cordon=(0.38, 0.12),
+    cordones=(11.8, 19.6, 6),
     paneles=[{'parte': 'talon', 'x': (2.8, 8.4), 'v': (0.2, 0.8), 'inclina': 2.0}],
-    rayas={**SAMBA['rayas'], 'ancho': 0.8, 'paso_abajo': 1.5, 'paso_arriba': 1.3, 'x_abajo': 10.2, 'x_arriba': 11.8, 'v0': 0.2, 'v1': 0.76},
-    talon=(0.04, 0.72),
+    rayas={**SAMBA['rayas'], 'ancho': 1.35, 'paso_abajo': 2.3, 'paso_arriba': 1.8, 'x_abajo': 9.4, 'x_arriba': 12.4, 'v0': 0.24, 'v1': 0.78},
+    talon=(0.05, 0.6),
 )
 
 WC_MEGARIDE = {**MEGARIDE,
+               'base': [(0, 6.8), (12, 6.0), (22, 4.2), (30, 2.9)],
                'columnas': (MEGARIDE['columnas'][0], MEGARIDE['columnas'][1], 28, 0.36),
                'puntera': None, 'guardia': ('puntera', 0.26),
                'rayas': {**MEGARIDE['rayas'], 'ancho': 1.4, 'paso_abajo': 2.4, 'paso_arriba': 2.0, 'x_abajo': 9.6, 'x_arriba': 12.4},
@@ -604,11 +614,11 @@ PRODUCTOS = {
         v('Verde', 130, [39, 41, 43], '#3d5a3d', '#e8dcc4', suela=GOMA),
     ]),
     'albrecht': ('Albrecht II SPZL', 'albrecht', [
-        v('Marrón', 140, [40, 41, 42, 44], '#7a5436', '#e8dcc4', puntera='#6b4930'),
-        v('Azul marino', 140, [39, 41, 43], '#1f2c4f', '#d6d4cd', puntera='#1b2644'),
+        v('Cuero tostado', 140, [40, 41, 42, 44], '#a5562b', '#e8dcc4', suela=GOMA, puntera='#93491f'),
+        v('Marrón oscuro', 140, [39, 41, 43], '#5a3b26', '#e8dcc4', suela=GOMA, puntera='#4c3120'),
     ]),
     'zx8000': ('ZX 8000', 'zx', [
-        v('Azul y amarillo', 120, [40, 41, 42, 43], '#d8d9dc', '#2352a3', suela='#2352a3', puntera='#2f6fb5', talon='#e6c229', entresuela='#f3f1ea'),
+        v('Aguamarina', 120, [40, 41, 42, 43], '#6fd0dc', '#2a3e9b', suela='#46b6c8', puntera='#3a66c4', talon='#f2d33a', entresuela='#f3f1ea'),
         v('Blanco y gris', 120, [38, 39, 41], BLANCO, '#8a8c92', suela='#8a8c92', puntera='#c9c9cc', talon='#8a8c92'),
     ]),
     'stansmith': ('Stan Smith', 'stansmith', [
@@ -680,16 +690,16 @@ PRODUCTOS = {
         v('Arena y negro', 165, [40, 42, 43], '#b9a888', '#3a342a', suela='#1a1a1d', puntera='#7b6d55', talon='#3a342a', entresuela='#e0d9c8', cordones='#3a342a'),
     ]),
     'badbo': ('Bad Bunny BadBo 1.0', 'badbo', [
-        v('Blanco, rojo y azul', 160, [39, 40, 41, 42, 43], BLANCO, '#c8102e', suela=BLANCO, puntera='#1f3f8a', talon='#1f3f8a', correa='#c8102e'),
-        v('Negro y rojo', 160, [40, 41, 43], NEGRO, '#c8102e', suela='#1b1b1f', puntera='#2a2a2f', talon='#c8102e', correa='#c8102e'),
+        v('Crema y negro', 160, [39, 40, 41, 42, 43], '#ebe4d2', '#161616', suela='#ebe4d2', puntera='#d8d0bb', talon='#161616', cordones='#ebe4d2'),
+        v('Blanco y negro', 160, [40, 41, 43], BLANCO, '#161616', suela=BLANCO, puntera='#e2e0d9', talon='#161616'),
     ]),
     'chavarria-megaride': ('Willy Chavarria × Megaride', 'wcmegaride', [
-        v('Negro y plata', 200, [40, 41, 42, 43], '#1a1a1d', '#c9cbd0', suela='#111113', puntera='#2a2a2f', talon='#c9cbd0', entresuela='#1a1a1d', correa='#c9cbd0', forro='#0e0e10'),
-        v('Blanco y rojo', 200, [39, 41, 42], BLANCO, '#b3261e', suela='#141416', puntera='#d9d7cf', talon='#b3261e', entresuela=BLANCO, correa='#b3261e', forro='#0e0e10'),
+        v('Plata', 200, [40, 41, 42, 43], '#b8bcc4', '#2a2a2f', suela='#4a4d55', puntera='#9fa4ad', talon='#2a2a2f', entresuela='#d5d8de', correa='#c9d6e2', forro='#1c1c20'),
+        v('Turquesa', 200, [39, 41, 42], '#5fc3c7', '#e5e4de', suela='#3d8f97', puntera='#4aa8ad', talon='#e5e4de', entresuela='#9fdde0', correa='#d8f1f2', forro='#1c1c20'),
     ]),
     'wb-army': ('Wales Bonner × BW Army', 'wbarmy', [
-        v('Marrón y crema', 190, [38, 40, 41, 42], '#6b4a31', '#e8dcc4', suela=GOMA, puntera='#58391f', talon='#e8dcc4'),
-        v('Crema y verde', 190, [39, 41, 43], '#e4d6bd', '#2c5a3f', suela=GOMA, puntera='#d6c6a8', talon='#2c5a3f'),
+        v('Crema y burdeos', 190, [38, 40, 41, 42], '#ece4d2', '#5e1f2b', suela=GOMA, puntera='#ddd3bd', talon='#5e1f2b'),
+        v('Negro y crema', 190, [39, 41, 43], '#1d1d20', '#e8dcc4', suela=GOMA, puntera='#2a2a2e', talon='#e8dcc4'),
     ]),
     'y3-evo': ('Y-3 Evo SL', 'y3evo', [
         v('Blanco y negro', 240, [39, 41, 42], '#e7e6e1', '#141414', suela='#141414', puntera='#d9d7cf', talon='#141414', entresuela=BLANCO),
@@ -704,28 +714,30 @@ PRODUCTOS = {
         v('Azul y blanco', 220, [39, 41, 43], '#3a5fa8', BLANCO, suela='#1f3f8a', puntera='#27437a', talon=BLANCO, entresuela=BLANCO, correa='#7f9bd0'),
     ]),
     'coca-superstar': ('Coca-Cola × Superstar', 'cocasuperstar', [
-        v('Rojo y blanco', 150, [38, 40, 41, 42, 43], '#c8102e', BLANCO, suela=BLANCO, puntera=BLANCO, talon=BLANCO),
-        v('Blanco y rojo', 150, [39, 41, 42], BLANCO, '#c8102e', suela=BLANCO, puntera='#e9e7df', talon='#c8102e'),
+        v('Crema y rojo', 150, [38, 40, 41, 42, 43], '#efe8d8', '#161616', suela='#efe8d8', puntera='#e6dfcd', talon='#c8102e'),
+        v('Negro y rojo', 150, [39, 41, 42], '#18181b', '#c8102e', suela=BLANCO, puntera='#e9e7df', talon='#c8102e'),
     ]),
     'braindead-guide': ('Brain Dead × Guide Tennie', 'guidetennie', [
         v('Mostaza y negro', 170, [40, 41, 42, 43], '#b08a2e', '#2b2b2b', suela='#1e1e22', talon='#2b2b2b', cordones='#1e1e22'),
         v('Violeta y negro', 170, [39, 41, 43], '#5c4a86', '#2b2b2b', suela='#1e1e22', talon='#d8d24b', cordones='#d8d24b'),
     ]),
     'clot-samba': ('CLOT × Samba', 'clot', [
-        v('Crema y yute', 180, [40, 41, 42], '#e4d6bd', '#3a2c20', suela='#c8a877', puntera='#d6c6a8'),
-        v('Negro y yute', 180, [41, 42, 43], '#232326', '#c8a877', suela='#c8a877', puntera='#2e2e33'),
+        v('Blanco y negro', 180, [40, 41, 42], BLANCO, '#141414', suela='#c8a877', puntera='#e2ded2'),
+        v('Verde y blanco', 180, [41, 42, 43], '#2e7d5b', BLANCO, suela='#c8a877', puntera='#27694c'),
+        v('Rosa', 180, [37, 38, 39], '#e9c6c9', '#d7aeb2', suela='#c8a877', puntera='#dfb9bd'),
     ]),
     'sftm-samba': ('Song for the Mute × Samba LX', 'sambalx', [
-        v('Gris desgastado', 170, [39, 41, 42], '#8e8a80', '#3d3b37', suela='#9c8866', puntera='#7f7b72'),
-        v('Marrón desgastado', 170, [40, 42, 44], '#6e5a48', '#d5ccb9', suela='#9c8866', puntera='#604e3f'),
+        v('Negro', 170, [39, 41, 42], '#1b1b1e', '#e6dfcc', suela='#141416', puntera='#26262a'),
+        v('Marrón', 170, [40, 42, 44], '#4a2f24', '#e6dfcc', suela='#141416', puntera='#3d271e'),
     ]),
     'sftm-tokyo': ('Song for the Mute × Tokyo', 'tokyo', [
-        v('Verde desgastado', 170, [39, 40, 41], '#59604b', '#d5ccb9', puntera='#4e5442'),
-        v('Negro desgastado', 170, [40, 41, 43], '#2d2c2a', '#a9a497', puntera='#3a3936'),
+        v('Azul y dorado', 170, [39, 40, 41], '#1f6fd1', '#c9a24a', suela=GOMA, puntera='#1b61b8', talon='#c9a24a'),
+        v('Crema y dorado', 170, [38, 40, 41], '#e8dfcb', '#c9a24a', suela=GOMA, puntera='#dcd2bb', talon='#c9a24a'),
+        v('Negro y dorado', 170, [40, 41, 43], '#1b1b1e', '#c9a24a', suela=GOMA, puntera='#26262a', talon='#c9a24a'),
     ]),
     'atmos-zx': ('atmos × ZX 8000', 'atmoszx', [
-        v('Blanco, gris y rojo', 160, [40, 41, 42], '#efeeea', '#111114', suela='#d23a2e', puntera='#c9c8c3', talon='#d23a2e', entresuela='#efeeea'),
-        v('Negro y rojo', 160, [41, 42, 43], '#1b1b1f', '#d23a2e', suela='#d23a2e', puntera='#2c2c31', talon='#2c2c31', entresuela='#e8e6df'),
+        v('Verde G-SNK', 160, [40, 41, 42], '#7bd64a', '#1f3f8a', suela='#1f3f8a', puntera='#f2d33a', talon='#ff7a1a', entresuela='#f2f0e8'),
+        v('Blanco, gris y rojo', 160, [41, 42, 43], '#efeeea', '#111114', suela='#d23a2e', puntera='#c9c8c3', talon='#d23a2e', entresuela='#efeeea'),
     ]),
 }
 
@@ -734,16 +746,16 @@ DESCRIPCIONES = {
     'gazelle': 'Clásico de perfil bajo y líneas limpias, pensado para el uso diario.',
     'superstar': 'Puntera de concha y suela de copa, una silueta reconocible al instante.',
     'hawaii': 'Silueta de terraza con suela de copa y refuerzo bajo en la capellada.',
-    'albrecht': 'Corte alto para tobillo, con muchos ojales y rayas finas.',
+    'albrecht': 'Corte medio de cuero, suela gruesa de goma y muchos ojales.',
     'clot': 'Versión con suela alta de textura trenzada y puntera ampliada.',
-    'sambalx': 'Perfil muy bajo, con dos franjas anchas y materiales desgastados.',
+    'sambalx': 'Samba sobre una suela gruesa con tacos y cuero desgastado.',
     'tokyo': 'Silueta delgada con correa sobre el empeine.',
     'atmoszx': 'Running en capas, con correa y paneles de contraste.',
     'hoopsmid': 'Bota media de baloncesto, con cuello acolchado en franjas.',
     'forummid': 'Bota media con correa en el tobillo y puntera perforada.',
     'breaknetmid': 'Bota media limpia, con rayas anchas y suela de copa.',
     'terrex': 'Bota de senderismo con suela de tacos, puntera reforzada y tiradores.',
-    'badbo': 'Versión aproximada: silueta de cancha con correa y colores de bandera.',
+    'badbo': 'Silueta robusta de cancha con cuello acolchado y puntera de goma.',
     'wcmegaride': 'Suela de columnas gruesas y capellada envolvente.',
     'wbarmy': 'Perfil bajo y delgado con rayas finas y suela de goma.',
     'y3evo': 'Running elevado de líneas limpias, con suela curva.',

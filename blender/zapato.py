@@ -92,19 +92,19 @@ class Horma:
         self.x_lado = xs
         self.y_ext = np.interp(xs, *self._monotono(ext))
         self.y_int = np.interp(xs, *self._monotono(intr))
-        # detras de la garganta no limita nada; delante baja poco a poco hasta la punta
+        # techo de la punta: un cuarto de elipse desde la garganta hasta la nariz,
+        # y una subida suave hacia atras para no tocar el resto del zapato
         garganta = self.garganta = float(np.max(np.array(m['abertura'])[:, 0]))
-        alto = float(self.borde(garganta)) + 0.6
-        bajada = m.get('bajada', (0.6, 1.6, 1.2))
-        tramo = 29.3 - garganta
-        puntos = [(garganta, alto), (garganta + tramo * 0.42, alto - bajada[0] - 0.6),
-                  (garganta + tramo * 0.75, alto - bajada[1] - 0.6),
-                  (29.3, float(self.base(29.3)) + bajada[2]), (31, float(self.base(30)))]
-        self.altura_punta = lambda q: np.where(q < garganta, self.borde(q) + 0.6 + 50 * (garganta - q),
-                                               np.interp(q, *zip(*puntos)))
-        n = self.normal(0.25, 0.3)
-        if n[1] > 0:  # en u=0.25 la cara exterior mira hacia y negativo
-            self.signo = -1.0
+        alto = float(self.borde(garganta)) + 0.4 - float(self.base(garganta))
+        largo = 30.7 - garganta
+
+        def altura_punta(q):
+            t = np.clip((q - garganta) / largo, 0, 1)
+            elipse = np.sqrt(np.clip(1 - t ** 2, 0, 1)) ** 0.85
+            subida = 8 * np.logaddexp(0, (garganta - q) / 1.2)
+            return self.base(q) + alto * elipse + subida
+
+        self.altura_punta = altura_punta
 
     @staticmethod
     def _monotono(puntos):
@@ -147,7 +147,9 @@ class Horma:
         r = np.clip(np.abs(y - centro) / medio, 0, 1)
         # junto a la garganta la cupula aun no redondea los lados
         w = suave(self.garganta, self.garganta + 4.5, x)
-        techo = self.base(x) + (self.altura_punta(x) - self.base(x)) * (1 - w * r ** 2.4) ** 0.45
+        # la pared de la punta sube un poco recta antes de curvarse
+        labio = self.base(x) + 0.9
+        techo = labio + (self.altura_punta(x) - labio) * (1 - w * r ** 2.4) ** 0.45
         return -suavidad * np.logaddexp(-z / suavidad, -techo / suavidad)
 
     def S(self, u, v):
@@ -739,6 +741,8 @@ def mirar(cam, pos, objetivo=(15, 0, 4.5)):
 
 
 VISTAS = {
+    'cerca': (52, -30, 14),
+    'frente': (70, -6, 16),
     'lado': (15, -88, 7),
     'tres_cuartos': (72, -62, 34),
     'arriba': (15, -6, 95),
