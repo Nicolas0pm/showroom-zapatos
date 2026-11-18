@@ -4,6 +4,13 @@ Tienda virtual en 3D hecha para el proyecto de motion design. En vez de una cuad
 
 **Sitio publicado:** https://showroom-zapatos.vercel.app
 
+**Video de cómo navegar la página:** https://youtu.be/i6WQlw-_BfE
+
+## Autores
+
+- Santiago Stiven Gutierrez Moralez
+- Nicolas Esteban Rodriguez Calderón
+
 > Proyecto universitario sin fines comerciales y sin relación con las marcas o personas mencionadas. No se vende nada: precios, tallas y modelos son simulados, y los modelos 3D son aproximaciones hechas por el equipo.
 
 ## Tecnologías
