@@ -217,7 +217,7 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
   const [t, setT] = useState({})
   useEffect(() => {
     const tareas = [
-      ['marca', () => neon('Showroom', '#ff4f8b', 640, 125)],
+      ['marca', () => neon('Showroom', '#ff4f8b', 1024, 200)],
       ['fondo', () => ladrillo([4.6, 3.2])],
       ['derecha', () => ladrillo([6.6, 3.2], true)],
       ['concreto', () => concreto([5, 2.4])],
@@ -355,8 +355,8 @@ function Cuarto({ estantes, vertical, alElegirEstante, vista, sinMovimiento, int
         <planeGeometry args={[150, 180]} />
         <meshStandardMaterial map={t.reja} transparent alphaTest={0.4} side={DoubleSide} metalness={0.5} roughness={0.5} />
       </mesh>}
-      {t.marca && <mesh position={[0, 284, -MEDIO + 2]}>
-        <planeGeometry args={[112, 21.9]} />
+      {t.marca && <mesh position={vertical ? [0, 287, -MEDIO + 2] : [0, 262, -MEDIO + 2]}>
+        <planeGeometry args={vertical ? [130, 25.4] : [205, 40]} />
         <meshBasicMaterial ref={marca} map={t.marca} transparent depthWrite={false} toneMapped={false} color="#000" />
       </mesh>}
       {cielo.map((f, i) => (

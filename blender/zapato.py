@@ -129,8 +129,11 @@ class Horma:
         c, o = self.contorno(u), self.abertura(u)
         cuello = 1 - suave(*self.m['cuello'], o[..., 0])
         ang = v * math.pi / 2
-        exp = 2 / self.m.get('caja', 2.7)
-        f = (1 - cuello) * (1 - np.cos(ang) ** exp) + cuello * v ** 1.7
+        exp = 2 / self.m.get('caja', 2.25)
+        # la pared se inclina hacia adentro desde la suela: seccion de cupula, no de caja
+        inclina = self.m.get('inclinacion', 0.55)
+        caja = (1 - inclina) * (1 - np.cos(ang) ** exp) + inclina * (1 - (1 - v) ** 1.6)
+        f = (1 - cuello) * caja + cuello * v ** 1.7
         g = (1 - cuello) * np.sin(ang) ** exp + cuello * v ** 0.9
         # en la punta la capellada baja en pendiente, no en curva abombada
         xy = c + (o - c) * f[..., None]
@@ -148,8 +151,8 @@ class Horma:
         # junto a la garganta la cupula aun no redondea los lados
         w = suave(self.garganta, self.garganta + 4.5, x)
         # la pared de la punta sube un poco recta antes de curvarse
-        labio = self.base(x) + 0.9
-        techo = labio + (self.altura_punta(x) - labio) * (1 - w * r ** 2.4) ** 0.45
+        labio = self.base(x) + 0.55
+        techo = labio + (self.altura_punta(x) - labio) * (1 - w * r ** 2) ** 0.6
         return -suavidad * np.logaddexp(-z / suavidad, -techo / suavidad)
 
     def S(self, u, v):
