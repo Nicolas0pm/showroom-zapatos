@@ -39,6 +39,7 @@ SAMBA = {
               'ancho': 1.0, 'v0': 0.07, 'v1': 0.8},
     'puntera': (22.2, 0.98, 1.15, 0.07),  # x, altura, forma, grosor
     'puntera_t': (0.36, 0.11),            # puntera en T: altura a los lados y ancho del tallo
+    'acabado': {'puntera': 'gamuza'},     # material de cada pieza; por defecto cuero
     'ojalera': (11.8, 0.8),
     'talon': (0.05, 0.5),
 }
@@ -537,6 +538,17 @@ GUIDE_TENNIE = variante_de(
 SL72 = {**SL72, 'paneles': [{'parte': 'puntera', 'x': (3.0, 7.6), 'v': (0.16, 0.92), 'inclina': 1.6}]}
 ZX = {**ZX, 'guardia': ('puntera', 0.16),
       'paneles': [{'parte': 'talon', 'x': (17.5, 20.5), 'v': (0.3, 0.8), 'inclina': -1.5}]}
+
+GAMUZA = {'capellada': 'gamuza', 'ojalera': 'gamuza', 'contrafuerte': 'gamuza', 'lengua': 'gamuza', 'puntera': 'gamuza'}
+MALLA = {'capellada': 'malla', 'lengua': 'malla', 'puntera': 'gamuza'}
+for _modelo in (GAZELLE, SPEZIAL, CAMPUS, HAWAII, TOKYO, GUIDE_TENNIE):
+    _modelo['acabado'] = GAMUZA
+for _modelo in (ZX, ATMOS_ZX, ULTRABOOST, ADIZERO, SATISFY_ADIZERO, SUPERNOVA, Y3_EVO, MEGARIDE,
+                WC_MEGARIDE, BAPE_ADISTAR):
+    _modelo['acabado'] = MALLA
+SL72['acabado'] = {'capellada': 'tela', 'lengua': 'tela', 'puntera': 'gamuza', 'contrafuerte': 'gamuza'}
+TERREX['acabado'] = {'capellada': 'tela', 'lengua': 'tela', 'puntera': 'goma'}
+ADILETTE['acabado'] = {'capellada': 'plastico', 'rayas': 'plastico'}
 
 for _modelo in (SUPERSTAR, CAMPUS, STAN, FORUM, GRAND_COURT, HOOPS_MID, FORUM_MID, BREAKNET_MID,
                 BADBO, COCA_SUPERSTAR, HAWAII):

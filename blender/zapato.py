@@ -355,7 +355,7 @@ def lengua(h):
             y = a * w * fin
             p = (x, y, z - 0.5 * a * a)
             arriba.append(p)
-            abajo.append((p[0], p[1], p[2] - 0.22))
+            abajo.append((p[0], p[1], p[2] - 0.42))
     arriba, abajo = h.curvar(arriba), h.curvar(abajo)
     n = nb * na
     caras = rejilla(nb, na)
@@ -398,6 +398,23 @@ def cordones(h):
         obs.append(tramo(f'cordon_{i}_b', internos[i][1], externos[i + 1][1], 0.46))
     for i, (u, _) in enumerate(externos + internos):
         obs.append(punto(h, f'ojal_{i}', u, 0.9, radio=0.22, alto=0.09, material='costuras'))
+    return obs + mono(externos[-1][1], internos[-1][1], m['cordon'])
+
+
+def mono(a, b, cordon):
+    """Lazada de dos orejas y dos puntas sobre la ultima fila de cordones."""
+    centro = (a + b) / 2 + np.array((0, 0, 0.7))
+    lado = (b - a) / np.linalg.norm(b - a)
+    ancho, grueso = cordon
+    obs = []
+    for s in (-1, 1):
+        oreja = [centro + lado * s * 1.05 * (1 - math.cos(t)) + np.array((-0.25 * (1 - math.cos(t)), 0, 0.55 * math.sin(t)))
+                 for t in np.linspace(0, 2 * math.pi, 18)]
+        obs.append(tubo(f'mono_oreja_{s}', 'cordones', oreja, grueso * 1.4, ancho * 0.6, arriba=(1, 0, 0), lados=6))
+        punta = [centro + np.array((1.5 * t, 0.55 * s * t, -1.0 * t - 0.25 * math.sin(t * math.pi))) for t in np.linspace(0, 1, 10)]
+        obs.append(tubo(f'mono_punta_{s}', 'cordones', punta, ancho * 0.6, grueso, arriba=(0, 0, 1), lados=6))
+    nudo = [centro + lado * t for t in np.linspace(-0.3, 0.3, 4)]
+    obs.append(tubo('mono_nudo', 'cordones', nudo, 0.32, 0.3, arriba=(1, 0, 0), lados=8))
     return obs
 
 
@@ -456,12 +473,18 @@ def puntera(h):
 
 
 def ojalera(h):
+    """Banda de los ojales; su borde inferior hace una onda entre cada ojal."""
     x, v0 = h.m['ojalera']
     ua, ub = h.u_de_x(x, 0.95, -1), h.u_de_x(x, 0.95, 1)
-    a = np.linspace(0, 1, 70)
+    ondas = 2 * h.m['cordones'][2]
+
+    def bajo(A):
+        return v0 + 0.018 * (1 - np.cos(2 * math.pi * A * ondas)) / 2
+
+    a = np.linspace(0, 1, 140)
     return [parche(h, 'ojalera', 'ojalera',
-                   lambda A, B: (ua + (ub - ua) * A, v0 + (0.995 - v0) * B), 70, 6, alto=0.08),
-            costura(h, 'costura_ojalera', ua + (ub - ua) * a, np.full_like(a, v0 + 0.02))]
+                   lambda A, B: (ua + (ub - ua) * A, bajo(A) + (0.995 - bajo(A)) * B), 140, 6, alto=0.08),
+            costura(h, 'costura_ojalera', ua + (ub - ua) * a, bajo(a) + 0.02)]
 
 
 def contrafuerte(h):
@@ -691,14 +714,34 @@ def hex_rgb(c):
 
 
 def aplicar_variante(m, nombre):
-    pintar(m['variantes'][nombre])
+    pintar(m['variantes'][nombre], m)
 
 
-def pintar(colores):
+# Como refleja la luz cada acabado: rugosidad y brillo aterciopelado (sheen).
+ACABADOS = {
+    'cuero': (0.52, 0.0),
+    'gamuza': (0.92, 0.35),
+    'tela': (0.85, 0.3),
+    'malla': (0.8, 0.2),
+    'goma': (0.72, 0.0),
+    'plastico': (0.35, 0.0),
+}
+ACABADO_POR_PARTE = {'cordones': 'tela', 'forro': 'tela', 'costuras': 'tela', 'suela': 'goma',
+                     'entresuela': 'goma', 'etiqueta': 'tela'}
+
+
+def pintar(colores, m=None):
+    acabados = {**ACABADO_POR_PARTE, **((m or {}).get('acabado', {}))}
     for parte, material in _mats.items():
         bsdf = material.node_tree.nodes.get('Principled BSDF')
         bsdf.inputs['Base Color'].default_value = hex_rgb(colores.get(parte, '#ffffff'))
-        bsdf.inputs['Roughness'].default_value = 0.62 if parte != 'suela' else 0.45
+        rugosidad, terciopelo = ACABADOS[acabados.get(parte, 'cuero')]
+        bsdf.inputs['Roughness'].default_value = rugosidad
+        if 'Sheen Weight' in bsdf.inputs:
+            # el brillo aterciopelado toma el color de la pieza para no lavarla
+            bsdf.inputs['Sheen Weight'].default_value = terciopelo
+            bsdf.inputs['Sheen Roughness'].default_value = 0.6
+            bsdf.inputs['Sheen Tint'].default_value = hex_rgb(colores.get(parte, '#ffffff'))
 
 
 # --- render y exportacion ---------------------------------------------------
@@ -798,7 +841,7 @@ def main():
             if base != a.modelo:
                 continue
             for i, x in enumerate(lista):
-                pintar(x['colores'])
+                pintar(x['colores'], m)
                 s.render.filepath = f'{AQUI}/renders/fotos/{clave}-{i}.png'
                 bpy.ops.render.render(write_still=True)
         return
